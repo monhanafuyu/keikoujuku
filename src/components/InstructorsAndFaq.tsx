@@ -24,37 +24,37 @@ export const InstructorsAndFaq: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-slate-50 border-t border-slate-200">
+    <section className="py-24 bg-[#111A2E] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#b38f4f] mb-4 font-serif tracking-widest">
               よくある質問
             </h2>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-200 hover:border-slate-300">
+              <div key={idx} className="bg-[#0B1426] border border-white/10 rounded-sm overflow-hidden transition-all duration-200 hover:border-[#b38f4f]/30">
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
                 >
-                  <span className="font-bold text-slate-800 pr-4">{faq.q}</span>
+                  <span className="font-bold text-white tracking-wide pr-4">{faq.q}</span>
                   {openFaq === idx ? (
-                    <ChevronUp className="w-5 h-5 text-blue-600 shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-[#b38f4f] shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-slate-500 shrink-0" />
                   )}
                 </button>
                 <div
                   className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFaq === idx ? 'max-h-48 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                    openFaq === idx ? 'max-h-60 pb-5 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className="text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                  <p className="text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4 tracking-wide">
                     {faq.a}
                   </p>
                 </div>

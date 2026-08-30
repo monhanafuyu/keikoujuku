@@ -13,7 +13,7 @@ export default function App() {
   const openConsultation = () => setIsConsultationOpen(true);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-20 sm:pb-0">
+    <div className="min-h-screen bg-[#0B1426] text-slate-200 font-sans selection:bg-[#b38f4f] selection:text-[#1a1a1a] pb-20 sm:pb-0">
       <Navbar onOpenConsultation={openConsultation} />
       
       <main>
@@ -29,12 +29,12 @@ export default function App() {
       <Footer onOpenConsultation={openConsultation} />
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 sm:hidden flex shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)]">
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-[#0B1426]/95 backdrop-blur-md border-t border-white/10 sm:hidden flex shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.5)]">
         <button
           onClick={openConsultation}
-          className="w-full py-4 px-3 rounded-xl bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow-lg shadow-blue-700/30 active:scale-[0.98] transition-transform"
+          className="w-full py-4 px-3 rounded-sm bg-[#b38f4f] text-[#1a1a1a] font-bold text-sm flex items-center justify-center gap-1.5 shadow-lg shadow-[#b38f4f]/20 active:scale-[0.98] transition-transform"
         >
-          <span>無料で受験戦略を相談する</span>
+          <span>無料受験相談に申し込む</span>
         </button>
       </div>
 
