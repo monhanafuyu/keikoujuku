@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export const InstructorsAndFaq: React.FC = () => {
   const faqs = [
@@ -27,63 +27,6 @@ export const InstructorsAndFaq: React.FC = () => {
     <section className="py-24 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Instructors Section */}
-        <div className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-              講師紹介
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              現役慶應生を中心とした講師陣。自らの受験経験（一般・FIT・総合型など）を活かし、生徒に寄り添った指導を行います。
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Example Instructor 1 */}
-            <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-6 items-start">
-              <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center shrink-0">
-                <User className="w-10 h-10 text-slate-400" />
-              </div>
-              <div>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-md border border-blue-100">一般選抜経験者</span>
-                  <span className="px-2.5 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-md border border-indigo-100">法学部</span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">講師 A</h3>
-                <p className="text-sm text-slate-500 mb-4">慶應義塾大学 法学部在学</p>
-                <div className="space-y-2 text-sm text-slate-700">
-                  <p><span className="font-bold">指導科目:</span> 英語、日本史、小論文</p>
-                  <p className="leading-relaxed bg-slate-50 p-3 rounded-xl mt-3 text-slate-600 text-xs">
-                    「自分自身が一般選抜で苦労した経験を活かし、効率的な参考書の進め方と、モチベーション維持を徹底サポートします。」
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Example Instructor 2 */}
-            <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-6 items-start">
-              <div className="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center shrink-0">
-                <User className="w-10 h-10 text-slate-400" />
-              </div>
-              <div>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-md border border-emerald-100">FIT入試経験者</span>
-                  <span className="px-2.5 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-md border border-purple-100">総合型選抜</span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">講師 B</h3>
-                <p className="text-sm text-slate-500 mb-4">慶應義塾大学 法学部在学</p>
-                <div className="space-y-2 text-sm text-slate-700">
-                  <p><span className="font-bold">指導科目:</span> 志望理由書、面接、現代文</p>
-                  <p className="leading-relaxed bg-slate-50 p-3 rounded-xl mt-3 text-slate-600 text-xs">
-                    「FIT入試は自己分析と論理構築が鍵です。対話を通じて、あなたの本当の強みと言語化を引き出します。」
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">

@@ -27,7 +27,7 @@ export const ComparisonAndPricing: React.FC<{ onOpenConsultation: () => void }> 
                   <th className="w-1/5 p-4 text-center font-bold text-slate-700 bg-slate-50 border-b-2 border-slate-200">推薦専門塾</th>
                   <th className="w-1/5 p-5 text-center font-black text-blue-700 bg-blue-50 border-b-2 border-blue-200 rounded-t-xl text-lg relative shadow-[0_-5px_20px_rgba(0,0,0,0.02)]">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full whitespace-nowrap">この塾</div>
-                    PASSGATE
+                    慶應コーチング
                   </th>
                 </tr>
               </thead>

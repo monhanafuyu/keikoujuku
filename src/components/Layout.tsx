@@ -6,8 +6,8 @@ export const Navbar: React.FC<{ onOpenConsultation: () => void; onOpenLine: () =
   <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       <div className="flex items-center gap-2 cursor-pointer">
-        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-black text-xl italic tracking-tighter">P</div>
-        <span className="font-extrabold text-xl tracking-tight text-slate-900">PASSGATE</span>
+        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-black text-xl italic tracking-tighter">慶</div>
+        <span className="font-extrabold text-xl tracking-tight text-slate-900">慶應コーチング</span>
       </div>
       <div className="hidden md:flex items-center gap-3">
         <button onClick={onOpenLine} className="px-5 py-2.5 rounded-xl font-bold text-sm bg-[#06C755]/10 text-[#05b34c] hover:bg-[#06C755]/20 transition-colors">
@@ -28,8 +28,8 @@ export const Footer: React.FC<{ onOpenConsultation: () => void; onOpenLine: () =
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-6 h-6 bg-slate-300 rounded flex items-center justify-center text-white font-black text-xs italic tracking-tighter">P</div>
-            <span className="font-extrabold text-lg tracking-tight text-slate-900">PASSGATE</span>
+            <div className="w-6 h-6 bg-slate-300 rounded flex items-center justify-center text-white font-black text-xs italic tracking-tighter">慶</div>
+            <span className="font-extrabold text-lg tracking-tight text-slate-900">慶應コーチング</span>
           </div>
           <p className="text-slate-500 text-xs leading-relaxed max-w-sm mb-4">
             現役慶應生による受験戦略設計・学習管理・質問指導・推薦対策を提供する大学受験専門のオンライン塾。
@@ -48,7 +48,7 @@ export const Footer: React.FC<{ onOpenConsultation: () => void; onOpenLine: () =
         </div>
       </div>
       <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>&copy; {new Date().getFullYear()} PASSGATE. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} 慶應コーチング. All rights reserved.</p>
         <div className="flex gap-4 text-xs">
           <a href="#" className="hover:text-slate-900">特定商取引法に基づく表記</a>
           <a href="#" className="hover:text-slate-900">利用規約</a>
