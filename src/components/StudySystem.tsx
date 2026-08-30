@@ -19,97 +19,97 @@ export const StudySystem: React.FC = () => {
         
         {/* Study Cycle */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 font-serif tracking-widest">
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-900 mb-6 font-serif tracking-widest">
             計画を立てて終わりではありません。
           </h2>
-          <p className="text-sm md:text-base text-[#b38f4f] font-bold border border-[#b38f4f]/30 bg-[#b38f4f]/5 inline-block px-8 py-3 rounded-sm tracking-widest">
+          <p className="text-sm md:text-base text-[#b38f4f] font-bold border border-[#b38f4f] bg-white inline-block px-8 py-3 rounded-sm tracking-widest shadow-sm">
             戦略 → 計画 → 勉強 → 質問 → 確認 → 改善
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
           {steps.map((step, idx) => (
-            <div key={idx} className="bg-white/5 border border-white/10 rounded-sm p-8 shadow-sm relative overflow-hidden group hover:border-[#b38f4f]/50 transition-all">
+            <div key={idx} className="bg-slate-50 border border-slate-200 rounded-sm p-8 shadow-sm relative overflow-hidden group hover:border-[#b38f4f] transition-all">
               <div className="flex items-center justify-between mb-6">
-                <span className="text-[#b38f4f] font-bold text-sm tracking-widest">{step.num}</span>
-                <step.icon className="w-6 h-6 text-slate-500 group-hover:text-[#b38f4f] transition-colors" />
+                <span className="text-[#b38f4f] font-bold text-sm tracking-widest font-serif">{step.num}</span>
+                <step.icon className="w-6 h-6 text-slate-400 group-hover:text-[#b38f4f] transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 tracking-wider">{step.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-wider font-serif">{step.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed tracking-wide">{step.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Dashboard UI: Strategy Karte */}
-        <div className="bg-[#111A2E] border border-white/10 rounded-sm p-8 md:p-16 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#b38f4f]/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="bg-white border border-slate-200 rounded-sm p-8 md:p-16 shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#b38f4f]/5 rounded-full blur-[100px] pointer-events-none"></div>
           
           <div className="text-center mb-12 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#b38f4f] mb-4 font-serif tracking-widest">
+            <h2 className="text-3xl md:text-4xl font-normal text-slate-900 mb-4 font-serif tracking-widest">
               受験戦略カルテ
             </h2>
-            <p className="text-slate-300 tracking-wide text-sm md:text-base">
+            <p className="text-slate-600 tracking-wide text-sm md:text-base">
               生徒一人ひとりの状況を可視化し、最適な選択肢を常にアップデートします。
             </p>
           </div>
 
-          <div className="bg-[#0B1426] rounded-sm p-6 md:p-10 shadow-xl relative z-10 mx-auto max-w-5xl border border-white/10">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border-b border-white/10 pb-6 gap-4">
+          <div className="bg-slate-50 rounded-sm p-6 md:p-10 shadow-md relative z-10 mx-auto max-w-5xl border border-slate-200">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border-b border-slate-200 pb-6 gap-4">
               <div>
-                <h3 className="text-xl font-bold text-white tracking-widest">個別ダッシュボード <span className="text-xs font-normal text-slate-500 ml-2">(デモ画面)</span></h3>
+                <h3 className="text-xl font-bold text-slate-900 tracking-widest font-serif">個別ダッシュボード <span className="text-xs font-normal text-slate-500 ml-2">(デモ画面)</span></h3>
               </div>
-              <span className="bg-[#b38f4f]/10 text-[#b38f4f] px-4 py-1.5 rounded-sm text-sm font-bold border border-[#b38f4f]/30 tracking-widest">
+              <span className="bg-white text-[#b38f4f] px-4 py-1.5 rounded-sm text-sm font-bold border border-[#b38f4f]/30 tracking-widest shadow-sm">
                 高校2年生 10月時点
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* 第一志望 */}
-              <div className="bg-white/5 p-6 rounded-sm border border-white/10">
+              <div className="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
                 <div className="text-xs font-bold text-[#b38f4f] mb-3 tracking-widest">第一志望</div>
-                <div className="font-bold text-lg text-white tracking-wider">慶應義塾大学 法学部</div>
+                <div className="font-bold text-lg text-slate-900 tracking-wider">慶應義塾大学 法学部</div>
               </div>
               
               {/* 一般選抜準備 */}
-              <div className="bg-white/5 p-6 rounded-sm border border-white/10">
+              <div className="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
                 <div className="text-xs font-bold text-[#b38f4f] mb-3 tracking-widest">一般選抜準備</div>
                 <div className="flex text-[#b38f4f] text-lg tracking-widest">
-                  ★★★★<span className="text-slate-700">★</span>
+                  ★★★★<span className="text-slate-200">★</span>
                 </div>
               </div>
 
               {/* FIT入試準備 */}
-              <div className="bg-white/5 p-6 rounded-sm border border-white/10">
+              <div className="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
                 <div className="text-xs font-bold text-[#b38f4f] mb-3 tracking-widest">FIT入試準備</div>
                 <div className="flex text-[#b38f4f] text-lg tracking-widest">
-                  ★★★<span className="text-slate-700">★★</span>
+                  ★★★<span className="text-slate-200">★★</span>
                 </div>
               </div>
 
               {/* 評定 */}
-              <div className="bg-white/5 p-6 rounded-sm border border-white/10">
+              <div className="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
                 <div className="text-xs font-bold text-[#b38f4f] mb-3 tracking-widest">評定平均</div>
-                <div className="font-black text-3xl text-white">4.3</div>
+                <div className="font-black text-3xl text-slate-900">4.3</div>
               </div>
 
               {/* 英検 */}
-              <div className="bg-white/5 p-6 rounded-sm border border-white/10">
+              <div className="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
                 <div className="text-xs font-bold text-[#b38f4f] mb-3 tracking-widest">外部英語資格 (英検)</div>
-                <div className="font-bold text-white tracking-wider">
-                  2級取得済 <span className="text-xs text-slate-400 font-normal ml-1">/ 準1級対策中</span>
+                <div className="font-bold text-slate-900 tracking-wider">
+                  2級取得済 <span className="text-xs text-slate-500 font-normal ml-1">/ 準1級対策中</span>
                 </div>
               </div>
 
               {/* 達成率 */}
-              <div className="bg-white/5 p-6 rounded-sm border border-white/10 flex flex-col justify-center">
+              <div className="bg-white p-6 rounded-sm border border-slate-200 shadow-sm flex flex-col justify-center">
                 <div className="text-xs font-bold text-[#b38f4f] mb-4 tracking-widest">今週の学習達成率</div>
                 <div className="flex items-center gap-4">
-                  <div className="flex-1 bg-slate-800 rounded-sm h-1.5 overflow-hidden">
+                  <div className="flex-1 bg-slate-100 rounded-sm h-1.5 overflow-hidden">
                     <div className="bg-[#b38f4f] h-full w-[82%] relative">
                       <div className="absolute inset-0 bg-white/20 w-full h-full animate-pulse"></div>
                     </div>
                   </div>
-                  <span className="font-black text-lg text-white">82%</span>
+                  <span className="font-black text-lg text-slate-900">82%</span>
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@ export const StudySystem: React.FC = () => {
               <div className="text-sm font-bold text-[#b38f4f] mb-4 tracking-widest">今週の重点課題</div>
               <div className="flex flex-wrap gap-3">
                 {['英単語', '英文解釈', '定期テスト対策', '小論文1題', '大学研究'].map((tag) => (
-                  <span key={tag} className="bg-[#0B1426] px-5 py-2 rounded-sm text-sm text-slate-300 border border-white/10 font-medium shadow-sm tracking-wide">
+                  <span key={tag} className="bg-white px-5 py-2 rounded-sm text-sm text-slate-700 border border-slate-200 font-medium shadow-sm tracking-wide">
                     {tag}
                   </span>
                 ))}

@@ -13,7 +13,7 @@ export default function App() {
   const openConsultation = () => setIsConsultationOpen(true);
 
   return (
-    <div className="min-h-screen bg-[#0B1426] text-slate-200 font-sans selection:bg-[#b38f4f] selection:text-[#1a1a1a] pb-20 sm:pb-0">
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#b38f4f] selection:text-white pb-20 sm:pb-0">
       <Navbar onOpenConsultation={openConsultation} />
       
       <main>
