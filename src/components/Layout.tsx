@@ -1,21 +1,57 @@
-import React from 'react';
-import { X } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // === Navbar ===
-export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenConsultation }) => (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
-      <div className="flex flex-col cursor-pointer">
-        <span className="font-serif text-xl sm:text-2xl tracking-widest text-[#0B1426] font-bold">慶應コーチング</span>
+export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenConsultation }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+        <div className="flex flex-col cursor-pointer">
+          <Link to="/" className="font-serif text-xl sm:text-2xl tracking-widest text-[#0B1426] font-bold hover:text-[#b38f4f] transition-colors">
+            慶應コーチング
+          </Link>
+        </div>
+        
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-6 text-sm font-bold tracking-widest text-slate-700">
+          <Link to="/keio-fit/" className="hover:text-[#b38f4f] transition-colors">FIT対策</Link>
+          <Link to="/shiteikou/" className="hover:text-[#b38f4f] transition-colors">指定校推薦</Link>
+          <Link to="/sougougata/" className="hover:text-[#b38f4f] transition-colors">総合型選抜</Link>
+          <Link to="/general/" className="hover:text-[#b38f4f] transition-colors">一般選抜</Link>
+          <Link to="/column/" className="hover:text-[#b38f4f] transition-colors">受験コラム</Link>
+          <button onClick={onOpenConsultation} className="px-6 py-3 rounded-sm font-bold text-sm bg-[#0B1426] text-white hover:bg-[#1A2639] transition-colors shadow-sm tracking-widest ml-4">
+            無料で受験戦略を相談する
+          </button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <div className="lg:hidden flex items-center gap-4">
+          <button onClick={onOpenConsultation} className="px-4 py-2.5 rounded-sm font-bold text-xs bg-[#0B1426] text-white hover:bg-[#1A2639] transition-colors shadow-sm tracking-widest">
+            無料相談
+          </button>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-900 p-1">
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
-      <div className="flex items-center gap-3">
-        <button onClick={onOpenConsultation} className="px-4 py-2.5 sm:px-6 sm:py-3 rounded-sm font-bold text-xs sm:text-sm bg-[#0B1426] text-white hover:bg-[#1A2639] transition-colors shadow-sm tracking-widest">
-          無料で受験戦略を相談する
-        </button>
-      </div>
-    </div>
-  </nav>
-);
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-lg py-4 px-4 flex flex-col gap-4 text-sm font-bold tracking-widest">
+          <Link to="/keio-fit/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">FIT入試対策</Link>
+          <Link to="/shiteikou/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">指定校推薦対策</Link>
+          <Link to="/sougougata/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">総合型選抜対策</Link>
+          <Link to="/general/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">一般選抜対策</Link>
+          <Link to="/coaching/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">大学受験コーチング</Link>
+          <Link to="/column/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">受験戦略コラム</Link>
+        </div>
+      )}
+    </nav>
+  );
+};
 
 // === Footer ===
 export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenConsultation }) => (
@@ -24,7 +60,9 @@ export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
-            <span className="font-extrabold text-xl tracking-widest text-slate-900 font-serif">慶應コーチング</span>
+            <Link to="/" className="font-extrabold text-xl tracking-widest text-slate-900 font-serif hover:text-[#b38f4f] transition-colors">
+              慶應コーチング
+            </Link>
           </div>
           <p className="text-slate-600 text-xs leading-relaxed max-w-sm mb-6 tracking-wide">
             現役慶應生による一般・推薦対応の大学受験塾。<br/>受験戦略・学習管理・質問指導・推薦対策まで横断的にサポートします。
@@ -35,8 +73,19 @@ export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
           </p>
         </div>
         <div>
-          <h4 className="font-bold text-slate-900 mb-6 tracking-widest font-serif">Menu</h4>
+          <h4 className="font-bold text-slate-900 mb-6 tracking-widest font-serif">コース・対策</h4>
           <ul className="space-y-3">
+            <li><Link to="/keio-fit/" className="hover:text-[#b38f4f] transition-colors tracking-wide">慶應FIT入試対策</Link></li>
+            <li><Link to="/shiteikou/" className="hover:text-[#b38f4f] transition-colors tracking-wide">指定校推薦対策</Link></li>
+            <li><Link to="/sougougata/" className="hover:text-[#b38f4f] transition-colors tracking-wide">総合型選抜対策</Link></li>
+            <li><Link to="/general/" className="hover:text-[#b38f4f] transition-colors tracking-wide">一般選抜対策</Link></li>
+            <li><Link to="/coaching/" className="hover:text-[#b38f4f] transition-colors tracking-wide">大学受験コーチング</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-bold text-slate-900 mb-6 tracking-widest font-serif">お役立ち情報</h4>
+          <ul className="space-y-3">
+            <li><Link to="/column/" className="hover:text-[#b38f4f] transition-colors tracking-wide">受験戦略コラム</Link></li>
             <li><button onClick={onOpenConsultation} className="hover:text-[#b38f4f] transition-colors tracking-wide">無料受験戦略相談</button></li>
           </ul>
         </div>
@@ -44,9 +93,9 @@ export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
       <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="tracking-wide">&copy; {new Date().getFullYear()} 慶應コーチング. All rights reserved.</p>
         <div className="flex gap-6 text-xs tracking-wide">
-          <a href="#" className="hover:text-slate-900 transition-colors">特定商取引法に基づく表記</a>
-          <a href="#" className="hover:text-slate-900 transition-colors">利用規約</a>
-          <a href="#" className="hover:text-slate-900 transition-colors">プライバシーポリシー</a>
+          <Link to="/" className="hover:text-slate-900 transition-colors">特定商取引法に基づく表記</Link>
+          <Link to="/" className="hover:text-slate-900 transition-colors">利用規約</Link>
+          <Link to="/" className="hover:text-slate-900 transition-colors">プライバシーポリシー</Link>
         </div>
       </div>
     </div>

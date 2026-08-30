@@ -1,44 +1,33 @@
-import React, { useState } from 'react';
-import { Hero } from './components/Hero';
-import { Features } from './components/Features';
-import { StudySystem } from './components/StudySystem';
-import { ExamStrategies } from './components/ExamStrategies';
-import { ComparisonAndPricing } from './components/ComparisonAndPricing';
-import { InstructorsAndFaq } from './components/InstructorsAndFaq';
-import { Navbar, Footer, FinalCta, FreeConsultationModal } from './components/Layout';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+
+import Home from './pages/Home';
+import { KeioFit } from './pages/KeioFit';
+import { Shiteikou } from './pages/Shiteikou';
+import { Sougougata } from './pages/Sougougata';
+import { General } from './pages/General';
+import { Coaching } from './pages/Coaching';
+import { ColumnList } from './pages/ColumnList';
+import { ColumnDetail } from './pages/ColumnDetail';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
-  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-
-  const openConsultation = () => setIsConsultationOpen(true);
-
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#b38f4f] selection:text-white pb-20 sm:pb-0">
-      <Navbar onOpenConsultation={openConsultation} />
-      
-      <main>
-        <Hero onOpenConsultation={openConsultation} />
-        <Features />
-        <StudySystem />
-        <ExamStrategies />
-        <ComparisonAndPricing onOpenConsultation={openConsultation} />
-        <InstructorsAndFaq />
-        <FinalCta onOpenConsultation={openConsultation} />
-      </main>
-
-      <Footer onOpenConsultation={openConsultation} />
-
-      {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 sm:hidden flex shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)]">
-        <button
-          onClick={openConsultation}
-          className="w-full py-4 px-3 rounded-sm bg-[#b38f4f] text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow-md active:scale-[0.98] transition-transform tracking-widest"
-        >
-          <span>無料で受験戦略を相談する</span>
-        </button>
-      </div>
-
-      <FreeConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
-    </div>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/keio-fit/" element={<KeioFit />} />
+          <Route path="/shiteikou/" element={<Shiteikou />} />
+          <Route path="/sougougata/" element={<Sougougata />} />
+          <Route path="/general/" element={<General />} />
+          <Route path="/coaching/" element={<Coaching />} />
+          <Route path="/column/" element={<ColumnList />} />
+          <Route path="/column/:id" element={<ColumnDetail />} />
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }
