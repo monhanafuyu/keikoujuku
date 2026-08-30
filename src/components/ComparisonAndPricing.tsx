@@ -67,66 +67,29 @@ export const ComparisonAndPricing: React.FC<{ onOpenConsultation: () => void }> 
               料金プラン
             </h2>
             <p className="text-slate-600">
-              生徒の目標や必要なサポートレベルに合わせて選べる3つのプラン。
+              生徒一人ひとりに合わせた完全オーダーメイドの学習管理を提供します。
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-end">
-            
-            {/* Light Plan */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-slate-800 mb-2">ライト</h3>
-              <div className="mb-6 pb-6 border-b border-slate-100">
-                <span className="text-3xl font-black text-slate-900">準備中</span>
-                <span className="text-sm text-slate-500 ml-1">/ 月額 (例)</span>
-              </div>
-              <ul className="space-y-4 text-sm text-slate-700 mb-8 font-medium">
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 受験戦略作成</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 学習計画</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 定期面談</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 進捗管理</li>
-                <li className="flex items-start gap-3 text-slate-300"><Minus className="w-5 h-5 shrink-0" /> 質問対応</li>
-              </ul>
-            </div>
-
+          <div className="max-w-md mx-auto">
             {/* Standard Plan (Recommended) */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative transform md:-translate-y-4">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white font-bold text-sm px-4 py-1 rounded-full">
-                おすすめ
+            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative">
+              <h3 className="text-xl font-bold text-white mb-2 text-center">慶應合格コーチングプラン</h3>
+              <div className="mb-6 pb-6 border-b border-slate-700 text-center mt-6">
+                <span className="text-4xl font-black text-white">30,000円</span>
+                <span className="text-sm text-slate-400 ml-1">/ 月額 (税別)</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">スタンダード</h3>
-              <div className="mb-6 pb-6 border-b border-slate-700">
-                <span className="text-4xl font-black text-white">準備中</span>
-                <span className="text-sm text-slate-400 ml-1">/ 月額 (例)</span>
-              </div>
-              <ul className="space-y-4 text-sm text-slate-200 mb-8 font-medium">
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> ライトの全サービス</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 週1面談</li>
+              <ul className="space-y-4 text-sm text-slate-200 mb-8 font-medium px-4">
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 月4回の個別面談・指導</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 横断的受験戦略作成 (一般/推薦)</li>
                 <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 毎日の進捗管理</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 質問対応・確認テスト</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 一般選抜対策・推薦戦略相談</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> いつでも質問対応</li>
+                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-400 shrink-0" /> 確認テストの実施</li>
               </ul>
               <button onClick={onOpenConsultation} className="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition-colors">
                 無料相談に申し込む
               </button>
             </div>
-
-            {/* Premium Plan */}
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-slate-800 mb-2">プレミアム</h3>
-              <div className="mb-6 pb-6 border-b border-slate-100">
-                <span className="text-3xl font-black text-slate-900">準備中</span>
-                <span className="text-sm text-slate-500 ml-1">/ 月額 (例)</span>
-              </div>
-              <ul className="space-y-4 text-sm text-slate-700 mb-8 font-medium">
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> スタンダードの全サービス</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 個別指導・答案添削</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 小論文・志望理由書サポート</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> 面接対策</li>
-                <li className="flex items-start gap-3"><Check className="w-5 h-5 text-blue-500 shrink-0" /> より詳細な受験戦略設計</li>
-              </ul>
-            </div>
-
           </div>
         </div>
 

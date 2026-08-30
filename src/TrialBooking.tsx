@@ -32,7 +32,7 @@ export default function TrialBooking({ siteContent }: { siteContent: any }) {
       setSuccess(true);
     } catch (err) {
       console.error("Error submitting trial booking:", err);
-      setError('送信に失敗しました。時間をおいて再度お試しいただくか、直接LINEよりご連絡ください。');
+      setError('送信に失敗しました。時間をおいて再度お試しいただくか、直接メールよりご連絡ください。');
     } finally {
       setSubmitting(false);
     }
@@ -49,17 +49,17 @@ export default function TrialBooking({ siteContent }: { siteContent: any }) {
           <p className="text-slate-600 mb-8 leading-relaxed">
             体験授業の仮予約を受け付けました。<br />
             <span className="font-bold text-red-500">※まだ予約は完了していません。</span><br />
-            日程調整のため、必ず下記のボタンから公式LINEを友だち追加し、<br />
+            日程調整のため、必ず下記のボタンから公式メールを友だち追加し、<br />
             <span className="font-bold">「体験授業希望：{formData.studentName}」</span>とメッセージをお送りください。
           </p>
           <a
-            href={siteContent?.lineUrl || '#'}
+            href={siteContent?.emailUrl || '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#06C755] hover:bg-[#05b34c] text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-lg shadow-[#06C755]/20 mb-8 w-full sm:w-auto"
           >
             <MessageCircle className="w-6 h-6" />
-            公式LINEを追加して予約を完了する
+            公式メールを追加して予約を完了する
           </a>
           <div>
             <Link to="/" className="text-emerald-600 font-medium hover:underline flex items-center justify-center gap-1">
@@ -203,7 +203,7 @@ export default function TrialBooking({ siteContent }: { siteContent: any }) {
                   )}
                 </button>
                 <p className="text-center text-xs text-slate-500 mt-4">
-                  送信後、公式LINEへのご案内が表示されます。
+                  送信後、公式メールへのご案内が表示されます。
                 </p>
               </div>
             </form>

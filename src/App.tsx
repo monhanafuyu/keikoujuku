@@ -9,45 +9,36 @@ import { Navbar, Footer, FinalCta, FreeConsultationModal, LineModal } from './co
 
 export default function App() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-  const [isLineOpen, setIsLineOpen] = useState(false);
 
   const openConsultation = () => setIsConsultationOpen(true);
-  const openLine = () => setIsLineOpen(true);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-20 sm:pb-0">
-      <Navbar onOpenConsultation={openConsultation} onOpenLine={openLine} />
+      <Navbar onOpenConsultation={openConsultation} />
       
       <main>
-        <Hero onOpenConsultation={openConsultation} onOpenLine={openLine} />
+        <Hero onOpenConsultation={openConsultation} />
         <Features />
         <StudySystem />
         <ExamStrategies />
         <ComparisonAndPricing onOpenConsultation={openConsultation} />
         <InstructorsAndFaq />
-        <FinalCta onOpenConsultation={openConsultation} onOpenLine={openLine} />
+        <FinalCta onOpenConsultation={openConsultation} />
       </main>
 
-      <Footer onOpenConsultation={openConsultation} onOpenLine={openLine} />
+      <Footer onOpenConsultation={openConsultation} />
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 sm:hidden flex gap-2 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)]">
-        <button
-          onClick={openLine}
-          className="flex-1 py-3.5 px-2 rounded-xl bg-[#06C755] text-white font-bold text-xs flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform"
-        >
-          <span>LINEで相談</span>
-        </button>
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 sm:hidden flex shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)]">
         <button
           onClick={openConsultation}
-          className="flex-2 py-3.5 px-3 rounded-xl bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-blue-700/30 active:scale-[0.98] transition-transform"
+          className="w-full py-4 px-3 rounded-xl bg-blue-700 text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow-lg shadow-blue-700/30 active:scale-[0.98] transition-transform"
         >
           <span>無料で受験戦略を相談する</span>
         </button>
       </div>
 
       <FreeConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
-      <LineModal isOpen={isLineOpen} onClose={() => setIsLineOpen(false)} />
     </div>
   );
 }

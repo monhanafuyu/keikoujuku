@@ -58,7 +58,7 @@ export const SOLUTION_STEPS = [
   {
     stepNumber: '04',
     title: '進捗確認・確認テストを実施',
-    description: '毎日LINEで学習報告を受け、週1回の面談時に口頭試問や確認テストを実施。「やったつもり」を徹底的に排除します。',
+    description: '毎日メールで学習報告を受け、週1回の面談時に口頭試問や確認テストを実施。「やったつもり」を徹底的に排除します。',
     iconName: 'ClipboardCheck',
     badge: '定着チェック'
   },
@@ -232,7 +232,7 @@ export const COMPARISON_ITEMS = [
   {
     category: '自習管理',
     traditional: '自習室はあるが、実際に何をどう勉強しているかはノータッチ',
-    passgate: '毎日の勉強開始・終了、勉強時間、完了タスクをLINEで徹底把握',
+    passgate: '毎日の勉強開始・終了、勉強時間、完了タスクをメールで徹底把握',
     advantage: 'サボれない環境と勉強の習慣化を構築'
   },
   {
@@ -271,7 +271,7 @@ export const SERVICES_LIST = [
   {
     icon: 'Smartphone',
     title: '毎日の進捗管理',
-    description: 'LINEや専用フォームで毎日の勉強開始・終了や達成タスクを報告。サボり癖や中だるみを防ぎ、毎日の勉強習慣を定着させます。',
+    description: 'メールや専用フォームで毎日の勉強開始・終了や達成タスクを報告。サボり癖や中だるみを防ぎ、毎日の勉強習慣を定着させます。',
     tag: 'サボらせない仕組み'
   },
   {
@@ -289,7 +289,7 @@ export const SERVICES_LIST = [
   {
     icon: 'MessageCircleQuestion',
     title: '24時間質問対応',
-    description: '自習中にわからない問題や解説の疑問点は、LINEで写真を送ればいつでも質問可能。つまずきをその日のうちに解消します。',
+    description: '自習中にわからない問題や解説の疑問点は、メールで写真を送ればいつでも質問可能。つまずきをその日のうちに解消します。',
     tag: '疑問を放置しない'
   },
   {
@@ -318,8 +318,8 @@ export const PRICING_PLANS: PricingPlan[] = [
       { text: '月間・週間学習計画の作成', included: true },
       { text: '志望校別 参考書・問題集の選定', included: true },
       { text: '定期的な進捗チェック', included: true },
-      { text: '毎日のLINE進捗管理', included: false },
-      { text: 'いつでもLINE質問対応', included: false },
+      { text: '毎日のメール進捗管理', included: false },
+      { text: 'いつでもメール質問対応', included: false },
       { text: '毎週の週間確認テスト', included: false },
       { text: '答案添削・個別指導', included: false }
     ]
@@ -335,8 +335,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     features: [
       { text: '週1回 オンライン個別面談（45分）', included: true, highlight: true },
       { text: '一人ひとりに合わせた日割学習計画', included: true, highlight: true },
-      { text: '毎日のLINE進捗報告＆モチベーション管理', included: true, highlight: true },
-      { text: '24時間いつでもLINE質問対応', included: true, highlight: true },
+      { text: '毎日のメール進捗報告＆モチベーション管理', included: true, highlight: true },
+      { text: '24時間いつでもメール質問対応', included: true, highlight: true },
       { text: '毎週のオリジナル週間確認テスト', included: true, highlight: true },
       { text: '志望校別 参考書・問題集の選定', included: true },
       { text: '模試分析＆受験戦略アドバイス', included: true },
@@ -356,7 +356,7 @@ export const PRICING_PLANS: PricingPlan[] = [
       { text: '英語・国語・小論文の答案添削指導（無制限）', included: true, highlight: true },
       { text: '難関大特化の二次試験・個別試験対策', included: true },
       { text: '緊急時・直前のZoom質問対応', included: true },
-      { text: 'メンターとの優先LINE相談', included: true }
+      { text: 'メンターとの優先メール相談', included: true }
     ]
   }
 ];
@@ -365,7 +365,7 @@ export const STEPS_TO_JOIN = [
   {
     step: 'STEP 1',
     title: '無料学習相談に申し込み',
-    description: 'サイトの予約フォームまたはLINEから、希望の日時を選択して簡単1分でお申し込みいただけます。',
+    description: 'サイトの予約フォームまたはメールから、希望の日時を選択して簡単1分でお申し込みいただけます。',
     time: '所要時間 1分'
   },
   {
@@ -399,7 +399,7 @@ export const FAQ_LIST: FaqItem[] = [
   },
   {
     question: 'オンラインだけでも受講できますか？地方在住でも大丈夫ですか？',
-    answer: 'はい、完全オンラインで全国どこからでも受講可能です。面談や確認テストはZoomを使用し、日々の進捗管理や質問対応はLINEで行います。通塾にかかる移動時間をゼロにできるため、部活動や日々の学校生活と両立しやすくなっています。'
+    answer: 'はい、完全オンラインで全国どこからでも受講可能です。面談や確認テストはZoomを使用し、日々の進捗管理や質問対応はメールで行います。通塾にかかる移動時間をゼロにできるため、部活動や日々の学校生活と両立しやすくなっています。'
   },
   {
     question: '高校1年生や2年生から入っても早すぎませんか？',
@@ -419,6 +419,6 @@ export const FAQ_LIST: FaqItem[] = [
   },
   {
     question: '保護者への学習状況の報告はありますか？',
-    answer: 'はい、スタンダードプランおよびプレミアムプランでは、月次の学習進捗レポート（確認テストの得点率、タスク達成度、メンターコメント）をご送付します。また、ご希望に応じて三者面談やLINEでのご相談にも対応しておりますので、安心してお任せいただけます。'
+    answer: 'はい、スタンダードプランおよびプレミアムプランでは、月次の学習進捗レポート（確認テストの得点率、タスク達成度、メンターコメント）をご送付します。また、ご希望に応じて三者面談やメールでのご相談にも対応しておりますので、安心してお任せいただけます。'
   }
 ];

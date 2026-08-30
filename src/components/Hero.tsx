@@ -1,9 +1,8 @@
 import React from 'react';
 import { BookOpen, Target, CalendarCheck, MessageCircleQuestion } from 'lucide-react';
 
-export const Hero: React.FC<{ onOpenConsultation: () => void; onOpenLine: () => void }> = ({
+export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
   onOpenConsultation,
-  onOpenLine,
 }) => {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
@@ -43,12 +42,6 @@ export const Hero: React.FC<{ onOpenConsultation: () => void; onOpenLine: () => 
             className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg shadow-xl shadow-blue-600/20 transition-all hover:scale-105 active:scale-95"
           >
             無料で受験戦略を相談する
-          </button>
-          <button
-            onClick={onOpenLine}
-            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-lg shadow-xl shadow-[#06C755]/20 transition-all hover:scale-105 active:scale-95"
-          >
-            LINEで気軽に相談する
           </button>
         </div>
 
