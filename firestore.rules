@@ -1,0 +1,165 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: siteContent
+    // Document ID: main
+    // Fields:
+    //   - heroTitle: string (optional)
+    //   - heroSubtitle: string (optional)
+    //   - heroBadge: string (optional)
+    //   - heroDescription: string (optional)
+    //   - importanceTitle: string (optional)
+    //   - importanceDescription: string (optional)
+    //   - comparisonTitle: string (optional)
+    //   - tutorsTitle: string (optional)
+    //   - pricingTitle: string (optional)
+    //   - ctaTitle: string (optional)
+    //   - ctaDescription: string (optional)
+    //   - featuresTitle: string (optional)
+    //   - feature1Title: string (optional)
+    //   - feature1Desc: string (optional)
+    //   - feature2Title: string (optional)
+    //   - feature2Desc: string (optional)
+    //   - feature3Title: string (optional)
+    //   - feature3Desc: string (optional)
+    //   - tuitionFee: number (optional)
+    //   - lineUrl: string (optional)
+    //   - updatedAt: string (optional)
+    //
+    // Collection: announcements
+    // Document ID: auto-generated
+    // Fields:
+    //   - title: string (required, max 100 chars)
+    //   - content: string (required, max 2000 chars)
+    //   - date: string (required)
+    //   - createdAt: string (optional)
+    //
+    // ===============================================================
+    
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        request.auth.token.email == "monhanafuyu@gmail.com" && 
+        request.auth.token.email_verified == true;
+    }
+    
+    function isValidAnnouncement(data) {
+      return data.keys().hasAll(['title', 'content', 'date']) &&
+             data.title is string && data.title.size() > 0 && data.title.size() <= 100 &&
+             data.content is string && data.content.size() > 0 && data.content.size() <= 2000 &&
+             data.date is string;
+    }
+    
+    function isValidSiteContent(data) {
+      return (!('heroTitle' in data) || (data.heroTitle is string && data.heroTitle.size() <= 200)) &&
+             (!('heroSubtitle' in data) || (data.heroSubtitle is string && data.heroSubtitle.size() <= 500)) &&
+             (!('heroBadge' in data) || (data.heroBadge is string && data.heroBadge.size() <= 100)) &&
+             (!('heroDescription' in data) || (data.heroDescription is string && data.heroDescription.size() <= 1000)) &&
+             (!('importanceTitle' in data) || (data.importanceTitle is string && data.importanceTitle.size() <= 200)) &&
+             (!('importanceDescription' in data) || (data.importanceDescription is string && data.importanceDescription.size() <= 1000)) &&
+             (!('comparisonTitle' in data) || (data.comparisonTitle is string && data.comparisonTitle.size() <= 200)) &&
+             (!('tutorsTitle' in data) || (data.tutorsTitle is string && data.tutorsTitle.size() <= 200)) &&
+             (!('pricingTitle' in data) || (data.pricingTitle is string && data.pricingTitle.size() <= 200)) &&
+             (!('ctaTitle' in data) || (data.ctaTitle is string && data.ctaTitle.size() <= 200)) &&
+             (!('ctaDescription' in data) || (data.ctaDescription is string && data.ctaDescription.size() <= 1000)) &&
+             (!('featuresTitle' in data) || (data.featuresTitle is string && data.featuresTitle.size() <= 200)) &&
+             (!('feature1Title' in data) || (data.feature1Title is string && data.feature1Title.size() <= 200)) &&
+             (!('feature1Desc' in data) || (data.feature1Desc is string && data.feature1Desc.size() <= 1000)) &&
+             (!('feature2Title' in data) || (data.feature2Title is string && data.feature2Title.size() <= 200)) &&
+             (!('feature2Desc' in data) || (data.feature2Desc is string && data.feature2Desc.size() <= 1000)) &&
+             (!('feature3Title' in data) || (data.feature3Title is string && data.feature3Title.size() <= 200)) &&
+             (!('feature3Desc' in data) || (data.feature3Desc is string && data.feature3Desc.size() <= 1000)) &&
+             (!('tuitionFee' in data) || (data.tuitionFee is number && data.tuitionFee >= 0)) &&
+             (!('lineUrl' in data) || (data.lineUrl is string && data.lineUrl.size() <= 500));
+    }
+
+    function isValidBlogPost(data) {
+      return data.keys().hasAll(['title', 'content', 'authorName', 'published', 'createdAt', 'updatedAt']) &&
+             data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
+             data.content is string && data.content.size() <= 100000 &&
+             data.authorName is string && data.authorName.size() <= 100 &&
+             data.published is bool &&
+             data.createdAt is string &&
+             data.updatedAt is string;
+    }
+
+    function isValidApplication(data) {
+      return data.keys().hasAll(['studentName', 'parentName', 'email', 'phone', 'grade', 'status', 'agreedToTerms', 'createdAt', 'updatedAt']) &&
+             data.studentName is string && data.studentName.size() > 0 && data.studentName.size() <= 100 &&
+             data.parentName is string && data.parentName.size() > 0 && data.parentName.size() <= 100 &&
+             data.email is string && data.email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$") &&
+             data.phone is string && data.phone.size() > 0 && data.phone.size() <= 20 &&
+             data.grade is string && data.grade.size() > 0 && data.grade.size() <= 50 &&
+             (!('address' in data) || (data.address is string && data.address.size() <= 200)) &&
+             (!('message' in data) || (data.message is string && data.message.size() <= 1000)) &&
+             data.status in ['pending', 'contacted', 'approved', 'rejected'] &&
+             data.agreedToTerms is bool && data.agreedToTerms == true &&
+             data.createdAt is string &&
+             data.updatedAt is string;
+    }
+
+    function isValidTrialBooking(data) {
+      return data.keys().hasAll(['studentName', 'grade', 'email', 'phone', 'status']) &&
+             data.studentName is string && data.studentName.size() > 0 && data.studentName.size() <= 100 &&
+             data.grade is string && data.grade.size() > 0 && data.grade.size() <= 50 &&
+             data.email is string && data.email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$") &&
+             data.phone is string && data.phone.size() > 0 && data.phone.size() <= 20 &&
+             (!('preferredDate' in data) || (data.preferredDate is string && data.preferredDate.size() <= 200)) &&
+             (!('message' in data) || (data.message is string && data.message.size() <= 1000)) &&
+             data.status in ['pending', 'contacted', 'approved', 'rejected'] &&
+             (!('createdAt' in data) || data.createdAt is timestamp);
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /siteContent/{docId} {
+      allow read: if true;
+      allow create: if isAdmin() && isValidSiteContent(request.resource.data);
+      allow update: if isAdmin() && isValidSiteContent(request.resource.data);
+      allow delete: if isAdmin();
+    }
+    
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow create: if isAdmin() && isValidAnnouncement(request.resource.data);
+      allow update: if isAdmin() && isValidAnnouncement(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /blogs/{blogId} {
+      allow read: if resource == null || resource.data.published == true || isAdmin();
+      allow create: if isAdmin() && isValidBlogPost(request.resource.data);
+      allow update: if isAdmin() && isValidBlogPost(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /applications/{applicationId} {
+      allow read: if isAdmin();
+      allow create: if isValidApplication(request.resource.data);
+      allow update: if isAdmin() && isValidApplication(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /trialBookings/{bookingId} {
+      allow read: if isAdmin();
+      allow create: if isValidTrialBooking(request.resource.data);
+      allow update: if isAdmin() && isValidTrialBooking(request.resource.data);
+      allow delete: if isAdmin();
+    }
+  }
+}

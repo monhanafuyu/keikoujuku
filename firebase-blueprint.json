@@ -1,0 +1,115 @@
+{
+  "entities": {
+    "SiteContent": {
+      "title": "Site Content",
+      "description": "Editable content for the website",
+      "type": "object",
+      "properties": {
+        "heroTitle": { "type": "string" },
+        "heroSubtitle": { "type": "string" },
+        "heroBadge": { "type": "string" },
+        "heroDescription": { "type": "string" },
+        "importanceTitle": { "type": "string" },
+        "importanceDescription": { "type": "string" },
+        "comparisonTitle": { "type": "string" },
+        "tutorsTitle": { "type": "string" },
+        "pricingTitle": { "type": "string" },
+        "ctaTitle": { "type": "string" },
+        "ctaDescription": { "type": "string" },
+        "featuresTitle": { "type": "string" },
+        "feature1Title": { "type": "string" },
+        "feature1Desc": { "type": "string" },
+        "feature2Title": { "type": "string" },
+        "feature2Desc": { "type": "string" },
+        "feature3Title": { "type": "string" },
+        "feature3Desc": { "type": "string" },
+        "tuitionFee": { "type": "number" },
+        "lineUrl": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "News and updates",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "date"]
+    },
+    "BlogPost": {
+      "title": "Blog Post",
+      "description": "Educational blog posts",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "authorName": { "type": "string" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "authorName", "published", "createdAt", "updatedAt"]
+    },
+    "Application": {
+      "title": "Application",
+      "description": "Enrollment applications",
+      "type": "object",
+      "properties": {
+        "studentName": { "type": "string" },
+        "parentName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "grade": { "type": "string" },
+        "address": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "contacted", "approved", "rejected"] },
+        "agreedToTerms": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentName", "parentName", "email", "phone", "grade", "status", "agreedToTerms", "createdAt", "updatedAt"]
+    },
+    "TrialBooking": {
+      "title": "Trial Booking",
+      "description": "Requests for trial lessons",
+      "type": "object",
+      "properties": {
+        "studentName": { "type": "string" },
+        "grade": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "preferredDate": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "contacted", "approved", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["studentName", "grade", "email", "phone", "status"]
+    }
+  },
+  "firestore": {
+    "siteContent/{docId}": {
+      "schema": { "$ref": "#/entities/SiteContent" },
+      "description": "Holds the main site content. Usually just one document 'main'."
+    },
+    "announcements/{announcementId}": {
+      "schema": { "$ref": "#/entities/Announcement" },
+      "description": "List of announcements."
+    },
+    "blogs/{blogId}": {
+      "schema": { "$ref": "#/entities/BlogPost" },
+      "description": "List of blog posts."
+    },
+    "applications/{applicationId}": {
+      "schema": { "$ref": "#/entities/Application" },
+      "description": "List of enrollment applications."
+    },
+    "trialBookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/TrialBooking" },
+      "description": "List of trial booking requests."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PASSGATE - 大学受験専門の学習管理塾",
+  "description": "志望校から逆算した学習計画、毎週の面談、進捗管理、確認テストで大学受験をサポートする専門塾。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
