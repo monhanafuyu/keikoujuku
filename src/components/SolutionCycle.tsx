@@ -16,8 +16,8 @@ export const SolutionCycle: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-bold mb-4">
-            <RotateCw className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30/80 text-[#594226] text-xs font-bold mb-4">
+            <RotateCw className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>逆算型マネジメントシステム</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
@@ -33,20 +33,20 @@ export const SolutionCycle: React.FC = () => {
           {SOLUTION_STEPS.map((step, index) => (
             <div
               key={step.stepNumber}
-              className="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between relative group"
+              className="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-[#e4cda5] hover:shadow-md transition-all flex flex-col justify-between relative group"
             >
               {/* Top Step Number */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-2xl font-black text-blue-600">
+                  <span className="font-mono text-2xl font-black text-[#b38f4f]">
                     {step.stepNumber}
                   </span>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#b38f4f]/10 text-[#a07c3f] border border-[#b38f4f]/20">
                     {step.badge}
                   </span>
                 </div>
 
-                <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center mb-3 group-hover:bg-[#b38f4f] group-hover:text-white transition-colors">
                   {iconMap[step.iconName]}
                 </div>
 
@@ -73,7 +73,7 @@ export const SolutionCycle: React.FC = () => {
         <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             <div className="lg:col-span-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#b38f4f] bg-[#b38f4f]/10 px-2.5 py-1 rounded">
                 Sustainable PDCA
               </span>
               <h3 className="text-xl font-bold text-slate-900 mt-2">
@@ -85,8 +85,8 @@ export const SolutionCycle: React.FC = () => {
             </div>
 
             <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-100 text-center">
-                <span className="text-xs font-bold text-blue-800 block">PLAN</span>
+              <div className="p-3.5 rounded-xl bg-[#b38f4f]/10/70 border border-[#b38f4f]/20 text-center">
+                <span className="text-xs font-bold text-[#594226] block">PLAN</span>
                 <span className="text-sm font-black text-slate-900 mt-1 block">計画</span>
                 <span className="text-[11px] text-slate-500 mt-1 block">日割タスク指定</span>
               </div>

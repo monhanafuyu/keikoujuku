@@ -29,8 +29,8 @@ export const Services: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-bold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30/80 text-[#594226] text-xs font-bold mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>合格に必要な全サポート</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
@@ -46,11 +46,11 @@ export const Services: React.FC = () => {
           {SERVICES_LIST.map((service, index) => (
             <div
               key={index}
-              className="bg-slate-50/70 hover:bg-white p-6 rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-lg hover:border-blue-300 transition-all duration-200 flex flex-col justify-between group"
+              className="bg-slate-50/70 hover:bg-white p-6 rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-lg hover:border-[#e4cda5] transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-2xs">
+                  <div className="w-12 h-12 rounded-2xl bg-[#b38f4f]/10 text-[#a07c3f] flex items-center justify-center group-hover:bg-[#b38f4f] group-hover:text-white transition-colors shadow-2xs">
                     {iconMap[service.icon]}
                   </div>
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white text-slate-600 border border-slate-200">
@@ -67,7 +67,7 @@ export const Services: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-blue-700 font-bold">
+              <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-[#a07c3f] font-bold">
                 <span>詳細を見る</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>

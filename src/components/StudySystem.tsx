@@ -41,7 +41,7 @@ export const StudySystem: React.FC = () => {
         </div>
 
         {/* Dashboard UI: Strategy Karte */}
-        <div className="bg-white border border-slate-200 rounded-sm p-8 md:p-16 shadow-lg relative overflow-hidden">
+        <div className="bg-white border border-slate-200 rounded-sm p-8 md:p-16 shadow-lg relative overflow-hidden mb-24">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#b38f4f]/5 rounded-full blur-[100px] pointer-events-none"></div>
           
           <div className="text-center mb-12 relative z-10">
@@ -127,6 +127,33 @@ export const StudySystem: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Parent Appeal Section */}
+        <div className="max-w-4xl mx-auto text-center mt-8">
+          <h2 className="text-3xl md:text-4xl font-normal text-slate-900 mb-6 font-serif tracking-widest">
+            お子さまの受験状況を、<br className="sm:hidden" />見える状態に。
+          </h2>
+          <p className="text-slate-600 tracking-wide text-sm md:text-base leading-relaxed mb-12">
+            保護者の方にとっても、大学受験は不安がつきものです。<br />
+            慶應コーチングでは、学習進捗レポートなどを通じてお子さまの状況を共有します。
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+            {[
+              '現在何を勉強しているか分かる',
+              '毎週の学習進捗を確認できる',
+              '志望校までに何が足りないか分かる',
+              '一般選抜・推薦の両方について相談できる',
+              '大学受験について第三者に相談できる'
+            ].map((benefit, idx) => (
+              <div key={idx} className="bg-slate-50 border border-slate-200 p-5 rounded-sm flex items-center gap-3">
+                <div className="w-2 h-2 bg-[#b38f4f] rotate-45 shrink-0"></div>
+                <span className="text-slate-700 font-bold text-sm tracking-wide">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

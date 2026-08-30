@@ -3,12 +3,12 @@ import { ShieldCheck, FileText, Smartphone, Users, CheckCircle2 } from 'lucide-r
 
 export const ParentBenefitSection: React.FC = () => {
   return (
-    <section className="py-16 bg-blue-50/50 border-b border-blue-100 relative">
+    <section className="py-16 bg-[#b38f4f]/10/50 border-b border-[#b38f4f]/20 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#b38f4f]/20 shadow-sm">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/2 space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30 text-[#594226] text-xs font-bold">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>保護者の皆さまへ</span>
               </div>
@@ -21,15 +21,15 @@ export const ParentBenefitSection: React.FC = () => {
 
               <div className="space-y-2.5 pt-2">
                 <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                   <span>毎月の学習進捗・確認テスト結果レポートをご送付</span>
                 </div>
                 <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                   <span>保護者様専用LINEで学習状況や進路の相談が可能</span>
                 </div>
                 <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                   <span>「勉強しなさい」と言わなくても自走する環境を構築</span>
                 </div>
               </div>
@@ -40,10 +40,10 @@ export const ParentBenefitSection: React.FC = () => {
               <div className="bg-slate-900 text-white rounded-2xl p-5 shadow-lg border border-slate-800 space-y-4 text-xs">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <div className="flex items-center gap-2">
-                    <FileText className="w-4 h-4 text-blue-400" />
+                    <FileText className="w-4 h-4 text-[#d4b783]" />
                     <span className="font-bold text-slate-200">月次学習進捗レポート（サンプル）</span>
                   </div>
-                  <span className="text-[10px] bg-blue-600/30 text-blue-300 px-2 py-0.5 rounded border border-blue-500/40">
+                  <span className="text-[10px] bg-[#b38f4f]/30 text-[#e4cda5] px-2 py-0.5 rounded border border-[#c4a365]/40">
                     保護者様共有
                   </span>
                 </div>
@@ -56,7 +56,7 @@ export const ParentBenefitSection: React.FC = () => {
                   </div>
                   <div className="p-3 bg-slate-800/80 rounded-xl">
                     <p className="text-[11px] text-slate-400">週間確認テスト平均点</p>
-                    <p className="text-lg font-black text-blue-400 mt-0.5">92点</p>
+                    <p className="text-lg font-black text-[#d4b783] mt-0.5">92点</p>
                     <p className="text-[10px] text-slate-400">全4回すべて合格基準達成</p>
                   </div>
                 </div>

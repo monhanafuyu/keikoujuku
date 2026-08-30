@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Brand Identity */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-blue-900 to-blue-700 flex items-center justify-center text-white font-black text-xl shadow-md shadow-blue-950/10 group-hover:scale-[1.02] transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-[#3f2e1a] to-[#a07c3f] flex items-center justify-center text-white font-black text-xl shadow-md shadow-[#2a1f11]/10 group-hover:scale-[1.02] transition-transform">
               P
             </div>
             <div>
@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
                 <span className="font-extrabold text-xl tracking-tight text-slate-900 font-display">
                   PASSGATE
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-widest bg-blue-50 text-blue-700 border border-blue-200/60 px-1.5 py-0.5 rounded">
+                <span className="text-[10px] uppercase font-bold tracking-widest bg-[#b38f4f]/10 text-[#a07c3f] border border-[#b38f4f]/30/60 px-1.5 py-0.5 rounded">
                   学習管理塾
                 </span>
               </div>
@@ -64,10 +64,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-blue-700 transition-colors py-1 relative group"
+                className="hover:text-[#a07c3f] transition-colors py-1 relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b38f4f] transition-all duration-200 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
             </button>
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-md shadow-blue-700/20 transition-all hover:shadow-lg hover:shadow-blue-700/25 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-[#a07c3f] hover:bg-[#594226] shadow-md shadow-[#a07c3f]/20 transition-all hover:shadow-lg hover:shadow-[#a07c3f]/25 active:scale-[0.98]"
               id="nav-consult-btn"
             >
               <Calendar className="w-4 h-4" />
@@ -115,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-blue-700 rounded-xl transition-colors flex items-center justify-between"
+                  className="px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#a07c3f] rounded-xl transition-colors flex items-center justify-between"
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 text-slate-400" />
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
                   setMobileMenuOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full py-3.5 px-4 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-blue-700/25"
+                className="w-full py-3.5 px-4 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#a07c3f]/25"
                 id="mobile-nav-consult-btn"
               >
                 <Calendar className="w-4 h-4" />
@@ -149,7 +149,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
-              <ShieldCheck className="w-4 h-4 text-blue-600" />
+              <ShieldCheck className="w-4 h-4 text-[#b38f4f]" />
               <span>無理な勧誘や有料契約への自動更新は一切ありません</span>
             </div>
           </div>

@@ -12,8 +12,8 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-bold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30/80 text-[#594226] text-xs font-bold mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>明朗な月額定額制</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
@@ -31,7 +31,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
               key={plan.id}
               className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 relative ${
                 plan.isPopular
-                  ? 'bg-white border-2 border-blue-600 shadow-xl shadow-blue-900/5 lg:-translate-y-2'
+                  ? 'bg-white border-2 border-[#b38f4f] shadow-xl shadow-[#3f2e1a]/5 lg:-translate-y-2'
                   : 'bg-white border border-slate-200 shadow-xs hover:border-slate-300'
               }`}
             >
@@ -40,7 +40,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
                 <div
                   className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-black tracking-wider uppercase shadow-xs ${
                     plan.isPopular
-                      ? 'bg-blue-600 text-white shadow-blue-600/30'
+                      ? 'bg-[#b38f4f] text-white shadow-[#b38f4f]/30'
                       : 'bg-slate-800 text-slate-200'
                   }`}
                 >
@@ -85,7 +85,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
                       {feature.included ? (
                         <Check
                           className={`w-4 h-4 shrink-0 mt-0.5 ${
-                            feature.highlight ? 'text-blue-600 font-bold' : 'text-emerald-600'
+                            feature.highlight ? 'text-[#b38f4f] font-bold' : 'text-emerald-600'
                           }`}
                         />
                       ) : (
@@ -104,7 +104,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
                   onClick={() => onOpenConsultation(plan.name)}
                   className={`w-full py-3.5 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 ${
                     plan.isPopular
-                      ? 'bg-blue-700 hover:bg-blue-800 text-white shadow-md shadow-blue-700/25 hover:shadow-lg'
+                      ? 'bg-[#a07c3f] hover:bg-[#594226] text-white shadow-md shadow-[#a07c3f]/25 hover:shadow-lg'
                       : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
                   }`}
                 >
@@ -119,7 +119,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
         {/* Pricing Guarantee Notes */}
         <div className="bg-white rounded-2xl p-5 border border-slate-200 text-xs text-slate-600 max-w-4xl mx-auto space-y-1.5">
           <p className="font-bold text-slate-800 flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-blue-600" />
+            <ShieldCheck className="w-4 h-4 text-[#b38f4f]" />
             料金とご契約に関するご案内
           </p>
           <ul className="list-disc list-inside space-y-1 pl-1 text-slate-500">

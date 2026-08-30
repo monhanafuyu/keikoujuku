@@ -1,6 +1,6 @@
 {
-  "name": "慶應コーチング - 大学受験専門の学習管理塾",
-  "description": "志望校から逆算した学習計画、毎週の面談、進捗管理、確認テストで大学受験をサポートする専門塾。",
+  "name": "慶應コーチング - 現役慶應生による一般・推薦対応の大学受験塾",
+  "description": "現役慶應生による大学受験コーチング。一般選抜・慶應法FIT・総合型選抜・指定校推薦に対応。学習計画・進捗管理から、分からない問題の個別解説までサポートします。",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

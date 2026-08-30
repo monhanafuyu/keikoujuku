@@ -53,16 +53,16 @@ export const Worries: React.FC = () => {
 
         {/* Down Arrow Indicator */}
         <div className="flex justify-center mb-6">
-          <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 animate-bounce">
+          <div className="w-10 h-10 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30 flex items-center justify-center text-[#b38f4f] animate-bounce">
             <ArrowDown className="w-5 h-5" />
           </div>
         </div>
 
         {/* Essential Core Insight Box */}
-        <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-800 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-[#2a1f11] text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-800 text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#b38f4f]/10 rounded-full blur-2xl pointer-events-none" />
           
-          <span className="inline-block text-blue-400 text-xs sm:text-sm font-bold tracking-wider uppercase mb-3">
+          <span className="inline-block text-[#d4b783] text-xs sm:text-sm font-bold tracking-wider uppercase mb-3">
             The Truth of College Entrance Exam
           </span>
 
@@ -74,9 +74,9 @@ export const Worries: React.FC = () => {
             ではありません。
           </p>
 
-          <div className="my-4 w-16 h-1 bg-blue-500 mx-auto rounded-full" />
+          <div className="my-4 w-16 h-1 bg-[#c4a365] mx-auto rounded-full" />
 
-          <p className="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-sky-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#b38f4f]/30 via-white to-sky-200 max-w-3xl mx-auto leading-relaxed">
             合格までに必要な勉強を、<br />
             正しい順番で、最後までやり切れるかです。
           </p>

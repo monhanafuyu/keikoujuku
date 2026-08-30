@@ -25,7 +25,7 @@ export const ComparisonAndPricing: React.FC<{ onOpenConsultation: () => void }> 
                   <th className="w-1/5 p-4 text-center font-bold text-slate-500 bg-slate-50 border-b-2 border-slate-200">一般的な予備校</th>
                   <th className="w-1/5 p-4 text-center font-bold text-slate-500 bg-slate-50 border-b-2 border-slate-200">一般的な学習管理塾</th>
                   <th className="w-1/5 p-4 text-center font-bold text-slate-500 bg-slate-50 border-b-2 border-slate-200">推薦専門塾</th>
-                  <th className="w-1/5 p-5 text-center font-bold text-white bg-[#b38f4f] border-b-2 border-[#9a7b43] text-lg relative shadow-md">
+                  <th className="w-1/5 p-5 text-center font-bold text-white bg-[#b38f4f] border-b-2 border-[#a07c3f] text-lg relative shadow-md">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] px-4 py-1 rounded-sm whitespace-nowrap font-bold tracking-widest shadow-sm">当塾</div>
                     慶應コーチング
                   </th>
@@ -118,7 +118,7 @@ export const ComparisonAndPricing: React.FC<{ onOpenConsultation: () => void }> 
           </div>
           
           <div className="mt-16 flex justify-center">
-            <button onClick={onOpenConsultation} className="px-12 py-5 rounded-sm bg-[#b38f4f] hover:bg-[#a07c3f] text-[#1a1a1a] font-bold transition-colors shadow-lg shadow-[#b38f4f]/20 tracking-widest text-lg">
+            <button onClick={onOpenConsultation} className="px-12 py-5 rounded-sm bg-[#b38f4f] hover:bg-[#a07c3f] text-white font-bold transition-colors shadow-lg shadow-[#b38f4f]/20 tracking-widest text-lg">
               無料受験相談を申し込む
             </button>
           </div>

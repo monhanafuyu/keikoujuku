@@ -36,7 +36,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
             onClick={() => setActiveTab('commercial')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               activeTab === 'commercial'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-[#b38f4f] text-white'
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >
@@ -46,7 +46,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
             onClick={() => setActiveTab('terms')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               activeTab === 'terms'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-[#b38f4f] text-white'
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >
@@ -56,7 +56,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
             onClick={() => setActiveTab('privacy')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               activeTab === 'privacy'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-[#b38f4f] text-white'
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >

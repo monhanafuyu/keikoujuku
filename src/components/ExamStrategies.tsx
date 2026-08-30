@@ -8,11 +8,14 @@ export const ExamStrategies: React.FC = () => {
         
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-normal text-slate-900 mb-6 leading-tight font-serif tracking-widest">
-            合格する方法だけではなく、<br className="sm:hidden"/>合格する選択肢を増やす。
+            勉強方法だけでなく、<br className="sm:hidden"/>受験方法から考える。
           </h2>
-          <p className="text-slate-600 leading-relaxed font-bold tracking-wide">
-            この塾は、推薦だけ・一般だけを専門にするのではありません。<br />
-            生徒の可能性を最大限に広げるため、複数の入試方式を横断した戦略を描きます。
+          <p className="text-lg md:text-xl font-bold text-[#b38f4f] mb-6 tracking-widest">
+            「合格する方法だけでなく、合格する選択肢を増やす。」
+          </p>
+          <p className="text-slate-600 leading-relaxed tracking-wide text-sm md:text-base">
+            大学受験には、一般選抜だけでなく、総合型選抜、学校推薦型選抜、指定校推薦など複数の受験方式があります。<br />
+            慶應コーチングでは、現在の成績・評定・資格・活動・志望大学をもとに、一つの方式だけに絞らず受験戦略を考えます。
           </p>
         </div>
 

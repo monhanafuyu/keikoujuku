@@ -33,7 +33,7 @@ export const StepsToJoin: React.FC<StepsToJoinProps> = ({ onOpenConsultation }) 
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-xs font-black px-2.5 py-1 rounded-md bg-blue-700 text-white">
+                  <span className="font-mono text-xs font-black px-2.5 py-1 rounded-md bg-[#a07c3f] text-white">
                     {item.step}
                   </span>
                   <span className="text-[10px] font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
@@ -70,7 +70,7 @@ export const StepsToJoin: React.FC<StepsToJoinProps> = ({ onOpenConsultation }) 
         <div className="mt-8 text-center">
           <button
             onClick={onOpenConsultation}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-sm font-bold shadow-md shadow-blue-700/25 transition-all hover:shadow-lg active:scale-[0.99]"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white text-sm font-bold shadow-md shadow-[#a07c3f]/25 transition-all hover:shadow-lg active:scale-[0.99]"
           >
             <Calendar className="w-4 h-4" />
             <span>まずは無料で学習相談を予約する</span>

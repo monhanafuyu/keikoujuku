@@ -8,8 +8,8 @@ export const ComparisonTable: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-bold mb-4">
-            <Zap className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30/80 text-[#594226] text-xs font-bold mb-4">
+            <Zap className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>一般的な塾・予備校との比較</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
@@ -32,10 +32,10 @@ export const ComparisonTable: React.FC = () => {
                   <th className="py-4 px-5 text-sm font-bold text-slate-600 bg-slate-100/70 w-2/5">
                     一般的な個別・集団予備校
                   </th>
-                  <th className="py-4 px-5 text-sm font-black text-white bg-blue-700 w-2/5">
+                  <th className="py-4 px-5 text-sm font-black text-white bg-[#a07c3f] w-2/5">
                     <div className="flex items-center gap-2">
                       <span>PASSGATE（学習管理塾）</span>
-                      <span className="text-[10px] bg-blue-500 text-white px-2 py-0.5 rounded-full font-bold">推奨</span>
+                      <span className="text-[10px] bg-[#c4a365] text-white px-2 py-0.5 rounded-full font-bold">推奨</span>
                     </div>
                   </th>
                 </tr>
@@ -52,12 +52,12 @@ export const ComparisonTable: React.FC = () => {
                         <span>{item.traditional}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-5 font-medium text-slate-900 leading-relaxed bg-blue-50/20">
+                    <td className="py-4 px-5 font-medium text-slate-900 leading-relaxed bg-[#b38f4f]/10/20">
                       <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                         <div>
-                          <span className="font-bold text-blue-950 block">{item.passgate}</span>
-                          <span className="text-[11px] text-blue-700 block mt-0.5">{item.advantage}</span>
+                          <span className="font-bold text-[#2a1f11] block">{item.passgate}</span>
+                          <span className="text-[11px] text-[#a07c3f] block mt-0.5">{item.advantage}</span>
                         </div>
                       </div>
                     </td>
@@ -69,9 +69,9 @@ export const ComparisonTable: React.FC = () => {
         </div>
 
         {/* Strong Final Punchline Banner */}
-        <div className="bg-gradient-to-r from-blue-900 via-slate-900 to-blue-950 text-white p-8 sm:p-12 rounded-3xl shadow-xl text-center relative overflow-hidden border border-slate-800">
+        <div className="bg-gradient-to-r from-[#3f2e1a] via-slate-900 to-[#2a1f11] text-white p-8 sm:p-12 rounded-3xl shadow-xl text-center relative overflow-hidden border border-slate-800">
           <div className="max-w-3xl mx-auto relative z-10">
-            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase mb-2 block">
+            <span className="text-xs font-bold text-[#e4cda5] tracking-widest uppercase mb-2 block">
               Our Core Mission
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-snug font-display">

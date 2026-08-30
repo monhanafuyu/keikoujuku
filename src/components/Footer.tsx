@@ -15,13 +15,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenLineModal, on
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blue-700 flex items-center justify-center text-white font-black text-base">
+              <div className="w-8 h-8 rounded-lg bg-[#a07c3f] flex items-center justify-center text-white font-black text-base">
                 P
               </div>
               <span className="text-lg font-black text-white tracking-tight">
                 PASSGATE
               </span>
-              <span className="text-[10px] text-blue-400 font-bold bg-blue-950/80 border border-blue-800/60 px-2 py-0.5 rounded">
+              <span className="text-[10px] text-[#d4b783] font-bold bg-[#2a1f11]/80 border border-[#594226]/60 px-2 py-0.5 rounded">
                 大学受験専門 学習管理塾
               </span>
             </div>
@@ -107,7 +107,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenLineModal, on
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <p>© {new Date().getFullYear()} PASSGATE Inc. All Rights Reserved.</p>
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-blue-500" />
+            <ShieldCheck className="w-4 h-4 text-[#c4a365]" />
             <span>大学受験専門オンライン学習管理プラットフォーム</span>
           </div>
         </div>

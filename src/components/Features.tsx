@@ -51,25 +51,25 @@ export const Features: React.FC = () => {
 
             <div className="flex-1 space-y-6 relative z-10">
               <div className="inline-block px-4 py-2 border border-[#b38f4f]/30 text-[#b38f4f] font-bold rounded-sm text-sm tracking-widest bg-white">
-                自学自習 × 個別質問指導
+                管理だけでは、終わらない。
               </div>
               <h2 className="text-3xl md:text-4xl font-normal text-slate-900 leading-tight font-serif tracking-widest">
                 分からない問題を、<br />分からないままにしない。
               </h2>
               <div className="space-y-4 text-slate-600 leading-relaxed tracking-wide">
                 <p>
-                  基本となるのは、自分で問題を解く学習です。しかし、分からない問題を何時間も抱え込む必要はありません。
+                  慶應コーチングでは、自学自習を中心に勉強を進めます。しかし、解説を読んでも理解できない問題を一人で何時間も抱える必要はありません。
                 </p>
                 <p>
-                  解説を読んでも分からない問題や、理解できない単元があれば、講師に質問できます。単に答えを教えるのではなく、
+                  分からない問題や苦手な単元は、現役慶應生講師へ質問できます。単に答えを教えるのではなく、
                 </p>
                 <ul className="bg-slate-50 p-6 rounded-sm border border-slate-200 space-y-3 font-bold text-slate-700">
                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-[#b38f4f] rotate-45"></div>『なぜそうなるのか』</li>
                   <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-[#b38f4f] rotate-45"></div>『どこで考え方を間違えたのか』</li>
-                  <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-[#b38f4f] rotate-45"></div>『次からどう解けばいいのか』</li>
+                  <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-[#b38f4f] rotate-45"></div>『次に同じ問題が出たときどう考えるのか』</li>
                 </ul>
                 <p>
-                  まで理解できるように個別に解説します。
+                  まで理解できるよう個別に解説します。
                 </p>
               </div>
             </div>
@@ -77,9 +77,9 @@ export const Features: React.FC = () => {
             <div className="flex-1 w-full bg-slate-50 border border-slate-200 rounded-sm p-8 text-slate-900 relative z-10">
               <div className="absolute left-0 top-0 w-[2px] h-full bg-[#b38f4f]"></div>
               
-              <h3 className="text-xl font-serif font-bold mb-8 text-slate-900 tracking-widest border-b border-slate-200 pb-4">質問可能な内容の例</h3>
+              <h3 className="text-xl font-serif font-bold mb-8 text-slate-900 tracking-widest border-b border-slate-200 pb-4">質問可能な科目例</h3>
               <div className="grid grid-cols-2 gap-y-6 gap-x-4 mb-8">
-                {['英語の英文解釈', '英文法', '現代文', '古文', '日本史', '世界史', '数学', 'その他対応可能科目'].map((subject) => (
+                {['英語', '現代文', '古文', '日本史', '世界史', '数学', 'その他'].map((subject) => (
                   <div key={subject} className="flex items-center gap-2 text-sm text-slate-600 tracking-wide">
                     <UserCheck className="w-4 h-4 text-[#b38f4f]" />
                     {subject}

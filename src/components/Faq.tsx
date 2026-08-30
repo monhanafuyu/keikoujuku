@@ -14,8 +14,8 @@ export const Faq: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-bold mb-4">
-            <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30/80 text-[#594226] text-xs font-bold mb-4">
+            <HelpCircle className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>疑問と不安にお答えします</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
@@ -41,7 +41,7 @@ export const Faq: React.FC = () => {
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3.5">
-                    <span className="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 font-black text-xs flex items-center justify-center shrink-0">
+                    <span className="w-7 h-7 rounded-lg bg-[#b38f4f]/10 text-[#a07c3f] font-black text-xs flex items-center justify-center shrink-0">
                       Q
                     </span>
                     <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
@@ -50,7 +50,7 @@ export const Faq: React.FC = () => {
                   </div>
                   <ChevronDown
                     className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-blue-600' : ''
+                      isOpen ? 'rotate-180 text-[#b38f4f]' : ''
                     }`}
                   />
                 </button>
