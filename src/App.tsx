@@ -1,144 +1,53 @@
 import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Worries } from './components/Worries';
-import { SolutionCycle } from './components/SolutionCycle';
-import { StudyPlanDemo } from './components/StudyPlanDemo';
-import { ComparisonTable } from './components/ComparisonTable';
-import { Services } from './components/Services';
-import { ParentBenefitSection } from './components/ParentBenefitSection';
-import { Pricing } from './components/Pricing';
-import { StepsToJoin } from './components/StepsToJoin';
-import { Faq } from './components/Faq';
-import { FinalCta } from './components/FinalCta';
-import { Footer } from './components/Footer';
-import { FreeConsultationModal } from './components/FreeConsultationModal';
-import { LineModal } from './components/LineModal';
-import { LegalModal } from './components/LegalModal';
-import { Calendar, MessageCircle } from 'lucide-react';
+import { Features } from './components/Features';
+import { StudySystem } from './components/StudySystem';
+import { ExamStrategies } from './components/ExamStrategies';
+import { ComparisonAndPricing } from './components/ComparisonAndPricing';
+import { InstructorsAndFaq } from './components/InstructorsAndFaq';
+import { Navbar, Footer, FinalCta, FreeConsultationModal, LineModal } from './components/Layout';
 
 export default function App() {
-  const [consultationModalOpen, setConsultationModalOpen] = useState(false);
-  const [lineModalOpen, setLineModalOpen] = useState(false);
-  const [legalModalState, setLegalModalState] = useState<{
-    isOpen: boolean;
-    type: 'terms' | 'privacy' | 'commercial';
-  }>({
-    isOpen: false,
-    type: 'commercial',
-  });
-  const [selectedPlanForConsultation, setSelectedPlanForConsultation] = useState<string | undefined>(undefined);
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [isLineOpen, setIsLineOpen] = useState(false);
 
-  const handleOpenConsultation = (planName?: string) => {
-    setSelectedPlanForConsultation(planName);
-    setConsultationModalOpen(true);
-  };
-
-  const handleOpenLine = () => {
-    setLineModalOpen(true);
-  };
-
-  const handleOpenLegal = (type: 'terms' | 'privacy' | 'commercial') => {
-    setLegalModalState({
-      isOpen: true,
-      type,
-    });
-  };
+  const openConsultation = () => setIsConsultationOpen(true);
+  const openLine = () => setIsLineOpen(true);
 
   return (
-    <div className="min-h-screen bg-slate-50/50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-20 sm:pb-0">
-      {/* Fixed Navigation Bar */}
-      <Navbar
-        onOpenConsultation={() => handleOpenConsultation()}
-        onOpenLineModal={handleOpenLine}
-      />
-
-      {/* Main Landing Page Sections */}
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white pb-20 sm:pb-0">
+      <Navbar onOpenConsultation={openConsultation} onOpenLine={openLine} />
+      
       <main>
-        {/* ① Hero Section */}
-        <Hero
-          onOpenConsultation={() => handleOpenConsultation()}
-          onOpenLineModal={handleOpenLine}
-        />
-
-        {/* ② High School Students' Worries & True Problem */}
-        <Worries />
-
-        {/* ③ Solution: 5-Step Reverse Calculation Management & PDCA */}
-        <SolutionCycle />
-
-        {/* ④ Concrete Study Plan Example (High School 2nd year -> Meiji Law Model) */}
-        <StudyPlanDemo />
-
-        {/* ⑤ Comparison Matrix (Traditional Cram School vs PASSGATE) */}
-        <ComparisonTable />
-
-        {/* ⑥ 8 Comprehensive Study Services */}
-        <Services />
-
-        {/* Dedicated Value for Parents (Progress Visualization) */}
-        <ParentBenefitSection />
-
-        {/* ⑦ Pricing (Light / Standard [Recommended] / Premium) */}
-        <Pricing onOpenConsultation={handleOpenConsultation} />
-
-        {/* ⑧ 4 Steps to Join */}
-        <StepsToJoin onOpenConsultation={() => handleOpenConsultation()} />
-
-        {/* ⑨ Frequently Asked Questions (Accordion) */}
-        <Faq />
-
-        {/* ⑩ Deep Navy Final CTA */}
-        <FinalCta
-          onOpenConsultation={() => handleOpenConsultation()}
-          onOpenLineModal={handleOpenLine}
-        />
+        <Hero onOpenConsultation={openConsultation} onOpenLine={openLine} />
+        <Features />
+        <StudySystem />
+        <ExamStrategies />
+        <ComparisonAndPricing onOpenConsultation={openConsultation} />
+        <InstructorsAndFaq />
+        <FinalCta onOpenConsultation={openConsultation} onOpenLine={openLine} />
       </main>
 
-      {/* ⑪ Official Footer */}
-      <Footer
-        onOpenLegal={handleOpenLegal}
-        onOpenLineModal={handleOpenLine}
-        onOpenConsultation={() => handleOpenConsultation()}
-      />
+      <Footer onOpenConsultation={openConsultation} onOpenLine={openLine} />
 
-      {/* Mobile Sticky Floating CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-30 p-2.5 bg-white/95 backdrop-blur-md border-t border-slate-200/80 sm:hidden flex gap-2">
+      {/* Mobile Sticky CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200 sm:hidden flex gap-2 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)]">
         <button
-          onClick={handleOpenLine}
-          className="flex-1 py-3 px-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-300 font-bold text-xs flex items-center justify-center gap-1.5 shadow-2xs active:scale-[0.98]"
+          onClick={openLine}
+          className="flex-1 py-3.5 px-2 rounded-xl bg-[#06C755] text-white font-bold text-xs flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform"
         >
-          <MessageCircle className="w-4 h-4 text-[#06C755]" />
           <span>LINEで相談</span>
         </button>
         <button
-          onClick={() => handleOpenConsultation()}
-          className="flex-2 py-3 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-blue-700/25 active:scale-[0.98]"
+          onClick={openConsultation}
+          className="flex-2 py-3.5 px-3 rounded-xl bg-blue-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-blue-700/30 active:scale-[0.98] transition-transform"
         >
-          <Calendar className="w-4 h-4" />
-          <span>無料学習相談を予約</span>
+          <span>無料で受験戦略を相談する</span>
         </button>
       </div>
 
-      {/* Interactive Modals */}
-      <FreeConsultationModal
-        isOpen={consultationModalOpen}
-        onClose={() => setConsultationModalOpen(false)}
-        selectedPlanName={selectedPlanForConsultation}
-      />
-
-      <LineModal
-        isOpen={lineModalOpen}
-        onClose={() => setLineModalOpen(false)}
-      />
-
-      <LegalModal
-        isOpen={legalModalState.isOpen}
-        initialType={legalModalState.type}
-        onClose={() =>
-          setLegalModalState((prev) => ({ ...prev, isOpen: false }))
-        }
-      />
+      <FreeConsultationModal isOpen={isConsultationOpen} onClose={() => setIsConsultationOpen(false)} />
+      <LineModal isOpen={isLineOpen} onClose={() => setIsLineOpen(false)} />
     </div>
   );
 }
