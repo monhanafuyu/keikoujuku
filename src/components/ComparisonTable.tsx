@@ -34,7 +34,7 @@ export const ComparisonTable: React.FC = () => {
                   </th>
                   <th className="py-4 px-5 text-sm font-black text-white bg-[#a07c3f] w-2/5">
                     <div className="flex items-center gap-2">
-                      <span>PASSGATE（学習管理塾）</span>
+                      <span>慶應ROUTE（学習管理塾）</span>
                       <span className="text-[10px] bg-[#c4a365] text-white px-2 py-0.5 rounded-full font-bold">推奨</span>
                     </div>
                   </th>
@@ -79,7 +79,7 @@ export const ComparisonTable: React.FC = () => {
               残りの1週間を変える。」
             </h3>
             <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
-              合格に必要な自習時間を、無駄なく、迷いなく、最高の集中力で駆け抜ける。それが大学受験専門の学習管理塾 PASSGATE の提供する価値です。
+              合格に必要な自習時間を、無駄なく、迷いなく、最高の集中力で駆け抜ける。それが大学受験専門の学習管理塾 慶應ROUTE の提供する価値です。
             </p>
           </div>
         </div>

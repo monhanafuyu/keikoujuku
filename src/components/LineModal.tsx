@@ -31,7 +31,7 @@ export const LineModal: React.FC<LineModalProps> = ({ isOpen, onClose }) => {
               LINE Official
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-1 font-display">
-              PASSGATE公式LINE
+              慶應ROUTE公式LINE
             </h3>
             <p className="text-xs text-slate-500 mt-1">
               友だち追加で、受験の悩みをチャットで気軽にご相談いただけます。

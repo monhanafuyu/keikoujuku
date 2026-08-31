@@ -39,21 +39,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Brand Identity */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 via-[#3f2e1a] to-[#a07c3f] flex items-center justify-center text-white font-black text-xl shadow-md shadow-[#2a1f11]/10 group-hover:scale-[1.02] transition-transform">
-              P
+          <a href="/" className="flex items-center gap-2.5 group">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#8a6d3b] via-[#c5a059] to-[#8a6d3b] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-[#a07c3f]/20 group-hover:scale-[1.05] transition-transform duration-300 border border-white/20">
+              <span className="drop-shadow-sm">慶</span>
             </div>
-            <div>
+            <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-xl tracking-tight text-slate-900 font-display">
-                  PASSGATE
+                <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-[#8a6d3b] via-[#e2c17d] to-[#8a6d3b] bg-clip-text text-transparent font-display drop-shadow-xs">
+                  慶應ROUTE
                 </span>
-                <span className="text-[10px] uppercase font-bold tracking-widest bg-[#b38f4f]/10 text-[#a07c3f] border border-[#b38f4f]/30/60 px-1.5 py-0.5 rounded">
-                  学習管理塾
+                <span className="text-[9px] uppercase font-bold tracking-[0.2em] bg-[#b38f4f]/10 text-[#8a6d3b] border border-[#b38f4f]/30 px-1.5 py-0.5 rounded-sm">
+                  KEIO
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 font-medium hidden sm:block">
-                大学受験専門・志望校逆算マネジメント
+              <p className="text-[10px] text-slate-400 font-medium hidden sm:block tracking-wide">
+                現役慶應生による逆算コーチング
               </p>
             </div>
           </a>

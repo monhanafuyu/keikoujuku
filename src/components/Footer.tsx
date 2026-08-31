@@ -13,23 +13,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenLineModal, on
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-900">
           {/* Brand Info */}
-          <div className="md:col-span-2 space-y-3">
+          <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#a07c3f] flex items-center justify-center text-white font-black text-base">
-                P
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#8a6d3b] to-[#c5a059] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#a07c3f]/10">
+                慶
               </div>
-              <span className="text-lg font-black text-white tracking-tight">
-                PASSGATE
+              <span className="text-lg font-black text-white tracking-tight bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] bg-clip-text text-transparent">
+                慶應ROUTE
               </span>
               <span className="text-[10px] text-[#d4b783] font-bold bg-[#2a1f11]/80 border border-[#594226]/60 px-2 py-0.5 rounded">
-                大学受験専門 学習管理塾
+                現役慶應生による逆算コーチング
               </span>
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-md">
-              志望校から逆算した専用学習計画と毎週の進捗管理・確認テストで、自習時間を合格へ直結させるオンライン学習管理塾です。
+              慶應義塾大学の現役生が、自身の合格体験と最新の入試分析に基づき、志望校合格までの「最短ルート」を共に歩む学習管理塾です。
             </p>
             <p className="text-slate-500 text-[11px]">
-              運営：PASSGATE 運営事務局 / 教育マネジメント事業部
+              運営：慶應ROUTE 運営事務局
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenLineModal, on
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-          <p>© {new Date().getFullYear()} PASSGATE Inc. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} 慶應ROUTE All Rights Reserved.</p>
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#c4a365]" />
             <span>大学受験専門オンライン学習管理プラットフォーム</span>

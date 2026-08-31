@@ -74,7 +74,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
               <div className="border border-slate-200 rounded-xl divide-y divide-slate-100">
                 <div className="p-3 bg-slate-50 grid grid-cols-3">
                   <span className="font-bold text-slate-700">事業者名</span>
-                  <span className="col-span-2 text-slate-900">大学受験専門 学習管理塾 PASSGATE 運営事務局</span>
+                  <span className="col-span-2 text-slate-900">大学受験専門 学習管理塾 慶應ROUTE 運営事務局</span>
                 </div>
                 <div className="p-3 grid grid-cols-3">
                   <span className="font-bold text-slate-700">運営責任者</span>
@@ -108,7 +108,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
             <div className="space-y-3">
               <h4 className="text-base font-bold text-slate-900">利用規約</h4>
               <p>
-                本利用規約（以下「本規約」）は、大学受験専門学習管理塾PASSGATE（以下「当塾」）が提供するオンライン学習管理サービス（以下「本サービス」）の利用条件を定めるものです。
+                本利用規約（以下「本規約」）は、大学受験専門学習管理塾慶應ROUTE（以下「当塾」）が提供するオンライン学習管理サービス（以下「本サービス」）の利用条件を定めるものです。
               </p>
               <h5 className="font-bold text-slate-800">第1条（サービス内容）</h5>
               <p>
