@@ -22,7 +22,7 @@ export const ColumnPreviewSection: React.FC = () => {
             </h2>
           </div>
           <Link
-            to="/column/"
+            to="/columns/"
             className="mt-4 md:mt-0 inline-flex items-center text-xs font-bold text-[#B38F4F] hover:text-[#8F6E32] tracking-widest transition-colors"
           >
             コラム一覧をすべて見る
@@ -48,7 +48,7 @@ export const ColumnPreviewSection: React.FC = () => {
                 </div>
 
                 <h3 className="text-sm font-serif font-bold text-slate-900 group-hover:text-[#B38F4F] transition-colors leading-snug line-clamp-2 mb-3">
-                  <Link to={`/column/${col.id}`}>
+                  <Link to={`/columns/${col.id}`}>
                     {col.title}
                   </Link>
                 </h3>
@@ -59,7 +59,7 @@ export const ColumnPreviewSection: React.FC = () => {
               </div>
 
               <Link
-                to={`/column/${col.id}`}
+                to={`/columns/${col.id}`}
                 className="text-xs font-bold text-[#080E1A] group-hover:text-[#B38F4F] tracking-widest flex items-center pt-3 border-t border-slate-100 transition-colors"
               >
                 記事を読む

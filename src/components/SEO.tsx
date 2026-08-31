@@ -2,44 +2,69 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   keywords?: string;
-  canonicalUrl?: string;
-  ogImage?: string;
+  canonicalUrl: string;
+  type?: 'website' | 'article';
+  schemaOrgData?: object;
+  breadcrumbs?: { name: string; url: string }[];
 }
 
-export const SEO: React.FC<SEOProps> = ({
-  title = '慶應ROUTE｜一般も、推薦も。慶應合格へのルートを、一つに絞らない。',
-  description = '現役慶應生とつくる、あなただけの慶應合格戦略。一般選抜・慶應法FIT・総合型選抜・指定校推薦まで対応。受験戦略の設計から毎週の学習管理、分からない問題の個別解説まで、慶應合格に向けて一貫してサポートします。',
-  keywords = '慶應, 慶應義塾大学, 受験, 合格, 一般選抜, 推薦入試, FIT入試, 総合型選抜, 指定校推薦, 慶應ROUTE, オンライン塾, 個別指導',
-  canonicalUrl = 'https://keio-route.example.com',
-  ogImage = 'https://keio-route.example.com/ogp.jpg',
+export const SEO: React.FC<SEOProps> = ({ 
+  title, 
+  description, 
+  keywords, 
+  canonicalUrl, 
+  type = 'website',
+  schemaOrgData,
+  breadcrumbs
 }) => {
+  const baseUrl = 'https://www.keikouzemi.com';
+  const fullCanonicalUrl = `${baseUrl}${canonicalUrl === '/' ? '' : canonicalUrl}`;
+
+  // Default WebSite Schema
+  const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "慶應ROUTE",
+    "url": baseUrl
+  };
+
+  const breadcrumbsSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": `${baseUrl}${crumb.url}`
+    }))
+  } : null;
+
   return (
     <Helmet>
-      {/* Primary Meta Tags */}
       <title>{title}</title>
-      <meta name="title" content={title} />
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-
-      {/* Canonical */}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonicalUrl} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <link rel="canonical" href={fullCanonicalUrl} />
+      
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:url" content={fullCanonicalUrl} />
+      <meta property="og:type" content={type} />
+      <meta property="og:site_name" content="慶應ROUTE" />
 
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={ogImage} />
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgData || defaultSchema)}
+      </script>
+      
+      {breadcrumbsSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbsSchema)}
+        </script>
+      )}
     </Helmet>
   );
 };

@@ -23,7 +23,7 @@ export const PricingAndComparison: React.FC<{ onOpenConsultation: () => void }> 
               <div className="col-span-1 bg-[#fcfaf5] p-4 border-b border-slate-200 font-bold text-slate-700 text-center">一般的な<br/>学習管理塾</div>
               <div className="col-span-1 bg-[#fcfaf5] p-4 border-b border-slate-200 font-bold text-slate-700 text-center">総合型・推薦<br/>専門塾</div>
               <div className="col-span-1 bg-[#b38f4f] p-4 border-b border-[#a07c3f] font-bold text-white text-center flex flex-col justify-center items-center">
-                <span>慶應ROUTE 2.0</span>
+                <span>慶應ROUTE</span>
               </div>
 
               {/* Rows */}

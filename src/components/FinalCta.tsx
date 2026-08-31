@@ -25,7 +25,7 @@ export const FinalCta: React.FC<FinalCtaProps> = ({ onOpenConsultation }) => {
         
         <div className="flex justify-center">
           <button onClick={onOpenConsultation} className="px-10 py-5 rounded-2xl bg-[#b38f4f] hover:bg-[#c4a365] text-white font-bold text-lg shadow-xl shadow-[#b38f4f]/30 transition-all active:scale-[0.98] border border-[#d4b783]/40 min-w-[300px]">
-            無料相談・体験を申し込む
+            無料受験戦略相談を申し込む
           </button>
         </div>
       </div>

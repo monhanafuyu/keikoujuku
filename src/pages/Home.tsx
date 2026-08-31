@@ -6,8 +6,10 @@ import { Roadmap } from '../components/Roadmap';
 import { StudyCycle } from '../components/StudyCycle';
 import { StrategyDashboard } from '../components/StrategyDashboard';
 import { InstructorValue } from '../components/InstructorValue';
+import { QualityAssurance } from '../components/QualityAssurance';
 import { PricingAndComparison } from '../components/PricingAndComparison';
 import { ColumnPreviewSection } from '../components/ColumnPreviewSection';
+import { FAQ } from '../components/FAQ';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { FinalCta } from '../components/FinalCta';
@@ -22,13 +24,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#B38F4F] selection:text-white pb-20 sm:pb-0">
       <SEO 
-        title="慶應ROUTE｜一般も、推薦も。慶應合格へのルートを、一つに絞らない。"
-        description="現役慶應生とつくる、あなただけの慶應合格戦略。一般選抜・慶應法FIT・総合型選抜・指定校推薦まで対応。受験戦略の設計から毎週の学習管理、分からない問題の個別解説まで、慶應合格に向けて一貫してサポートします。"
-        keywords="慶應, 慶應義塾大学, 受験, 合格, 一般選抜, 推薦入試, FIT入試, 総合型選抜, 慶應ROUTE, オンライン塾"
+        title="慶應ROUTE｜現役慶應生による慶應専門の大学受験塾"
+        description="現役慶應生が指導する慶應専門の大学受験塾「慶應ROUTE」。一般選抜・慶應法学部FIT入試・SFC総合型選抜・指定校推薦まで対応。受験戦略、学習管理、質問・個別解説を一貫してサポートします。"
         canonicalUrl="/"
       />
       
-      <h1 className="sr-only">一般も、推薦も。慶應合格へのルートを、一つに絞らない。慶應ROUTE</h1>
+      <h1 className="sr-only">一般も、推薦も。慶應合格へのルートを、一つに絞らない。</h1>
       <Navbar onOpenConsultation={openConsultation} />
       
       <main>
@@ -39,8 +40,10 @@ export default function Home() {
         <StudyCycle />
         <StrategyDashboard />
         <InstructorValue />
-        <ColumnPreviewSection />
+        <QualityAssurance />
         <PricingAndComparison onOpenConsultation={openConsultation} />
+        <ColumnPreviewSection />
+        <FAQ />
         <FinalCta onOpenConsultation={openConsultation} />
       </main>
 
@@ -52,7 +55,7 @@ export default function Home() {
           onClick={openConsultation}
           className="w-full py-4 px-3 rounded-lg bg-[#B38F4F] text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow-md active:scale-[0.98] transition-transform tracking-widest"
         >
-          <span>無料相談・体験を申し込む</span>
+          <span>無料受験戦略相談を申し込む</span>
         </button>
       </div>
 

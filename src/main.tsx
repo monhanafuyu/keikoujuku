@@ -8,3 +8,8 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 );
+
+// Redirect www to non-www
+if (window.location.hostname === 'www.keio-route.com') {
+  window.location.replace('https://keio-route.com' + window.location.pathname + window.location.search);
+}

@@ -53,7 +53,7 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
              onClick={onOpenConsultation} 
              className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 sm:py-5 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
           >
-            無料相談・体験を申し込む
+            無料受験戦略相談を申し込む
           </button>
         </div>
 
