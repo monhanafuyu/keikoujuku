@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   type = 'website',
   breadcrumbs
 }) => {
-  const siteUrl = 'https://keio-route.com';
+  const siteUrl = 'https://www.keikouzemi.com';
   const url = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
 
   const breadcrumbSchema = breadcrumbs ? {

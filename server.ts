@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
@@ -13,6 +14,46 @@ async function startServer() {
   const PORT = 3000;
 
   app.use(express.json());
+
+  // Explicit route for sitemap.xml to guarantee XML content-type and HTTP 200
+  app.get("/sitemap.xml", (req, res) => {
+    const sitemapPathPublic = path.join(process.cwd(), "public", "sitemap.xml");
+    const sitemapPathDist = path.join(process.cwd(), "dist", "sitemap.xml");
+
+    let sitemapContent = "";
+    if (fs.existsSync(sitemapPathPublic)) {
+      sitemapContent = fs.readFileSync(sitemapPathPublic, "utf-8");
+    } else if (fs.existsSync(sitemapPathDist)) {
+      sitemapContent = fs.readFileSync(sitemapPathDist, "utf-8");
+    }
+
+    if (sitemapContent) {
+      res.setHeader("Content-Type", "application/xml; charset=utf-8");
+      res.setHeader("Cache-Control", "public, max-age=3600");
+      return res.status(200).send(sitemapContent);
+    }
+
+    return res.status(404).send("Sitemap not found");
+  });
+
+  // Explicit route for robots.txt
+  app.get("/robots.txt", (req, res) => {
+    const robotsPathPublic = path.join(process.cwd(), "public", "robots.txt");
+    const robotsPathDist = path.join(process.cwd(), "dist", "robots.txt");
+
+    let robotsContent = "";
+    if (fs.existsSync(robotsPathPublic)) {
+      robotsContent = fs.readFileSync(robotsPathPublic, "utf-8");
+    } else if (fs.existsSync(robotsPathDist)) {
+      robotsContent = fs.readFileSync(robotsPathDist, "utf-8");
+    } else {
+      robotsContent = "User-agent: *\nAllow: /\n\nSitemap: https://www.keikouzemi.com/sitemap.xml\n";
+    }
+
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    res.setHeader("Cache-Control", "public, max-age=3600");
+    return res.status(200).send(robotsContent);
+  });
 
   // API Route for Free Consultation Form Submission
   app.post("/api/consultation", async (req, res) => {
@@ -78,7 +119,7 @@ ${content}
   } else {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
-    app.get("*", (req, res) => {
+    app.get("*all", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
   }
