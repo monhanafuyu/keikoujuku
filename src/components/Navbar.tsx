@@ -47,12 +47,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Brand Identity */}
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#8a6d3b] via-[#c5a059] to-[#8a6d3b] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-[#a07c3f]/20 group-hover:scale-[1.05] transition-transform duration-300 border border-white/20">
+            <div className="w-10 h-10 rounded-xl bg-slate-950 flex items-center justify-center text-white font-black text-xl shadow-md shadow-slate-950/20 group-hover:scale-[1.05] transition-transform duration-300 border border-slate-800">
               <span className="drop-shadow-sm font-serif">慶</span>
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-[#8a6d3b] via-[#e2c17d] to-[#8a6d3b] bg-clip-text text-transparent font-display drop-shadow-xs">
+                <span className="font-extrabold text-xl tracking-tight text-slate-950 font-display group-hover:text-black transition-colors">
                   慶應ROUTE
                 </span>
               </div>
