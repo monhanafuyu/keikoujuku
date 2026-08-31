@@ -23,7 +23,7 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c4a365] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d4b783]"></span>
           </span>
-          慶應ROUTE 2.0
+          慶應ROUTE
         </div>
 
         {/* Main H1 Headline */}
@@ -50,8 +50,8 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
         {/* CTA Button */}
         <div className="flex justify-center w-full mb-14">
           <button 
-            onClick={onOpenConsultation} 
-            className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 sm:py-5 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
+             onClick={onOpenConsultation} 
+             className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 sm:py-5 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
           >
             無料相談・体験を申し込む
           </button>
@@ -81,4 +81,3 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
     </section>
   );
 };
-

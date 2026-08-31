@@ -14,7 +14,7 @@ export const StudyCycle: React.FC = () => {
   return (
     <section className="py-24 bg-slate-900 text-white relative overflow-hidden" id="study-cycle">
       {/* Background accents */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-900/10 blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#2a1f11]/10 blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-[#a07c3f]/10 blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -34,7 +34,7 @@ export const StudyCycle: React.FC = () => {
           {steps.map((step, idx) => (
             <div key={idx} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800 transition-colors">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#d4b783]/20 flex items-center justify-center text-[#e4cda5]">
+                <div className="w-12 h-12 rounded-full bg-[#fcfaf5]0/20 flex items-center justify-center text-[#e4cda5]">
                   {step.icon}
                 </div>
                 <div>

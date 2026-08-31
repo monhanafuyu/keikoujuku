@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
@@ -8,6 +9,8 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
   }, []);
 
   const navLinks = [
-    { label: '一般・推薦の横断戦略', href: '#admission-types' },
-    { label: '高1からのロードマップ', href: '#roadmap' },
-    { label: '学習サイクル', href: '#study-cycle' },
-    { label: '受験戦略カルテ', href: '#dashboard' },
-    { label: '現役慶應生の指導', href: '#instructor' },
-    { label: '料金プラン', href: '#pricing' },
+    { label: '一般・推薦の横断戦略', href: isHome ? '#admission-types' : '/#admission-types' },
+    { label: '高1からのロードマップ', href: isHome ? '#roadmap' : '/#roadmap' },
+    { label: '学習サイクル', href: isHome ? '#study-cycle' : '/#study-cycle' },
+    { label: '受験戦略カルテ', href: isHome ? '#dashboard' : '/#dashboard' },
+    { label: '受験コラム', href: '/column' },
+    { label: '料金プラン', href: isHome ? '#pricing' : '/#pricing' },
   ];
 
   return (
@@ -37,13 +40,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & Brand Identity */}
-          <a href="/" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#8a6d3b] via-[#c5a059] to-[#8a6d3b] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-[#a07c3f]/20 group-hover:scale-[1.05] transition-transform duration-300 border border-white/20">
               <span className="drop-shadow-sm font-serif">慶</span>
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-xl tracking-tight text-slate-900 font-display">
+                <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-[#8a6d3b] via-[#e2c17d] to-[#8a6d3b] bg-clip-text text-transparent font-display drop-shadow-xs">
                   慶應ROUTE
                 </span>
               </div>
@@ -51,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
                 一般も、推薦も。慶應合格へのルートを、一つに絞らない。
               </p>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
@@ -71,10 +74,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           <div className="hidden sm:flex items-center gap-2.5">
             <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-[#b38f4f] hover:bg-[#a07c3f] shadow-md shadow-[#b38f4f]/20 transition-all hover:shadow-lg active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-[#a07c3f] hover:bg-[#594226] shadow-md shadow-[#a07c3f]/20 transition-all hover:shadow-lg active:scale-[0.98]"
             >
               <Calendar className="w-4 h-4" />
-              <span>無料相談・体験を申し込む</span>
+              <span>無料相談・体験</span>
             </button>
           </div>
 
@@ -114,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
                   setMobileMenuOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full py-3.5 px-4 rounded-xl bg-[#b38f4f] hover:bg-[#a07c3f] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#b38f4f]/20"
+                className="w-full py-3.5 px-4 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#a07c3f]/20"
               >
                 <Calendar className="w-4 h-4" />
                 <span>無料相談・体験を申し込む</span>

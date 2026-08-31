@@ -88,17 +88,17 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
             <p className="text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
               ご入力いただいたメールアドレス（{formData.email || 'ご登録アドレス'}）に、当日のZoom参加URLおよび事前アンケートをお送りいたしました。
             </p>
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-xs text-left space-y-1.5 max-w-md mx-auto">
+            <div className="bg-[#fcfaf5] p-4 rounded-2xl border border-slate-200 text-xs text-left space-y-1.5 max-w-md mx-auto">
               <p className="font-bold text-slate-800">ご予約内容の確認：</p>
               <p className="text-slate-600">お名前：{formData.name} 様</p>
               <p className="text-slate-600">学年：{formData.grade} / 志望校：{formData.targetUniversity || '未定・相談中'}</p>
               <p className="text-slate-600">希望日程：{formData.preferredDate || '直近の日程で調整'} {formData.preferredTime}</p>
-              {selectedPlanName && <p className="text-blue-700 font-bold">検討中のプラン：{selectedPlanName}</p>}
+              {selectedPlanName && <p className="text-[#a07c3f] font-bold">検討中のプラン：{selectedPlanName}</p>}
             </div>
             <div className="pt-4">
               <button
                 onClick={onClose}
-                className="w-full py-3.5 rounded-xl bg-blue-700 text-white font-bold text-sm hover:bg-blue-800 transition-colors shadow-md"
+                className="w-full py-3.5 rounded-xl bg-[#a07c3f] text-white font-bold text-sm hover:bg-[#594226] transition-colors shadow-md"
               >
                 トップページに戻る
               </button>
@@ -109,7 +109,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
           <div>
             {/* Modal Header */}
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-600/10 text-blue-700 text-xs font-bold mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#b38f4f]/10 text-[#a07c3f] text-xs font-bold mb-2">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>無料・オンライン（Zoom 30分）</span>
               </div>
@@ -124,17 +124,17 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
               <div className="flex items-center gap-2 mt-4">
                 <div
                   className={`h-1.5 flex-1 rounded-full ${
-                    step >= 1 ? 'bg-blue-600' : 'bg-slate-200'
+                    step >= 1 ? 'bg-[#b38f4f]' : 'bg-slate-200'
                   }`}
                 />
                 <div
                   className={`h-1.5 flex-1 rounded-full ${
-                    step >= 2 ? 'bg-blue-600' : 'bg-slate-200'
+                    step >= 2 ? 'bg-[#b38f4f]' : 'bg-slate-200'
                   }`}
                 />
                 <div
                   className={`h-1.5 flex-1 rounded-full ${
-                    step >= 3 ? 'bg-blue-600' : 'bg-slate-200'
+                    step >= 3 ? 'bg-[#b38f4f]' : 'bg-slate-200'
                   }`}
                 />
               </div>
@@ -156,7 +156,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                       onChange={(e) =>
                         setFormData({ ...formData, grade: e.target.value })
                       }
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                     >
                       <option value="高校1年生">高校1年生</option>
                       <option value="高校2年生">高校2年生</option>
@@ -180,7 +180,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                           targetUniversity: e.target.value,
                         })
                       }
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                     />
                   </div>
 
@@ -196,7 +196,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                           currentDeviation: e.target.value,
                         })
                       }
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                     >
                       <option value="〜45（基礎から固めたい）">〜45（基礎から固めたい）</option>
                       <option value="45〜50程度">45〜50程度</option>
@@ -211,7 +211,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="w-full py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[blue-700]/20"
+                      className="w-full py-3.5 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[[#a07c3f]]/20"
                     >
                       <span>次へ：現在のお悩みを選択</span>
                       <ArrowRight className="w-4 h-4" />
@@ -235,15 +235,15 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                         onClick={() => handleConcernToggle(opt)}
                         className={`w-full p-3 rounded-xl border text-left text-xs font-medium transition-all flex items-center justify-between ${
                           formData.concerns.includes(opt)
-                            ? 'bg-blue-600/10 border-blue-600 text-[#2a1f11] font-bold'
-                            : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                            ? 'bg-[#b38f4f]/10 border-[#b38f4f] text-[#2a1f11] font-bold'
+                            : 'bg-[#fcfaf5] border-slate-200 text-slate-700 hover:bg-slate-100'
                         }`}
                       >
                         <span>{opt}</span>
                         <div
                           className={`w-4 h-4 rounded-md border flex items-center justify-center ${
                             formData.concerns.includes(opt)
-                              ? 'bg-blue-600 border-blue-600 text-white'
+                              ? 'bg-[#b38f4f] border-[#b38f4f] text-white'
                               : 'border-slate-300'
                           }`}
                         >
@@ -267,7 +267,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(3)}
-                      className="flex-1 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[blue-700]/20"
+                      className="flex-1 py-3.5 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[[#a07c3f]]/20"
                     >
                       <span>次へ：日程とお名前のご入力</span>
                       <ArrowRight className="w-4 h-4" />
@@ -291,7 +291,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                     />
                   </div>
 
@@ -308,7 +308,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                       />
                     </div>
                     <div>
@@ -323,7 +323,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                       />
                     </div>
                   </div>
@@ -342,7 +342,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                             preferredDate: e.target.value,
                           })
                         }
-                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                       />
                     </div>
                     <div>
@@ -357,7 +357,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                             preferredTime: e.target.value,
                           })
                         }
-                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f]"
                       >
                         <option value="17:00〜18:00">17:00〜18:00</option>
                         <option value="18:00〜19:00">18:00〜19:00</option>
@@ -378,7 +378,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                       onChange={(e) =>
                         setFormData({ ...formData, isParent: e.target.checked })
                       }
-                      className="w-4 h-4 text-blue-600 rounded"
+                      className="w-4 h-4 text-[#b38f4f] rounded"
                     />
                     <label htmlFor="parent-check" className="text-xs text-slate-600">
                       保護者様からのご予約・お問い合わせ
@@ -397,7 +397,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex-1 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[blue-700]/25 disabled:opacity-50"
+                      className="flex-1 py-3.5 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[[#a07c3f]]/25 disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <span>予約処理中...</span>
@@ -411,7 +411,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                   </div>
 
                   <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 pt-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#b38f4f]" />
                     <span>個人情報はSSLで暗号化され安全に送信されます</span>
                   </div>
                 </div>

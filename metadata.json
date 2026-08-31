@@ -1,6 +1,8 @@
 {
-  "name": "慶應ROUTE - 現役慶應生による一般・推薦対応の大学受験塾",
-  "description": "現役慶應生による大学受験コーチング。一般選抜・慶應法FIT・総合型選抜・指定校推薦に対応。学習計画・進捗管理から、分からない問題の個別解説までサポートします。",
+  "name": "慶應ROUTE",
+  "description": "現役慶應生とつくる、あなただけの慶應合格戦略。一般選抜・慶應法FIT・総合型選抜・指定校推薦まで対応。受験戦略の設計から毎週の学習管理、分からない問題の個別解説まで、慶應合格に向けて一貫してサポートします。",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

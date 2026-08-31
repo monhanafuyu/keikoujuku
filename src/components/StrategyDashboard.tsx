@@ -3,7 +3,7 @@ import { LayoutDashboard, CheckCircle2, TrendingUp, BookOpen, PenTool, Award, Cl
 
 export const StrategyDashboard: React.FC = () => {
   return (
-    <section className="py-24 bg-slate-50" id="dashboard">
+    <section className="py-24 bg-[#fcfaf5]" id="dashboard">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-[#e4cda5] text-[#a07c3f] text-xs font-bold tracking-widest mb-6">
@@ -31,7 +31,7 @@ export const StrategyDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-6 sm:p-8 bg-slate-50/50 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="p-6 sm:p-8 bg-[#fcfaf5]/50 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-6">
               
@@ -53,7 +53,7 @@ export const StrategyDashboard: React.FC = () => {
                 </h3>
                 <div className="space-y-5">
                   {[
-                    { label: '一般選抜', progress: '65%', color: 'bg-[#d4b783]' },
+                    { label: '一般選抜', progress: '65%', color: 'bg-[#fcfaf5]0' },
                     { label: 'FIT入試', progress: '80%', color: 'bg-[#a07c3f]' },
                     { label: '総合型選抜', progress: '40%', color: 'bg-slate-400' }
                   ].map((item, i) => (
@@ -81,7 +81,7 @@ export const StrategyDashboard: React.FC = () => {
                     { title: '自己分析シートの作成', tag: 'FIT対策' },
                     { title: '小論文 第3回答案作成', tag: '小論文' }
                   ].map((task, i) => (
-                     <div key={i} className="flex items-center justify-between p-3 rounded-lg border border-slate-100 bg-slate-50">
+                     <div key={i} className="flex items-center justify-between p-3 rounded-lg border border-slate-100 bg-[#fcfaf5]">
                        <span className="text-sm font-medium text-slate-700">{task.title}</span>
                        <span className="text-[10px] px-2 py-1 bg-white border border-slate-200 rounded text-slate-500 font-bold">{task.tag}</span>
                      </div>
@@ -123,7 +123,7 @@ export const StrategyDashboard: React.FC = () => {
                   <Clock className="w-4 h-4" /> 週間学習達成率
                 </h3>
                 <div className="text-4xl font-black tracking-tighter mb-1">92<span className="text-xl">%</span></div>
-                <p className="text-xs text-[#d4b783]">今週の学習計画は順調に進んでいます。</p>
+                <p className="text-xs text-[#fcfaf5]0">今週の学習計画は順調に進んでいます。</p>
               </div>
 
             </div>
