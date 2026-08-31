@@ -135,7 +135,7 @@ export const StudySystem: React.FC = () => {
           </h2>
           <p className="text-slate-600 tracking-wide text-sm md:text-base leading-relaxed mb-12">
             保護者の方にとっても、大学受験は不安がつきものです。<br />
-            慶應コーチングでは、学習進捗レポートなどを通じてお子さまの状況を共有します。
+            慶應ROUTEでは、学習進捗レポートなどを通じてお子さまの状況を共有します。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">

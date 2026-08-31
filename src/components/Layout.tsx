@@ -11,18 +11,18 @@ export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         <div className="flex flex-col cursor-pointer">
           <Link to="/" className="font-serif text-xl sm:text-2xl tracking-widest text-[#0B1426] font-bold hover:text-[#b38f4f] transition-colors">
-            慶應コーチング
+            慶應ROUTE
           </Link>
         </div>
         
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-6 text-sm font-bold tracking-widest text-slate-700">
+        <div className="hidden lg:flex items-center gap-7 text-sm font-bold tracking-widest text-[#0B1426]">
           <Link to="/keio-fit/" className="hover:text-[#b38f4f] transition-colors">FIT対策</Link>
           <Link to="/shiteikou/" className="hover:text-[#b38f4f] transition-colors">指定校推薦</Link>
           <Link to="/sougougata/" className="hover:text-[#b38f4f] transition-colors">総合型選抜</Link>
           <Link to="/general/" className="hover:text-[#b38f4f] transition-colors">一般選抜</Link>
           <Link to="/column/" className="hover:text-[#b38f4f] transition-colors">受験コラム</Link>
-          <button onClick={onOpenConsultation} className="px-6 py-3 rounded-sm font-bold text-sm bg-[#0B1426] text-white hover:bg-[#1A2639] transition-colors shadow-sm tracking-widest ml-4">
+          <button onClick={onOpenConsultation} className="px-6 py-3 rounded-md font-bold text-sm bg-[#080E1A] text-white hover:bg-[#1A2639] transition-colors shadow-md tracking-widest ml-4">
             無料で受験戦略を相談する
           </button>
         </div>
@@ -61,14 +61,14 @@ export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
             <Link to="/" className="font-extrabold text-xl tracking-widest text-slate-900 font-serif hover:text-[#b38f4f] transition-colors">
-              慶應コーチング
+              慶應ROUTE
             </Link>
           </div>
           <p className="text-slate-600 text-xs leading-relaxed max-w-sm mb-6 tracking-wide">
             現役慶應生による一般・推薦対応の大学受験塾。<br/>受験戦略・学習管理・質問指導・推薦対策まで横断的にサポートします。
           </p>
           <p className="text-[10px] text-slate-500 border border-slate-200 p-4 rounded-sm bg-white leading-relaxed tracking-wide">
-            ※慶應コーチングは、慶應義塾および慶應義塾大学が運営・公認するサービスではありません。<br/>
+            ※慶應ROUTEは、慶應義塾および慶應義塾大学が運営・公認するサービスではありません。<br/>
             ※各入試方式の出願要件等は、必ず大学公式の最新募集要項をご確認ください。
           </p>
         </div>
@@ -91,7 +91,7 @@ export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
         </div>
       </div>
       <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="tracking-wide">&copy; {new Date().getFullYear()} 慶應コーチング. All rights reserved.</p>
+        <p className="tracking-wide">&copy; {new Date().getFullYear()} 慶應ROUTE. All rights reserved.</p>
         <div className="flex gap-6 text-xs tracking-wide">
           <Link to="/" className="hover:text-slate-900 transition-colors">特定商取引法に基づく表記</Link>
           <Link to="/" className="hover:text-slate-900 transition-colors">利用規約</Link>
@@ -151,7 +151,7 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: "57b69458-85b9-4df2-91dc-7b17c3050f4c",
-          subject: `【慶應コーチング】無料受験戦略相談のお申し込み - ${formData.name}様`,
+          subject: `【慶應ROUTE】無料受験戦略相談のお申し込み - ${formData.name}様`,
           from_name: formData.name,
           "お名前": formData.name,
           "現在の学年": formData.grade,

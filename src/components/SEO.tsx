@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   type = 'website',
   breadcrumbs
 }) => {
-  const siteUrl = 'https://keio-coaching.example.com'; // Dummy for now
+  const siteUrl = 'https://keio-route.com';
   const url = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
 
   const breadcrumbSchema = breadcrumbs ? {
@@ -40,7 +40,7 @@ export const SEO: React.FC<SEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content="慶應コーチング" />
+      <meta property="og:site_name" content="慶應ROUTE" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
