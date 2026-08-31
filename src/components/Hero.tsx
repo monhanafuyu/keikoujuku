@@ -17,19 +17,32 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         
-        {/* Main H1 Headline in Serif */}
-        <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-serif font-bold text-white mb-8 leading-[1.35] tracking-widest drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
-          一般も、推薦も。<br />
-          現役慶應生とつくる、あなた<br />
-          だけの合格戦略。
-        </h1>
+        {/* Sub-badge */}
+        <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3f2e1a]/60 border border-[#d4b783]/30 text-[#b38f4f] text-xs font-bold tracking-widest shadow-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c4a365] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d4b783]"></span>
+          </span>
+          慶應ROUTE 2.0
+        </div>
 
-        {/* Lead Description Box */}
+        {/* Main H1 Headline */}
+        <h1 className="text-3xl sm:text-5xl lg:text-[4rem] font-serif font-bold text-white mb-6 leading-[1.25] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+          一般も、推薦も。<br />
+          慶應合格へのルートを、<br />
+          一つに絞らない。
+        </h1>
+        
+        <p className="text-xl sm:text-2xl font-bold text-[#d4b783] mb-8 tracking-wide drop-shadow-md">
+          現役慶應生とつくる、あなただけの慶應合格戦略。
+        </p>
+
+        {/* Lead Description */}
         <div className="max-w-3xl mx-auto mb-10 w-full">
           <div className="bg-black/60 border border-white/15 px-6 py-5 sm:px-8 sm:py-6 rounded-lg backdrop-blur-md shadow-2xl">
             <p className="text-sm sm:text-base md:text-lg text-slate-100 font-sans tracking-wide leading-relaxed">
               <span className="font-semibold block sm:inline">一般選抜・慶應法FIT・総合型選抜・指定校推薦まで対応。</span>
-              <span className="block mt-1 sm:mt-0 text-slate-200">志望校から逆算した学習計画を毎週管理し、分からない問題は現役慶應生が個別に解説します。</span>
+              <span className="block mt-1 sm:mt-0 text-slate-200">受験戦略の設計から毎週の学習管理、分からない問題の個別解説まで、慶應合格に向けて一貫してサポートします。</span>
             </p>
           </div>
         </div>
@@ -38,18 +51,19 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
         <div className="flex justify-center w-full mb-14">
           <button 
             onClick={onOpenConsultation} 
-            className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
+            className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 sm:py-5 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
           >
-            無料で受験戦略を相談する
+            無料相談・体験を申し込む
           </button>
         </div>
 
-        {/* 4 Feature Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 w-full max-w-4xl mx-auto">
+        {/* 5 Feature Badges */}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 w-full max-w-4xl mx-auto">
           {[
+            '慶應専門',
             '現役慶應生が指導',
-            '一般・推薦の両方に対応',
-            '毎週の学習管理',
+            '一般・推薦両対応',
+            '1対1サポート',
             '質問・個別解説'
           ].map((title, idx) => (
             <div 

@@ -1,70 +1,32 @@
 import React from 'react';
-import { Calendar, MessageCircle, ChevronRight, ShieldCheck } from 'lucide-react';
 
 interface FinalCtaProps {
   onOpenConsultation: () => void;
-  onOpenLineModal: () => void;
 }
 
-export const FinalCta: React.FC<FinalCtaProps> = ({ onOpenConsultation, onOpenLineModal }) => {
+export const FinalCta: React.FC<FinalCtaProps> = ({ onOpenConsultation }) => {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-slate-900 via-[#2a1f11] to-slate-950 text-white relative overflow-hidden">
+    <section className="bg-gradient-to-b from-slate-900 via-[#2a1f11] to-slate-950 py-32 text-center relative overflow-hidden">
       {/* Subtle Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-25">
         <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#c4a365] rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-sky-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#a07c3f] rounded-full blur-3xl" />
       </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#3f2e1a]/60 border border-[#d4b783]/30 text-[#b38f4f]/30 text-xs font-bold mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#d4b783] animate-pulse" />
-          <span>完全無料・オンライン個別相談受付中</span>
-        </div>
-
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6 font-display">
-          受験勉強を、<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e4cda5] via-white to-sky-300">
-            「何をすればいいかわからない」
-          </span>
-          から始めない。
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight font-serif">
+          受験方式を決める前に、<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e4cda5] via-white to-[#b38f4f]">合格への戦略</span>を決めよう。
         </h2>
-
-        <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
-          まずは現在の成績・志望校・勉強方法についてお聞かせください。<br className="hidden sm:inline" />
-          無料学習相談で、あなた専用の逆算学習プランをご提案します。
+        <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-12 max-w-2xl mx-auto tracking-wide">
+          一般選抜、慶應FIT、総合型選抜、指定校推薦。<br />
+          現役慶應生と一緒に、現在の学力・評定・目標から、あなたに合った受験戦略を整理します。
         </p>
-
-        {/* Dual Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto mb-8">
-          <button
-            onClick={onOpenConsultation}
-            className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-[#b38f4f] hover:bg-[#c4a365] text-white text-base font-bold shadow-xl shadow-[#b38f4f]/30 transition-all hover:-translate-y-0.5 active:translate-y-0"
-            id="final-consult-btn"
-          >
-            <Calendar className="w-5 h-5 text-[#b38f4f]/30" />
-            <span>無料学習相談を申し込む</span>
-            <ChevronRight className="w-4 h-4" />
+        
+        <div className="flex justify-center">
+          <button onClick={onOpenConsultation} className="px-10 py-5 rounded-2xl bg-[#b38f4f] hover:bg-[#c4a365] text-white font-bold text-lg shadow-xl shadow-[#b38f4f]/30 transition-all active:scale-[0.98] border border-[#d4b783]/40 min-w-[300px]">
+            無料相談・体験を申し込む
           </button>
-
-          <button
-            onClick={onOpenLineModal}
-            className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-white hover:bg-emerald-50 text-slate-900 border border-emerald-400 text-base font-bold transition-all hover:-translate-y-0.5 shadow-lg"
-            id="final-line-btn"
-          >
-            <MessageCircle className="w-5 h-5 text-[#06C755]" />
-            <span>LINEで気軽に相談する</span>
-          </button>
-        </div>
-
-        <div className="flex items-center justify-center gap-6 text-xs text-slate-400">
-          <span className="flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-[#d4b783]" />
-            無理な勧誘は一切ありません
-          </span>
-          <span>•</span>
-          <span>所要時間 約30分</span>
-          <span>•</span>
-          <span>保護者同席歓迎</span>
         </div>
       </div>
     </section>

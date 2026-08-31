@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Menu, X, Calendar, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
-  onOpenLineModal: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineModal }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,13 +18,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
   }, []);
 
   const navLinks = [
-    { label: '特徴と悩み', href: '#worries' },
-    { label: '逆算学習ステップ', href: '#solution' },
-    { label: '学習計画例', href: '#plan-demo' },
-    { label: '他塾との違い', href: '#comparison' },
-    { label: 'サービス一覧', href: '#services' },
+    { label: '一般・推薦の横断戦略', href: '#admission-types' },
+    { label: '高1からのロードマップ', href: '#roadmap' },
+    { label: '学習サイクル', href: '#study-cycle' },
+    { label: '受験戦略カルテ', href: '#dashboard' },
+    { label: '現役慶應生の指導', href: '#instructor' },
     { label: '料金プラン', href: '#pricing' },
-    { label: 'よくある質問', href: '#faq' },
   ];
 
   return (
@@ -41,19 +39,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
           {/* Logo & Brand Identity */}
           <a href="/" className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#8a6d3b] via-[#c5a059] to-[#8a6d3b] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-[#a07c3f]/20 group-hover:scale-[1.05] transition-transform duration-300 border border-white/20">
-              <span className="drop-shadow-sm">慶</span>
+              <span className="drop-shadow-sm font-serif">慶</span>
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-[#8a6d3b] via-[#e2c17d] to-[#8a6d3b] bg-clip-text text-transparent font-display drop-shadow-xs">
+                <span className="font-extrabold text-xl tracking-tight text-slate-900 font-display">
                   慶應ROUTE
                 </span>
-                <span className="text-[9px] uppercase font-bold tracking-[0.2em] bg-[#b38f4f]/10 text-[#8a6d3b] border border-[#b38f4f]/30 px-1.5 py-0.5 rounded-sm">
-                  KEIO
-                </span>
               </div>
-              <p className="text-[10px] text-slate-400 font-medium hidden sm:block tracking-wide">
-                現役慶應生による逆算コーチング
+              <p className="text-[10px] text-slate-500 font-medium hidden sm:block tracking-wide">
+                一般も、推薦も。慶應合格へのルートを、一つに絞らない。
               </p>
             </div>
           </a>
@@ -75,20 +70,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
           {/* Desktop CTA Action Buttons */}
           <div className="hidden sm:flex items-center gap-2.5">
             <button
-              onClick={onOpenLineModal}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200/80 transition-all active:scale-[0.98]"
-              id="nav-line-btn"
-            >
-              <MessageCircle className="w-4 h-4 text-[#06C755]" />
-              <span>LINE相談</span>
-            </button>
-            <button
               onClick={onOpenConsultation}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-[#a07c3f] hover:bg-[#594226] shadow-md shadow-[#a07c3f]/20 transition-all hover:shadow-lg hover:shadow-[#a07c3f]/25 active:scale-[0.98]"
-              id="nav-consult-btn"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-[#b38f4f] hover:bg-[#a07c3f] shadow-md shadow-[#b38f4f]/20 transition-all hover:shadow-lg active:scale-[0.98]"
             >
               <Calendar className="w-4 h-4" />
-              <span>無料学習相談を予約</span>
+              <span>無料相談・体験を申し込む</span>
             </button>
           </div>
 
@@ -97,7 +83,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 lg:hidden"
             aria-label="メニューを開く"
-            id="mobile-menu-toggle"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -106,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-30 bg-slate-900/60 backdrop-blur-xs lg:hidden pt-20">
+        <div className="fixed inset-0 z-30 bg-slate-900/60 backdrop-blur-sm lg:hidden pt-20">
           <div className="bg-white m-4 rounded-3xl p-6 shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-200 max-h-[85vh] overflow-y-auto">
             <div className="flex flex-col gap-3 pb-6 border-b border-slate-100">
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">メニュー</span>
@@ -129,22 +114,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onOpenLineMo
                   setMobileMenuOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full py-3.5 px-4 rounded-xl bg-[#a07c3f] hover:bg-[#594226] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#a07c3f]/25"
-                id="mobile-nav-consult-btn"
+                className="w-full py-3.5 px-4 rounded-xl bg-[#b38f4f] hover:bg-[#a07c3f] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-[#b38f4f]/20"
               >
                 <Calendar className="w-4 h-4" />
-                <span>無料で学習相談を受ける（Zoom）</span>
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenLineModal();
-                }}
-                className="w-full py-3 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-sm flex items-center justify-center gap-2"
-                id="mobile-nav-line-btn"
-              >
-                <MessageCircle className="w-4 h-4 text-[#06C755]" />
-                <span>公式LINEで気軽に相談する</span>
+                <span>無料相談・体験を申し込む</span>
               </button>
             </div>
 
