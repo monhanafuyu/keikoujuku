@@ -29,6 +29,8 @@ export default function App() {
           
           <Route path="/column" element={<ColumnList />} />
           <Route path="/column/:id" element={<ColumnDetail />} />
+          <Route path="/columns" element={<ColumnList />} />
+          <Route path="/columns/:id" element={<ColumnDetail />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

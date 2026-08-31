@@ -22,10 +22,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
   }, []);
 
   const navLinks = [
-    { label: '高1・高2', href: isHome ? '#roadmap' : '/#roadmap' },
-    { label: '学習サイクル', href: '/study-management' },
-    { label: '受験コラム', href: '/columns' },
-    { label: '料金', href: isHome ? '#pricing' : '/#pricing' },
+    { label: '高1・高2', href: isHome ? '#roadmap' : '/#roadmap', isHash: true },
+    { label: '学習サイクル', href: '/study-management', isHash: false },
+    { label: '受験コラム', href: '/column', isHash: false },
+    { label: '料金', href: isHome ? '#pricing' : '/#pricing', isHash: true },
   ];
 
   const preparationLinks = [
@@ -94,16 +94,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
               </div>
             </div>
 
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="hover:text-[#a07c3f] transition-colors py-1 relative group"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b38f4f] transition-all duration-200 group-hover:w-full" />
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.isHash ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-[#a07c3f] transition-colors py-1 relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b38f4f] transition-all duration-200 group-hover:w-full" />
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="hover:text-[#a07c3f] transition-colors py-1 relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b38f4f] transition-all duration-200 group-hover:w-full" />
+                </Link>
+              )
+            )}
           </nav>
 
           {/* Desktop CTA Action Buttons */}
@@ -148,17 +159,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
               </div>
 
               <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-4">メニュー</span>
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#a07c3f] rounded-xl transition-colors flex items-center justify-between"
-                >
-                  <span>{link.label}</span>
-                  <ArrowRight className="w-4 h-4 text-slate-400" />
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.isHash ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#a07c3f] rounded-xl transition-colors flex items-center justify-between"
+                  >
+                    <span>{link.label}</span>
+                    <ArrowRight className="w-4 h-4 text-slate-400" />
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3 py-2.5 text-base font-semibold text-slate-800 hover:bg-slate-50 hover:text-[#a07c3f] rounded-xl transition-colors flex items-center justify-between"
+                  >
+                    <span>{link.label}</span>
+                    <ArrowRight className="w-4 h-4 text-slate-400" />
+                  </Link>
+                )
+              )}
             </div>
 
             <div className="pt-6 space-y-3">
