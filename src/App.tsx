@@ -19,13 +19,21 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/keio-fit" element={<KeioFit />} />
           <Route path="/keio-fit/" element={<KeioFit />} />
+          <Route path="/shiteikou" element={<Shiteikou />} />
           <Route path="/shiteikou/" element={<Shiteikou />} />
+          <Route path="/sougougata" element={<Sougougata />} />
           <Route path="/sougougata/" element={<Sougougata />} />
+          <Route path="/general" element={<General />} />
           <Route path="/general/" element={<General />} />
+          <Route path="/coaching" element={<Coaching />} />
           <Route path="/coaching/" element={<Coaching />} />
+          <Route path="/column" element={<ColumnList />} />
           <Route path="/column/" element={<ColumnList />} />
           <Route path="/column/:id" element={<ColumnDetail />} />
+          <Route path="/column/:id/" element={<ColumnDetail />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </Router>
     </HelmetProvider>
