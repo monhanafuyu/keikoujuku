@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://keioroute.com/</loc>
+    <loc>https://www.keikouzemi.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/keio-ippan</loc>
+    <loc>https://www.keikouzemi.com/keio-ippan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/keio-fit</loc>
+    <loc>https://www.keikouzemi.com/keio-fit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/keio-sfc</loc>
+    <loc>https://www.keikouzemi.com/keio-sfc</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/shiteiko</loc>
+    <loc>https://www.keikouzemi.com/shiteiko</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/general-recommendation</loc>
+    <loc>https://www.keikouzemi.com/general-recommendation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/study-management</loc>
+    <loc>https://www.keikouzemi.com/study-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://keioroute.com/column</loc>
+    <loc>https://www.keikouzemi.com/column</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>

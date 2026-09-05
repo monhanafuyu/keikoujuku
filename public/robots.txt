@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://keioroute.com/sitemap.xml
+Sitemap: https://www.keikouzemi.com/sitemap.xml
