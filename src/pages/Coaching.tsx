@@ -56,7 +56,7 @@ export const Coaching: React.FC = () => {
               { title: '個別質問対応', desc: '疑問を残さず即日解消' },
               { title: '一般・推薦両対応', desc: '一人ひとりに最適な戦略' },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/5 border border-[#B38F4F]/20 p-4 rounded-sm">
+              <div key={idx} className="bg-[#0a0a0a]/5 border border-[#B38F4F]/20 p-4 rounded-sm">
                 <div className="text-xs text-[#B38F4F] font-serif font-bold mb-1">{item.title}</div>
                 <div className="text-xs text-slate-400">{item.desc}</div>
               </div>
@@ -72,11 +72,11 @@ export const Coaching: React.FC = () => {
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-2 h-6 bg-[#B38F4F]"></div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-slate-900 m-0">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-white m-0">
               大学受験コーチングとは｜「授業」ではなく「自学自習」を変える
             </h2>
           </div>
-          <div className="text-slate-700 leading-relaxed space-y-4 text-base">
+          <div className="text-slate-300 leading-relaxed space-y-4 text-base">
             <p>
               大学受験における学習時間の9割以上は、授業以外の「自学自習」の時間です。どんなに優れた授業を受けても、自習の時間に正しい参考書を解き、復習し、定着させなければ成績は伸びません。
             </p>
@@ -90,7 +90,7 @@ export const Coaching: React.FC = () => {
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-2 h-6 bg-[#B38F4F]"></div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-slate-900 m-0">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-white m-0">
               慶應コーチングの指導システム
             </h2>
           </div>
@@ -118,26 +118,26 @@ export const Coaching: React.FC = () => {
                 desc: "定期テスト対策（評定）、慶應FIT・総合型・指定校推薦対策、一般入試対策のすべてをワンストップでマネジメントします。"
               }
             ].map((card, idx) => (
-              <div key={idx} className="bg-white border border-slate-200 p-6 rounded-sm shadow-sm">
+              <div key={idx} className="bg-[#0a0a0a] border border-white/10 p-6 rounded-sm shadow-sm">
                 <div className="w-10 h-10 bg-[#080E1A] text-[#B38F4F] rounded-sm flex items-center justify-center mb-4">
                   <card.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-slate-900 mb-2">{card.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{card.desc}</p>
+                <h3 className="text-lg font-serif font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Section 3: 現役慶應生が伴走する意義 */}
-        <section className="mb-20 bg-slate-50 border border-slate-200 p-8 rounded-sm">
+        <section className="mb-20 bg-[#050505] border border-white/10 p-8 rounded-sm">
           <div className="flex items-center gap-3 mb-4">
             <GraduationCap className="w-6 h-6 text-[#B38F4F]" />
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 m-0">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-white m-0">
               なぜ「現役慶應生」が伴走するのか
             </h2>
           </div>
-          <div className="text-slate-700 leading-relaxed space-y-4 text-sm sm:text-base">
+          <div className="text-slate-300 leading-relaxed space-y-4 text-sm sm:text-base">
             <p>
               難関大学受験のリアルな壁、勉強のモチベーション維持、最新の入試トレンドを最も身近に理解しているのは、自らも難関入試を突破した現役生です。
             </p>
@@ -149,16 +149,16 @@ export const Coaching: React.FC = () => {
 
         {/* Section 4: 関連コラム・内部リンク */}
         <section className="mb-20">
-          <h2 className="text-xl font-serif font-bold text-slate-900 mb-6 border-b border-slate-200 pb-3">
+          <h2 className="text-xl font-serif font-bold text-white mb-6 border-b border-white/10 pb-3">
             大学受験コーチングに関するおすすめコラム
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link to="/column/learning-management-vs-cram-school" className="p-4 bg-white border border-slate-200 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
-              <span className="text-sm font-bold text-slate-800 group-hover:text-[#B38F4F]">大学受験の学習管理塾とは？一般的な予備校との違い</span>
+            <Link to="/column/learning-management-vs-cram-school" className="p-4 bg-[#0a0a0a] border border-white/10 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
+              <span className="text-sm font-bold text-slate-200 group-hover:text-[#B38F4F]">大学受験の学習管理塾とは？一般的な予備校との違い</span>
               <ChevronRight className="w-4 h-4 text-[#B38F4F] shrink-0" />
             </Link>
-            <Link to="/column/kou1-juken-start" className="p-4 bg-white border border-slate-200 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
-              <span className="text-sm font-bold text-slate-800 group-hover:text-[#B38F4F]">高1の大学受験は何から始める？評定・英検・一般入試の優先順位</span>
+            <Link to="/column/kou1-juken-start" className="p-4 bg-[#0a0a0a] border border-white/10 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
+              <span className="text-sm font-bold text-slate-200 group-hover:text-[#B38F4F]">高1の大学受験は何から始める？評定・英検・一般入試の優先順位</span>
               <ChevronRight className="w-4 h-4 text-[#B38F4F] shrink-0" />
             </Link>
           </div>

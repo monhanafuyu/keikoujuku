@@ -35,7 +35,7 @@ export const AdmissionTypes: React.FC = () => {
   ];
 
   return (
-    <section id="admission-types" className="py-24 bg-[#fcfaf5] relative">
+    <section id="admission-types" className="py-24 bg-[#FAF9F5] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-black text-slate-900 mb-6 font-serif">
@@ -48,8 +48,8 @@ export const AdmissionTypes: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {types.map((type, idx) => (
-            <div key={idx} className="group flex flex-col bg-white rounded-2xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 hover:border-[#b38f4f]/30">
-              <div className="w-12 h-12 rounded-xl bg-[#fcfaf5] flex items-center justify-center mb-6">
+            <div key={idx} className="group flex flex-col bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 hover:border-[#b38f4f]/30">
+              <div className="w-12 h-12 rounded-xl bg-[#FAF9F5] flex items-center justify-center mb-6">
                 {type.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{type.title}</h3>
@@ -58,7 +58,7 @@ export const AdmissionTypes: React.FC = () => {
               <div className="pt-6 border-t border-slate-100 flex-grow">
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 mb-6">
                   {type.points.map((point, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-2 text-sm text-slate-700">
+                    <li key={pIdx} className="flex items-start gap-2 text-sm text-slate-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#b38f4f] mt-1.5 shrink-0"></span>
                       <span>{point}</span>
                     </li>

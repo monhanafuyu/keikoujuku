@@ -5,30 +5,30 @@ export const ParentBenefitSection: React.FC = () => {
   return (
     <section className="py-16 bg-[#b38f4f]/10/50 border-b border-[#b38f4f]/20 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#b38f4f]/20 shadow-sm">
+        <div className="bg-[#0a0a0a] rounded-3xl p-6 sm:p-10 border border-[#b38f4f]/20 shadow-sm">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/2 space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#b38f4f]/10 border border-[#b38f4f]/30 text-[#594226] text-xs font-bold">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>保護者の皆さまへ</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug font-display">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-snug font-display">
                 「家でちゃんと勉強しているか分からない」という不安を解消します。
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 高額な授業料を払っているのに、子どもが今どのレベルで何を頑張っているのか見えないのは大きなストレスです。慶應ROUTEでは、毎日の自習とテスト結果をすべてデータで見える化し、保護者の方へ定期共有します。
               </p>
 
               <div className="space-y-2.5 pt-2">
-                <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                   <span>毎月の学習進捗・確認テスト結果レポートをご送付</span>
                 </div>
-                <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                   <span>保護者様専用LINEで学習状況や進路の相談が可能</span>
                 </div>
-                <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                   <span>「勉強しなさい」と言わなくても自走する環境を構築</span>
                 </div>

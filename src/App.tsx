@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import { KeioIppan } from './pages/KeioIppan';
 import { KeioFit } from './pages/KeioFit';
 import { KeioSfc } from './pages/KeioSfc';
 import { Shiteiko } from './pages/Shiteiko';
-import { GeneralRecommendation } from './pages/GeneralRecommendation';
-import { StudyManagement } from './pages/StudyManagement';
+import { HighSchool12 } from './pages/HighSchool12';
+import { StudyCycle } from './pages/StudyCycle';
+import { StrategyChart } from './pages/StrategyChart';
+
 import { ColumnList } from './pages/ColumnList';
 import { ColumnDetail } from './pages/ColumnDetail';
 import { About, Contact, Terms, Privacy, Legal } from './pages/LegalPages';
@@ -24,13 +26,18 @@ export default function App() {
           <Route path="/keio-fit" element={<KeioFit />} />
           <Route path="/keio-sfc" element={<KeioSfc />} />
           <Route path="/shiteiko" element={<Shiteiko />} />
-          <Route path="/general-recommendation" element={<GeneralRecommendation />} />
-          <Route path="/study-management" element={<StudyManagement />} />
+          <Route path="/shiteikou" element={<Navigate to="/shiteiko" replace />} />
+          <Route path="/high-school-1-2" element={<HighSchool12 />} />
+          <Route path="/study-cycle" element={<StudyCycle />} />
+          <Route path="/strategy-chart" element={<StrategyChart />} />
+          
+          <Route path="/general-recommendation" element={<Navigate to="/shiteiko" replace />} />
+          <Route path="/study-management" element={<Navigate to="/study-cycle" replace />} />
           
           <Route path="/column" element={<ColumnList />} />
           <Route path="/column/:id" element={<ColumnDetail />} />
-          <Route path="/columns" element={<ColumnList />} />
-          <Route path="/columns/:id" element={<ColumnDetail />} />
+          <Route path="/columns" element={<Navigate to="/column" replace />} />
+          <Route path="/columns/:id" element={<Navigate to="/column/:id" replace />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -44,3 +51,4 @@ export default function App() {
     </HelmetProvider>
   );
 }
+

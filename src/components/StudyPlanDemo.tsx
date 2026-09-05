@@ -22,7 +22,7 @@ export const StudyPlanDemo: React.FC = () => {
   const selectedDay = SAMPLE_WEEKLY_SCHEDULE[selectedDayIndex];
 
   return (
-    <section id="plan-demo" className="py-20 bg-white relative">
+    <section id="plan-demo" className="py-20 bg-[#0a0a0a] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -30,10 +30,10 @@ export const StudyPlanDemo: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>実際の指導イメージ</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
             「今日何をすればいいか」が一目でわかる学習計画
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             高校2年生・明治大学法学部志望の生徒への実際の週間プラン例です。参考書名・ページ数・解き方まで細かく指定します。
           </p>
         </div>
@@ -80,46 +80,46 @@ export const StudyPlanDemo: React.FC = () => {
           {/* Left Column: Weekly Target Assignment List (7 Cols) */}
           <div className="lg:col-span-7 space-y-3">
             <div className="flex items-center justify-between pb-2">
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-[#b38f4f]" />
                 <span>今週の指定参考書と到達目標</span>
               </h3>
-              <span className="text-xs text-slate-500">6科目・分野を指定</span>
+              <span className="text-xs text-slate-400">6科目・分野を指定</span>
             </div>
 
             <div className="space-y-3">
               {SAMPLE_STUDY_PLAN_ITEMS.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-slate-50/70 p-4 sm:p-5 rounded-2xl border border-slate-200 hover:bg-white hover:border-[#e4cda5] transition-all shadow-2xs"
+                  className="bg-[#050505]/70 p-4 sm:p-5 rounded-2xl border border-white/10 hover:bg-[#0a0a0a] hover:border-[#e4cda5] transition-all shadow-2xs"
                 >
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-[#a07c3f] text-white">
                         {item.subject}
                       </span>
-                      <span className="text-sm font-bold text-slate-900">
+                      <span className="text-sm font-bold text-white">
                         {item.material}
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200/80 text-slate-700">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200/80 text-slate-300">
                       {item.tag}
                     </span>
                   </div>
 
-                  <div className="bg-white p-3 rounded-xl border border-slate-200/80 text-xs space-y-1 mb-2">
+                  <div className="bg-[#0a0a0a] p-3 rounded-xl border border-white/10/80 text-xs space-y-1 mb-2">
                     <div className="flex items-start gap-2">
                       <span className="text-slate-400 font-bold shrink-0">指定範囲:</span>
-                      <span className="font-bold text-slate-800">{item.scope}</span>
+                      <span className="font-bold text-slate-200">{item.scope}</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="text-slate-400 font-bold shrink-0">勉強手順:</span>
-                      <span className="text-slate-600">{item.dailyDetail}</span>
+                      <span className="text-slate-300">{item.dailyDetail}</span>
                     </div>
                   </div>
 
                   {/* Progress Line */}
-                  <div className="flex items-center justify-between text-[11px] text-slate-500">
+                  <div className="flex items-center justify-between text-[11px] text-slate-400">
                     <span>進捗状況</span>
                     <span className="font-bold text-[#a07c3f]">{item.progressPercent}% 完了</span>
                   </div>
@@ -135,11 +135,11 @@ export const StudyPlanDemo: React.FC = () => {
           </div>
 
           {/* Right Column: Interactive Day Selector (5 Cols) */}
-          <div className="lg:col-span-5 bg-white p-5 sm:p-6 rounded-3xl border-2 border-[#b38f4f]/20 shadow-md sticky top-24">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div className="lg:col-span-5 bg-[#0a0a0a] p-5 sm:p-6 rounded-3xl border-2 border-[#b38f4f]/20 shadow-md sticky top-24">
+            <div className="flex items-center justify-between pb-4 border-b border-white/10">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#b38f4f]">Daily Execution</span>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-1.5 mt-0.5">
+                <h3 className="text-base font-bold text-white flex items-center gap-1.5 mt-0.5">
                   <CalendarDays className="w-4 h-4 text-[#b38f4f]" />
                   <span>曜日ごとの日割スケジュール</span>
                 </h3>
@@ -155,7 +155,7 @@ export const StudyPlanDemo: React.FC = () => {
                   className={`py-2 rounded-xl text-xs font-bold transition-all text-center ${
                     selectedDayIndex === idx
                       ? 'bg-[#a07c3f] text-white shadow-xs'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      : 'bg-white/5 text-slate-300 hover:bg-slate-200'
                   }`}
                 >
                   <span className="block text-[10px] opacity-75">{schedule.label}</span>
@@ -169,7 +169,7 @@ export const StudyPlanDemo: React.FC = () => {
               <span className="text-[10px] font-bold text-[#a07c3f] uppercase tracking-wider block">
                 {selectedDay.day}の学習方針
               </span>
-              <p className="text-xs font-bold text-slate-800 mt-0.5">
+              <p className="text-xs font-bold text-slate-200 mt-0.5">
                 {selectedDay.focus}
               </p>
             </div>
@@ -181,8 +181,8 @@ export const StudyPlanDemo: React.FC = () => {
                   key={idx}
                   className={`p-3 rounded-xl border transition-all text-xs ${
                     t.completed
-                      ? 'bg-emerald-50/40 border-emerald-200 text-slate-800'
-                      : 'bg-slate-50 border-slate-200 text-slate-800'
+                      ? 'bg-emerald-50/40 border-emerald-200 text-slate-200'
+                      : 'bg-[#050505] border-white/10 text-slate-200'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -193,15 +193,15 @@ export const StudyPlanDemo: React.FC = () => {
                         }`}
                       />
                       <div>
-                        <span className="font-bold text-[11px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-700 mr-1.5">
+                        <span className="font-bold text-[11px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-300 mr-1.5">
                           {t.subject}
                         </span>
-                        <p className="font-medium text-slate-900 mt-1 leading-snug">
+                        <p className="font-medium text-white mt-1 leading-snug">
                           {t.task}
                         </p>
                       </div>
                     </div>
-                    <span className="text-[11px] text-slate-500 font-mono shrink-0 flex items-center gap-1">
+                    <span className="text-[11px] text-slate-400 font-mono shrink-0 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {t.estimatedMinutes}分
                     </span>
@@ -210,8 +210,8 @@ export const StudyPlanDemo: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-5 pt-4 border-t border-slate-100 text-center">
-              <p className="text-xs text-slate-500 leading-relaxed">
+            <div className="mt-5 pt-4 border-t border-white/10 text-center">
+              <p className="text-xs text-slate-400 leading-relaxed">
                 ※生徒の学校行事や部活の休養日に合わせて、曜日ごとの負担量を個別に最適化します。
               </p>
             </div>

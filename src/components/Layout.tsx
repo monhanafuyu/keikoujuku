@@ -7,7 +7,7 @@ export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a] border-b border-white/10 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
         <div className="flex flex-col cursor-pointer">
           <Link to="/" className="font-serif text-xl sm:text-2xl tracking-widest text-[#0B1426] font-bold hover:text-[#b38f4f] transition-colors">
@@ -32,7 +32,7 @@ export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
           <button onClick={onOpenConsultation} className="px-4 py-2.5 rounded-sm font-bold text-xs bg-[#0B1426] text-white hover:bg-[#1A2639] transition-colors shadow-sm tracking-widest">
             無料相談
           </button>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-900 p-1">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white p-1">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -40,13 +40,13 @@ export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-200 shadow-lg py-4 px-4 flex flex-col gap-4 text-sm font-bold tracking-widest">
-          <Link to="/keio-fit/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">FIT入試対策</Link>
-          <Link to="/shiteikou/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">指定校推薦対策</Link>
-          <Link to="/sougougata/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">総合型選抜対策</Link>
-          <Link to="/general/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">一般選抜対策</Link>
-          <Link to="/coaching/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">大学受験コーチング</Link>
-          <Link to="/column/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-700 hover:text-[#b38f4f]">受験戦略コラム</Link>
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0a0a0a] border-b border-white/10 shadow-lg py-4 px-4 flex flex-col gap-4 text-sm font-bold tracking-widest">
+          <Link to="/keio-fit/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-300 hover:text-[#b38f4f]">FIT入試対策</Link>
+          <Link to="/shiteikou/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-300 hover:text-[#b38f4f]">指定校推薦対策</Link>
+          <Link to="/sougougata/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-300 hover:text-[#b38f4f]">総合型選抜対策</Link>
+          <Link to="/general/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-300 hover:text-[#b38f4f]">一般選抜対策</Link>
+          <Link to="/coaching/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-300 hover:text-[#b38f4f]">大学受験コーチング</Link>
+          <Link to="/column/" onClick={() => setIsMenuOpen(false)} className="block py-2 text-slate-300 hover:text-[#b38f4f]">受験戦略コラム</Link>
         </div>
       )}
     </nav>
@@ -55,25 +55,25 @@ export const Navbar: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
 
 // === Footer ===
 export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenConsultation }) => (
-  <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-24 sm:pb-16 text-slate-500 text-sm">
+  <footer className="bg-[#050505] border-t border-white/10 pt-16 pb-24 sm:pb-16 text-slate-400 text-sm">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-3 mb-4">
-            <Link to="/" className="font-extrabold text-xl tracking-widest text-slate-900 font-serif hover:text-[#b38f4f] transition-colors">
+            <Link to="/" className="font-extrabold text-xl tracking-widest text-white font-serif hover:text-[#b38f4f] transition-colors">
               慶應ROUTE
             </Link>
           </div>
-          <p className="text-slate-600 text-xs leading-relaxed max-w-sm mb-6 tracking-wide">
+          <p className="text-slate-300 text-xs leading-relaxed max-w-sm mb-6 tracking-wide">
             現役慶應生による一般・推薦対応の大学受験塾。<br/>受験戦略・学習管理・質問指導・推薦対策まで横断的にサポートします。
           </p>
-          <p className="text-[10px] text-slate-500 border border-slate-200 p-4 rounded-sm bg-white leading-relaxed tracking-wide">
+          <p className="text-[10px] text-slate-400 border border-white/10 p-4 rounded-sm bg-[#0a0a0a] leading-relaxed tracking-wide">
             ※慶應ROUTEは、慶應義塾および慶應義塾大学が運営・公認するサービスではありません。<br/>
             ※各入試方式の出願要件等は、必ず大学公式の最新募集要項をご確認ください。
           </p>
         </div>
         <div>
-          <h4 className="font-bold text-slate-900 mb-6 tracking-widest font-serif">コース・対策</h4>
+          <h4 className="font-bold text-white mb-6 tracking-widest font-serif">コース・対策</h4>
           <ul className="space-y-3">
             <li><Link to="/keio-fit/" className="hover:text-[#b38f4f] transition-colors tracking-wide">慶應FIT入試対策</Link></li>
             <li><Link to="/shiteikou/" className="hover:text-[#b38f4f] transition-colors tracking-wide">指定校推薦対策</Link></li>
@@ -83,19 +83,19 @@ export const Footer: React.FC<{ onOpenConsultation: () => void }> = ({ onOpenCon
           </ul>
         </div>
         <div>
-          <h4 className="font-bold text-slate-900 mb-6 tracking-widest font-serif">お役立ち情報</h4>
+          <h4 className="font-bold text-white mb-6 tracking-widest font-serif">お役立ち情報</h4>
           <ul className="space-y-3">
             <li><Link to="/column/" className="hover:text-[#b38f4f] transition-colors tracking-wide">受験戦略コラム</Link></li>
             <li><button onClick={onOpenConsultation} className="hover:text-[#b38f4f] transition-colors tracking-wide">無料受験戦略相談</button></li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="tracking-wide">&copy; {new Date().getFullYear()} 慶應ROUTE. All rights reserved.</p>
         <div className="flex gap-6 text-xs tracking-wide">
-          <Link to="/" className="hover:text-slate-900 transition-colors">特定商取引法に基づく表記</Link>
-          <Link to="/" className="hover:text-slate-900 transition-colors">利用規約</Link>
-          <Link to="/" className="hover:text-slate-900 transition-colors">プライバシーポリシー</Link>
+          <Link to="/" className="hover:text-white transition-colors">特定商取引法に基づく表記</Link>
+          <Link to="/" className="hover:text-white transition-colors">利用規約</Link>
+          <Link to="/" className="hover:text-white transition-colors">プライバシーポリシー</Link>
         </div>
       </div>
     </div>
@@ -178,11 +178,11 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white border border-slate-200 rounded-sm max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-        <button onClick={onClose} className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-colors">
+      <div className="bg-[#0a0a0a] border border-white/10 rounded-sm max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+        <button onClick={onClose} className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-colors">
           <X className="w-5 h-5" />
         </button>
-        <h3 className="text-2xl font-bold text-slate-900 mb-2 font-serif tracking-widest border-b border-slate-200 pb-4">無料受験戦略相談</h3>
+        <h3 className="text-2xl font-bold text-white mb-2 font-serif tracking-widest border-b border-white/10 pb-4">無料受験戦略相談</h3>
         
         {status === "success" ? (
           <div className="py-12 text-center">
@@ -191,25 +191,25 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h4 className="text-xl font-bold text-slate-900 mb-2 tracking-widest">送信が完了しました</h4>
-            <p className="text-slate-600 mb-8 text-sm tracking-wide">内容を確認次第、担当者よりご連絡いたします。</p>
-            <button onClick={onClose} className="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold rounded-sm border border-slate-200 transition-colors tracking-widest">
+            <h4 className="text-xl font-bold text-white mb-2 tracking-widest">送信が完了しました</h4>
+            <p className="text-slate-300 mb-8 text-sm tracking-wide">内容を確認次第、担当者よりご連絡いたします。</p>
+            <button onClick={onClose} className="px-8 py-3 bg-white/5 hover:bg-slate-200 text-white font-bold rounded-sm border border-white/10 transition-colors tracking-widest">
               閉じる
             </button>
           </div>
         ) : (
           <>
             <p className="text-sm font-bold text-[#b38f4f] mt-6 tracking-wide">まずは、あなたの受験戦略を整理します。</p>
-            <p className="text-sm text-slate-600 mb-8 mt-2 tracking-wide leading-relaxed">
+            <p className="text-sm text-slate-300 mb-8 mt-2 tracking-wide leading-relaxed">
               現在の学力・評定・目標などから、「今から何を優先すべきか」を一緒に整理します。
             </p>
             
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2 tracking-wide">お名前</label>
+                <label className="block text-sm font-bold text-slate-300 mb-2 tracking-wide">お名前</label>
                 <input 
                   type="text" 
-                  className="w-full p-3 rounded-sm border border-slate-300 bg-white text-slate-900 focus:bg-white focus:border-[#c4a365] outline-none transition-colors" 
+                  className="w-full p-3 rounded-sm border border-slate-300 bg-[#0a0a0a] text-white focus:bg-[#0a0a0a] focus:border-[#c4a365] outline-none transition-colors" 
                   placeholder="慶應 太郎" 
                   required 
                   value={formData.name}
@@ -218,9 +218,9 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 tracking-wide">現在の学年</label>
+                  <label className="block text-sm font-bold text-slate-300 mb-2 tracking-wide">現在の学年</label>
                   <select 
-                    className="w-full p-3 rounded-sm border border-slate-300 bg-white text-slate-900 focus:bg-white focus:border-[#c4a365] outline-none transition-colors"
+                    className="w-full p-3 rounded-sm border border-slate-300 bg-[#0a0a0a] text-white focus:bg-[#0a0a0a] focus:border-[#c4a365] outline-none transition-colors"
                     value={formData.grade}
                     onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                   >
@@ -228,10 +228,10 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2 tracking-wide">志望校</label>
+                  <label className="block text-sm font-bold text-slate-300 mb-2 tracking-wide">志望校</label>
                   <input 
                     type="text" 
-                    className="w-full p-3 rounded-sm border border-slate-300 bg-white text-slate-900 focus:bg-white focus:border-[#c4a365] outline-none transition-colors" 
+                    className="w-full p-3 rounded-sm border border-slate-300 bg-[#0a0a0a] text-white focus:bg-[#0a0a0a] focus:border-[#c4a365] outline-none transition-colors" 
                     placeholder="慶應義塾大学 法学部 など" 
                     value={formData.university}
                     onChange={(e) => setFormData({ ...formData, university: e.target.value })}
@@ -240,10 +240,10 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
               </div>
               
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2 tracking-wide">現在の成績・模試・評定・英検・得意苦手科目など</label>
+                <label className="block text-sm font-bold text-slate-300 mb-2 tracking-wide">現在の成績・模試・評定・英検・得意苦手科目など</label>
                 <textarea 
                   rows={2} 
-                  className="w-full p-3 rounded-sm border border-slate-300 bg-white text-slate-900 focus:bg-white focus:border-[#c4a365] outline-none resize-none transition-colors" 
+                  className="w-full p-3 rounded-sm border border-slate-300 bg-[#0a0a0a] text-white focus:bg-[#0a0a0a] focus:border-[#c4a365] outline-none resize-none transition-colors" 
                   placeholder="例：評定平均4.2、英検2級、英語が得意で数学が苦手"
                   value={formData.grades}
                   onChange={(e) => setFormData({ ...formData, grades: e.target.value })}
@@ -251,10 +251,10 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2 tracking-wide">一般選抜・推薦への関心</label>
+                <label className="block text-sm font-bold text-slate-300 mb-2 tracking-wide">一般選抜・推薦への関心</label>
                 <input 
                   type="text" 
-                  className="w-full p-3 rounded-sm border border-slate-300 bg-white text-slate-900 focus:bg-white focus:border-[#c4a365] outline-none transition-colors" 
+                  className="w-full p-3 rounded-sm border border-slate-300 bg-[#0a0a0a] text-white focus:bg-[#0a0a0a] focus:border-[#c4a365] outline-none transition-colors" 
                   placeholder="例：指定校推薦を狙いつつ一般も考えている" 
                   value={formData.examTypes}
                   onChange={(e) => setFormData({ ...formData, examTypes: e.target.value })}
@@ -262,10 +262,10 @@ export const FreeConsultationModal: React.FC<{ isOpen: boolean; onClose: () => v
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2 tracking-wide">現在困っていること</label>
+                <label className="block text-sm font-bold text-slate-300 mb-2 tracking-wide">現在困っていること</label>
                 <textarea 
                   rows={3} 
-                  className="w-full p-3 rounded-sm border border-slate-300 bg-white text-slate-900 focus:bg-white focus:border-[#c4a365] outline-none resize-none transition-colors" 
+                  className="w-full p-3 rounded-sm border border-slate-300 bg-[#0a0a0a] text-white focus:bg-[#0a0a0a] focus:border-[#c4a365] outline-none resize-none transition-colors" 
                   placeholder="一般か推薦か迷っている、勉強計画の立て方がわからない等"
                   required
                   value={formData.content}

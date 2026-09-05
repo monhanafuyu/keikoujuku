@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const ExamStrategies: React.FC = () => {
   return (
-    <section className="py-24 bg-white border-t border-slate-200">
+    <section className="py-24 bg-[#0a0a0a] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -12,13 +12,13 @@ export const ExamStrategies: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-[#B38F4F]" />
             EXAM STRATEGIES & DIVERSITY
           </div>
-          <h2 className="text-3xl md:text-4xl font-normal text-slate-900 mb-6 leading-tight font-serif tracking-widest">
+          <h2 className="text-3xl md:text-4xl font-normal text-white mb-6 leading-tight font-serif tracking-widest">
             勉強方法だけでなく、<br className="sm:hidden"/>受験方法から考える。
           </h2>
           <p className="text-lg md:text-xl font-bold text-[#B38F4F] mb-6 tracking-widest">
             「合格する方法だけでなく、合格する選択肢を増やす。」
           </p>
-          <p className="text-slate-600 leading-relaxed tracking-wide text-sm md:text-base">
+          <p className="text-slate-300 leading-relaxed tracking-wide text-sm md:text-base">
             大学受験には、一般選抜だけでなく、慶應法学部FIT入試、総合型選抜、指定校推薦など複数の受験方式があります。<br />
             慶應ROUTEでは、現在の成績・評定・資格・活動・志望大学をもとに、一つの方式だけに絞らず受験戦略を考えます。
           </p>
@@ -27,16 +27,16 @@ export const ExamStrategies: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-20">
           
           {/* 一般選抜 */}
-          <div className="bg-slate-50 p-8 md:p-10 rounded-sm shadow-sm border border-slate-200 relative overflow-hidden group hover:border-[#B38F4F] transition-all flex flex-col justify-between">
+          <div className="bg-[#050505] p-8 md:p-10 rounded-sm shadow-sm border border-white/10 relative overflow-hidden group hover:border-[#B38F4F] transition-all flex flex-col justify-between">
             <div>
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 border border-slate-200 shadow-sm">
+              <div className="w-14 h-14 bg-[#0a0a0a] rounded-full flex items-center justify-center mb-6 border border-white/10 shadow-sm">
                 <Target className="w-6 h-6 text-[#B38F4F]" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-wider font-serif">一般選抜も、本気で対策する。</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed tracking-wide text-sm">
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-wider font-serif">一般選抜も、本気で対策する。</h3>
+              <p className="text-slate-300 mb-6 leading-relaxed tracking-wide text-sm">
                 「推薦を検討していても、一般選抜の勉強を止めない」という方針を重視します。基礎学力の向上は全ての入試の土台となります。
               </p>
-              <ul className="grid grid-cols-2 gap-3 text-xs sm:text-sm font-bold text-slate-700 mb-8">
+              <ul className="grid grid-cols-2 gap-3 text-xs sm:text-sm font-bold text-slate-300 mb-8">
                 <li className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#B38F4F]" /> 志望校逆算の参考書選定</li>
                 <li className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#B38F4F]" /> 年間・週間学習計画</li>
                 <li className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#B38F4F]" /> 進捗管理と確認テスト</li>
@@ -46,7 +46,7 @@ export const ExamStrategies: React.FC = () => {
             </div>
             <Link 
               to="/general/" 
-              className="inline-flex items-center text-xs font-bold text-[#080E1A] hover:text-[#B38F4F] tracking-widest pt-4 border-t border-slate-200"
+              className="inline-flex items-center text-xs font-bold text-[#080E1A] hover:text-[#B38F4F] tracking-widest pt-4 border-t border-white/10"
             >
               一般選抜対策の詳細を見る
               <ChevronRight className="w-4 h-4 ml-1 text-[#B38F4F]" />
@@ -54,15 +54,15 @@ export const ExamStrategies: React.FC = () => {
           </div>
 
           {/* 慶應FIT */}
-          <div className="bg-white p-8 md:p-10 rounded-sm shadow-md border-2 border-[#B38F4F]/40 text-slate-900 relative overflow-hidden flex flex-col justify-between">
+          <div className="bg-[#0a0a0a] p-8 md:p-10 rounded-sm shadow-md border-2 border-[#B38F4F]/40 text-white relative overflow-hidden flex flex-col justify-between">
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#B38F4F]/5 rounded-full blur-[80px] pointer-events-none"></div>
             <div>
               <div className="w-14 h-14 bg-[#B38F4F]/10 rounded-full flex items-center justify-center mb-6 border border-[#B38F4F]/20 relative z-10">
                 <PenTool className="w-6 h-6 text-[#B38F4F]" />
               </div>
               <h3 className="text-2xl font-bold mb-2 relative z-10 tracking-wider font-serif">慶應法学部FIT入試対策</h3>
-              <p className="text-[#B38F4F] font-bold mb-6 relative z-10 tracking-wide border-b border-slate-200 pb-3">「FIT一本勝負にしないFIT対策。」</p>
-              <ul className="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 mb-6 relative z-10">
+              <p className="text-[#B38F4F] font-bold mb-6 relative z-10 tracking-wide border-b border-white/10 pb-3">「FIT一本勝負にしないFIT対策。」</p>
+              <ul className="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-300 mb-6 relative z-10">
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#B38F4F] rotate-45"></div> A方式・B方式対策</li>
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#B38F4F] rotate-45"></div> 志望理由書・自己推薦書</li>
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-[#B38F4F] rotate-45"></div> 小論文・総合考査</li>
@@ -74,7 +74,7 @@ export const ExamStrategies: React.FC = () => {
             </div>
             <Link 
               to="/keio-fit/" 
-              className="inline-flex items-center text-xs font-bold text-[#B38F4F] hover:text-[#8F6E32] tracking-widest pt-4 border-t border-slate-200 relative z-10"
+              className="inline-flex items-center text-xs font-bold text-[#B38F4F] hover:text-[#8F6E32] tracking-widest pt-4 border-t border-white/10 relative z-10"
             >
               慶應法学部FIT入試対策の詳細を見る
               <ChevronRight className="w-4 h-4 ml-1" />
@@ -82,24 +82,24 @@ export const ExamStrategies: React.FC = () => {
           </div>
 
           {/* 指定校推薦 */}
-          <div className="bg-slate-50 p-8 md:p-10 rounded-sm shadow-sm border border-slate-200 relative overflow-hidden group hover:border-[#B38F4F] transition-all flex flex-col justify-between">
+          <div className="bg-[#050505] p-8 md:p-10 rounded-sm shadow-sm border border-white/10 relative overflow-hidden group hover:border-[#B38F4F] transition-all flex flex-col justify-between">
             <div>
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 border border-slate-200 shadow-sm">
+              <div className="w-14 h-14 bg-[#0a0a0a] rounded-full flex items-center justify-center mb-6 border border-white/10 shadow-sm">
                 <GraduationCap className="w-6 h-6 text-[#B38F4F]" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-wider font-serif">推薦を狙う。でも、<br/>推薦だけに賭けない。</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed tracking-wide text-sm">
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-wider font-serif">推薦を狙う。でも、<br/>推薦だけに賭けない。</h3>
+              <p className="text-slate-300 mb-6 leading-relaxed tracking-wide text-sm">
                 指定校推薦を視野に入れつつも、高1・高2から一般入試の基礎学力と評定管理を並行。高3になった時に複数の選択肢を残せるようにします。
               </p>
-              <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-700 mb-8">
-                <span className="px-3 py-1.5 bg-white border border-slate-200 rounded-sm">定期テスト評定対策</span>
-                <span className="px-3 py-1.5 bg-white border border-slate-200 rounded-sm">英検取得ロードマップ</span>
-                <span className="px-3 py-1.5 bg-white border border-slate-200 rounded-sm">校内選考・面接</span>
+              <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-300 mb-8">
+                <span className="px-3 py-1.5 bg-[#0a0a0a] border border-white/10 rounded-sm">定期テスト評定対策</span>
+                <span className="px-3 py-1.5 bg-[#0a0a0a] border border-white/10 rounded-sm">英検取得ロードマップ</span>
+                <span className="px-3 py-1.5 bg-[#0a0a0a] border border-white/10 rounded-sm">校内選考・面接</span>
               </div>
             </div>
             <Link 
               to="/shiteikou/" 
-              className="inline-flex items-center text-xs font-bold text-[#080E1A] hover:text-[#B38F4F] tracking-widest pt-4 border-t border-slate-200"
+              className="inline-flex items-center text-xs font-bold text-[#080E1A] hover:text-[#B38F4F] tracking-widest pt-4 border-t border-white/10"
             >
               指定校推薦対策の詳細を見る
               <ChevronRight className="w-4 h-4 ml-1 text-[#B38F4F]" />
@@ -107,24 +107,24 @@ export const ExamStrategies: React.FC = () => {
           </div>
 
           {/* 総合型選抜 */}
-          <div className="bg-slate-50 p-8 md:p-10 rounded-sm shadow-sm border border-slate-200 relative overflow-hidden group hover:border-[#B38F4F] transition-all flex flex-col justify-between">
+          <div className="bg-[#050505] p-8 md:p-10 rounded-sm shadow-sm border border-white/10 relative overflow-hidden group hover:border-[#B38F4F] transition-all flex flex-col justify-between">
             <div>
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 border border-slate-200 shadow-sm">
+              <div className="w-14 h-14 bg-[#0a0a0a] rounded-full flex items-center justify-center mb-6 border border-white/10 shadow-sm">
                 <Users className="w-6 h-6 text-[#B38F4F]" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-wider font-serif">総合型選抜対策</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed tracking-wide text-sm">
+              <h3 className="text-2xl font-bold text-white mb-4 tracking-wider font-serif">総合型選抜対策</h3>
+              <p className="text-slate-300 mb-6 leading-relaxed tracking-wide text-sm">
                 「書類だけ代わりに作る」サービスではありません。生徒本人が自分の経験・考えを言語化できるように、講師が対話しながらサポートします。
               </p>
-              <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-700 mb-8">
-                <span className="px-3 py-1.5 bg-white border border-slate-200 rounded-sm">自己分析</span>
-                <span className="px-3 py-1.5 bg-white border border-slate-200 rounded-sm">志望理由書添削</span>
-                <span className="px-3 py-1.5 bg-white border border-slate-200 rounded-sm">小論文・面接</span>
+              <div className="flex flex-wrap gap-2 text-xs font-bold text-slate-300 mb-8">
+                <span className="px-3 py-1.5 bg-[#0a0a0a] border border-white/10 rounded-sm">自己分析</span>
+                <span className="px-3 py-1.5 bg-[#0a0a0a] border border-white/10 rounded-sm">志望理由書添削</span>
+                <span className="px-3 py-1.5 bg-[#0a0a0a] border border-white/10 rounded-sm">小論文・面接</span>
               </div>
             </div>
             <Link 
               to="/sougougata/" 
-              className="inline-flex items-center text-xs font-bold text-[#080E1A] hover:text-[#B38F4F] tracking-widest pt-4 border-t border-slate-200"
+              className="inline-flex items-center text-xs font-bold text-[#080E1A] hover:text-[#B38F4F] tracking-widest pt-4 border-t border-white/10"
             >
               総合型選抜対策の詳細を見る
               <ChevronRight className="w-4 h-4 ml-1 text-[#B38F4F]" />
@@ -148,7 +148,7 @@ export const ExamStrategies: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto text-left mb-8">
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-sm">
+              <div className="bg-[#0a0a0a]/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-sm">
                 <div className="font-bold text-lg mb-4 text-white tracking-widest border-b border-white/10 pb-3 font-serif">高校1年</div>
                 <ul className="space-y-3 text-xs sm:text-sm text-slate-300 tracking-wide">
                   <li className="flex items-center gap-2"><div className="w-1 h-1 bg-[#B38F4F] rotate-45 shrink-0"></div>学習習慣の確立</li>
@@ -156,7 +156,7 @@ export const ExamStrategies: React.FC = () => {
                   <li className="flex items-center gap-2"><div className="w-1 h-1 bg-[#B38F4F] rotate-45 shrink-0"></div>英単語・英文法の基礎</li>
                 </ul>
               </div>
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-sm">
+              <div className="bg-[#0a0a0a]/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-sm">
                 <div className="font-bold text-lg mb-4 text-white tracking-widest border-b border-white/10 pb-3 font-serif">高校2年</div>
                 <ul className="space-y-3 text-xs sm:text-sm text-slate-300 tracking-wide">
                   <li className="flex items-center gap-2"><div className="w-1 h-1 bg-[#B38F4F] rotate-45 shrink-0"></div>一般入試基礎完成</li>

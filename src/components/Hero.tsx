@@ -12,13 +12,13 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
           alt="慶應義塾大学 三田キャンパス 旧図書館" 
           className="w-full h-full object-cover object-center brightness-95 contrast-105" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080E1A]/45 via-[#080E1A]/40 to-[#080E1A]/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080E1A]/60 via-[#080E1A]/50 to-[#080E1A]/80"></div>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         
         {/* Sub-badge */}
-        <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3f2e1a]/60 border border-[#d4b783]/30 text-[#b38f4f] text-xs font-bold tracking-widest shadow-sm">
+        <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3f2e1a]/80 border border-[#d4b783]/40 text-[#d4b783] text-xs font-bold tracking-widest shadow-sm">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c4a365] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d4b783]"></span>
@@ -49,9 +49,9 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
 
         {/* CTA Button */}
         <div className="flex justify-center w-full mb-14">
-          <button 
-             onClick={onOpenConsultation} 
-             className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 sm:py-5 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
+          <button
+              onClick={onOpenConsultation}
+              className="w-full sm:w-auto min-w-[280px] sm:min-w-[320px] px-10 py-4 sm:py-5 bg-[#b58b47] hover:bg-[#a07a38] text-white font-bold text-base sm:text-lg transition-all rounded-md shadow-2xl tracking-widest active:scale-[0.98] border border-[#d4ab63]/40"
           >
             無料受験戦略相談を申し込む
           </button>
@@ -68,7 +68,7 @@ export const Hero: React.FC<{ onOpenConsultation: () => void }> = ({
           ].map((title, idx) => (
             <div 
               key={idx} 
-              className="bg-[#0B1426]/60 backdrop-blur-md border border-white/15 py-3.5 px-4 rounded-md text-center hover:border-white/30 transition-colors shadow-lg"
+              className="bg-[#0B1426]/70 backdrop-blur-md border border-white/15 py-3.5 px-4 rounded-md text-center hover:border-white/30 transition-colors shadow-lg"
             >
               <span className="text-white font-medium text-xs sm:text-sm tracking-wider block">
                 {title}

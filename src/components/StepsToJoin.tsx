@@ -8,7 +8,7 @@ interface StepsToJoinProps {
 
 export const StepsToJoin: React.FC<StepsToJoinProps> = ({ onOpenConsultation }) => {
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-20 bg-[#0a0a0a] relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -16,10 +16,10 @@ export const StepsToJoin: React.FC<StepsToJoinProps> = ({ onOpenConsultation }) 
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
             <span>安心のステップ</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
             入塾までのシンプルな4ステップ
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             まずは無料相談でお子様・ご自身の現状と目標をお聞かせください。
           </p>
         </div>
@@ -29,29 +29,29 @@ export const StepsToJoin: React.FC<StepsToJoinProps> = ({ onOpenConsultation }) 
           {STEPS_TO_JOIN.map((item, index) => (
             <div
               key={index}
-              className="bg-slate-50/80 p-5 sm:p-6 rounded-2xl border border-slate-200/80 relative flex flex-col justify-between"
+              className="bg-[#050505]/80 p-5 sm:p-6 rounded-2xl border border-white/10/80 relative flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="font-mono text-xs font-black px-2.5 py-1 rounded-md bg-[#a07c3f] text-white">
                     {item.step}
                   </span>
-                  <span className="text-[10px] font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
+                  <span className="text-[10px] font-bold text-slate-400 bg-[#0a0a0a] px-2 py-0.5 rounded border border-white/10">
                     {item.time}
                   </span>
                 </div>
 
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-2 leading-snug">
+                <h3 className="text-sm sm:text-base font-bold text-white mb-2 leading-snug">
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
               {index < STEPS_TO_JOIN.length - 1 && (
-                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 rounded-full p-1 text-slate-400">
+                <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 bg-[#0a0a0a] border border-white/10 rounded-full p-1 text-slate-400">
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               )}

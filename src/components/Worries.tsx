@@ -4,7 +4,7 @@ import { WORRIES_LIST } from '../data';
 
 export const Worries: React.FC = () => {
   return (
-    <section id="worries" className="py-20 bg-white relative">
+    <section id="worries" className="py-20 bg-[#0a0a0a] relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14">
@@ -12,10 +12,10 @@ export const Worries: React.FC = () => {
             <AlertCircle className="w-3.5 h-3.5" />
             <span>高校生・受験生のつまずきポイント</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
             こんな悩み、ありませんか？
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             多くの受験生が「勉強のやる気はあるのに、やり方が定まらない」ことで貴重な時間を浪費してしまっています。
           </p>
         </div>
@@ -25,7 +25,7 @@ export const Worries: React.FC = () => {
           {WORRIES_LIST.map((worry, index) => (
             <div
               key={worry.id}
-              className={`p-5 sm:p-6 rounded-2xl border transition-all duration-200 bg-slate-50/70 hover:bg-white hover:shadow-md border-slate-200/90 ${
+              className={`p-5 sm:p-6 rounded-2xl border transition-all duration-200 bg-[#050505]/70 hover:bg-[#0a0a0a] hover:shadow-md border-white/10/90 ${
                 index === WORRIES_LIST.length - 1 ? 'md:col-span-2 max-w-2xl md:mx-auto w-full' : ''
               }`}
             >
@@ -35,14 +35,14 @@ export const Worries: React.FC = () => {
                 </div>
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200/70 text-slate-700">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200/70 text-slate-300">
                       {worry.tag}
                     </span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
                     「{worry.quote}」
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     {worry.detail}
                   </p>
                 </div>

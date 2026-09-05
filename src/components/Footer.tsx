@@ -11,20 +11,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
   const isHome = location.pathname === '/';
 
   return (
-    <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-xs">
+    <footer className="bg-[#0B1426] text-slate-400 py-16 border-t border-slate-800 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-900">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-2.5 inline-flex">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#8a6d3b] to-[#c5a059] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#a07c3f]/10">
+              <div className="w-8 h-8 rounded-lg bg-slate-800 border border-[#b38f4f]/30 flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#b38f4f]/10">
                 <span className="font-serif">慶</span>
               </div>
-              <span className="text-lg font-black text-white tracking-tight bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] bg-clip-text text-transparent">
+              <span className="text-lg font-black text-white tracking-tight">
                 慶應ROUTE
               </span>
-              <span className="text-[10px] text-[#d4b783] font-bold bg-[#2a1f11]/80 border border-[#594226]/60 px-2 py-0.5 rounded ml-2">
+              <span className="text-[10px] text-[#d4b783] font-bold bg-[#14233C] border border-[#d4b783]/30 px-2 py-0.5 rounded ml-2">
                 一般・推薦対応の慶應合格戦略塾
               </span>
             </Link>
@@ -38,10 +38,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
 
           {/* Quick Links */}
           <div>
-            <p className="text-white font-bold text-xs uppercase tracking-wider mb-3">
+            <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">
               ナビゲーション
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               <li>
                 <Link to="/keio-ippan" className="hover:text-white transition-colors">一般選抜対策</Link>
               </li>
@@ -55,10 +55,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
                 <Link to="/shiteiko" className="hover:text-white transition-colors">指定校推薦対策</Link>
               </li>
               <li>
-                <a href={isHome ? "#roadmap" : "/#roadmap"} className="hover:text-white transition-colors">高1からのロードマップ</a>
+                <Link to="/high-school-1-2" className="hover:text-white transition-colors">高1・高2からの準備</Link>
               </li>
               <li>
-                <Link to="/study-management" className="hover:text-white transition-colors">学習サイクル</Link>
+                <Link to="/study-cycle" className="hover:text-white transition-colors">学習サイクル</Link>
+              </li>
+              <li>
+                <Link to="/strategy-chart" className="hover:text-white transition-colors">受験戦略カルテ</Link>
               </li>
               <li>
                 <Link to="/column" className="hover:text-white transition-colors">受験コラム</Link>
@@ -71,14 +74,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
 
           {/* Legal and Inquiries */}
           <div>
-            <p className="text-white font-bold text-xs uppercase tracking-wider mb-3">
+            <p className="text-white font-bold text-xs uppercase tracking-wider mb-4">
               サポート・運営情報
             </p>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               <li>
                 <button
                   onClick={onOpenConsultation}
-                  className="text-[#d4b783] hover:text-[#e4cda5] transition-colors font-bold mb-2 block"
+                  className="text-[#d4b783] hover:text-white transition-colors font-bold mb-2 block"
                 >
                   無料受験戦略相談
                 </button>
@@ -104,8 +107,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
 
         {/* Bottom copyright and Disclaimer */}
         <div className="pt-8 flex flex-col space-y-4">
-          <div className="p-4 bg-slate-900 rounded-lg text-[11px] text-slate-400 border border-slate-800 flex items-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
+          <div className="p-4 bg-[#070D18] rounded-lg text-[11px] text-slate-400 border border-slate-800/80 flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 text-slate-400 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               慶應ROUTEは、慶應義塾および慶應義塾大学が運営・公認するサービスではありません。当塾は独立した教育サービスであり、慶應義塾の公式ロゴやペンマーク等の商標は一切使用しておりません。
             </p>

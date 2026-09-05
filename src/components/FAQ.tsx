@@ -56,7 +56,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
         <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
-        <div className="px-6 py-4 text-slate-600 border-t border-slate-100 leading-relaxed text-sm">
+        <div className="px-6 py-4 text-slate-600 border-t border-slate-200 leading-relaxed text-sm bg-white">
           {answer}
         </div>
       )}

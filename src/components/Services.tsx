@@ -25,7 +25,7 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-white relative">
+    <section id="services" className="py-20 bg-[#0a0a0a] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -33,10 +33,10 @@ export const Services: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>合格に必要な全サポート</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
             自習を合格へ直結させる、8つのサービス
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             学習計画から日々の質問、模試の分析まで、受験勉強のあらゆる不安と無駄を取り除きます。
           </p>
         </div>
@@ -46,28 +46,28 @@ export const Services: React.FC = () => {
           {SERVICES_LIST.map((service, index) => (
             <div
               key={index}
-              className="bg-slate-50/70 hover:bg-white p-6 rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-lg hover:border-[#e4cda5] transition-all duration-200 flex flex-col justify-between group"
+              className="bg-[#050505]/70 hover:bg-[#0a0a0a] p-6 rounded-3xl border border-white/10/90 shadow-2xs hover:shadow-lg hover:border-[#e4cda5] transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 rounded-2xl bg-[#b38f4f]/10 text-[#a07c3f] flex items-center justify-center group-hover:bg-[#b38f4f] group-hover:text-white transition-colors shadow-2xs">
                     {iconMap[service.icon]}
                   </div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white text-slate-600 border border-slate-200">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#0a0a0a] text-slate-300 border border-white/10">
                     {service.tag}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">
+                <h3 className="text-base font-bold text-white mb-2 leading-snug">
                   {service.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   {service.description}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-[11px] text-[#a07c3f] font-bold">
+              <div className="mt-4 pt-3 border-t border-white/10/60 flex items-center justify-between text-[11px] text-[#a07c3f] font-bold">
                 <span>詳細を見る</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>

@@ -9,13 +9,13 @@ const LegalLayout = ({ title, children }: { title: string, children: React.React
   const openConsultation = () => setIsConsultationOpen(true);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#B38F4F] selection:text-white">
+    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#B38F4F] selection:text-white">
       <SEO title={`${title}｜慶應ROUTE`} description={title} canonicalUrl="/legal" />
       <Navbar onOpenConsultation={openConsultation} />
       <main className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold font-serif text-slate-900 mb-8">{title}</h1>
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 prose prose-slate">
+          <h1 className="text-3xl font-bold font-serif text-white mb-8">{title}</h1>
+          <div className="bg-[#0a0a0a] rounded-2xl shadow-sm border border-white/10 p-8 prose prose-slate">
             {children}
           </div>
         </div>

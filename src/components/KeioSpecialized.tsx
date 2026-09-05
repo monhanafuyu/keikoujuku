@@ -8,7 +8,7 @@ export const KeioSpecialized: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FAF9F5] border border-[#f3e8d3] text-[#a07c3f] text-xs font-bold tracking-widest mb-6">
               <Target className="w-4 h-4 text-[#b38f4f]" />
               <span>慶應義塾大学 専門指導</span>
             </div>
@@ -27,7 +27,7 @@ export const KeioSpecialized: React.FC = () => {
               </p>
             </div>
             
-            <div className="mt-10 p-6 bg-[#fcfaf5] border-l-4 border-[#b38f4f] rounded-r-lg">
+            <div className="mt-10 p-6 bg-[#FAF9F5] border-l-4 border-[#b38f4f] rounded-r-lg">
               <p className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
                 慶應専門だから、<br className="sm:hidden" />
                 入試方式まで横断して考える。
@@ -37,18 +37,18 @@ export const KeioSpecialized: React.FC = () => {
           
           <div className="relative">
             {/* Visual representation of intersecting paths */}
-            <div className="aspect-square sm:aspect-[4/3] bg-[#fcfaf5] rounded-2xl border border-slate-200 p-8 flex flex-col justify-center relative overflow-hidden shadow-sm">
+            <div className="aspect-square sm:aspect-[4/3] bg-[#FAF9F5] rounded-2xl border border-slate-100 p-8 flex flex-col justify-center relative overflow-hidden shadow-sm">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#f3e8d3] rounded-full blur-[80px] -mr-20 -mt-20"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#fcfaf5] rounded-full blur-[80px] -ml-20 -mb-20"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FAF9F5] rounded-full blur-[80px] -ml-20 -mb-20"></div>
               
               <div className="relative z-10 flex flex-col gap-4">
                 {['一般選抜', '法学部 FIT入試', 'SFC 総合型選抜', '指定校推薦'].map((type, idx) => (
                   <div key={idx} className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 transform transition-transform hover:translate-x-2">
-                    <div className="w-10 h-10 rounded-full bg-[#fcfaf5] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#FAF9F5] flex items-center justify-center shrink-0">
                       <Layers className="w-5 h-5 text-[#b38f4f]" />
                     </div>
                     <span className="font-bold text-slate-800 flex-1">{type}</span>
-                    <ArrowRight className="w-4 h-4 text-slate-300" />
+                    <ArrowRight className="w-4 h-4 text-slate-400" />
                   </div>
                 ))}
               </div>

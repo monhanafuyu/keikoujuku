@@ -56,7 +56,7 @@ export const General: React.FC = () => {
               { title: '確認テスト', desc: '理解度を客観的に測定' },
               { title: '個別質問解説', desc: '分からない問題を即解消' },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white/5 border border-[#B38F4F]/20 p-4 rounded-sm">
+              <div key={idx} className="bg-[#0a0a0a]/5 border border-[#B38F4F]/20 p-4 rounded-sm">
                 <div className="text-xs text-[#B38F4F] font-serif font-bold mb-1">{item.title}</div>
                 <div className="text-xs text-slate-400">{item.desc}</div>
               </div>
@@ -72,11 +72,11 @@ export const General: React.FC = () => {
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-2 h-6 bg-[#B38F4F]"></div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-slate-900 m-0">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-white m-0">
               一般選抜の本質｜なぜ「自学自習の管理」が勝敗を分けるのか
             </h2>
           </div>
-          <div className="text-slate-700 leading-relaxed space-y-4 text-base">
+          <div className="text-slate-300 leading-relaxed space-y-4 text-base">
             <p>
               難関大学の一般選抜で合否を分けるのは、予備校で何時間の授業を聞いたかではありません。「自分のレベルに合った参考書を、正しい順番で、何回復習して完璧にしたか」という<strong>自学自習の質と量</strong>です。
             </p>
@@ -90,7 +90,7 @@ export const General: React.FC = () => {
         <section className="mb-20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-2 h-6 bg-[#B38F4F]"></div>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-slate-900 m-0">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-white m-0">
               慶應コーチングの一般選抜指導システム
             </h2>
           </div>
@@ -123,14 +123,14 @@ export const General: React.FC = () => {
                 desc: "模試の結果から弱点単元を特定して計画を即座に修正。高3秋以降は志望校の過去問を徹底分析し、時間配分や捨て問の判断など実戦力を鍛えます。"
               }
             ].map((card, idx) => (
-              <div key={idx} className="bg-white border border-slate-200 p-6 sm:p-8 rounded-sm shadow-sm">
+              <div key={idx} className="bg-[#0a0a0a] border border-white/10 p-6 sm:p-8 rounded-sm shadow-sm">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-sm bg-[#080E1A] text-[#B38F4F] flex items-center justify-center shrink-0">
                     <card.icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-slate-900 mb-2">{card.title}</h3>
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{card.desc}</p>
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-white mb-2">{card.title}</h3>
+                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">{card.desc}</p>
                   </div>
                 </div>
               </div>
@@ -139,14 +139,14 @@ export const General: React.FC = () => {
         </section>
 
         {/* Section 3: 推薦入試との併願メリット */}
-        <section className="mb-20 bg-slate-50 border border-slate-200 p-8 rounded-sm">
+        <section className="mb-20 bg-[#050505] border border-white/10 p-8 rounded-sm">
           <div className="flex items-center gap-3 mb-4">
             <Sparkles className="w-6 h-6 text-[#B38F4F]" />
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 m-0">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-white m-0">
               推薦入試（FIT・指定校・総合型）との併願メリット
             </h2>
           </div>
-          <div className="text-slate-700 leading-relaxed space-y-4 text-sm sm:text-base">
+          <div className="text-slate-300 leading-relaxed space-y-4 text-sm sm:text-base">
             <p>
               一般選抜の学力がある生徒は、推薦入試の小論文や面接でも論理的な思考力を発揮しやすく、合格率が高まります。
             </p>
@@ -158,16 +158,16 @@ export const General: React.FC = () => {
 
         {/* Section 4: 関連コラム・内部リンク */}
         <section className="mb-20">
-          <h2 className="text-xl font-serif font-bold text-slate-900 mb-6 border-b border-slate-200 pb-3">
+          <h2 className="text-xl font-serif font-bold text-white mb-6 border-b border-white/10 pb-3">
             一般選抜に関するおすすめコラム
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link to="/column/learning-management-vs-cram-school" className="p-4 bg-white border border-slate-200 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
-              <span className="text-sm font-bold text-slate-800 group-hover:text-[#B38F4F]">大学受験の学習管理塾とは？一般的な予備校との違い</span>
+            <Link to="/column/learning-management-vs-cram-school" className="p-4 bg-[#0a0a0a] border border-white/10 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
+              <span className="text-sm font-bold text-slate-200 group-hover:text-[#B38F4F]">大学受験の学習管理塾とは？一般的な予備校との違い</span>
               <ChevronRight className="w-4 h-4 text-[#B38F4F] shrink-0" />
             </Link>
-            <Link to="/column/kou2-juken-strategy" className="p-4 bg-white border border-slate-200 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
-              <span className="text-sm font-bold text-slate-800 group-hover:text-[#B38F4F]">高2から大学受験を始めるなら何をする？現役慶應生の学習戦略</span>
+            <Link to="/column/kou2-juken-strategy" className="p-4 bg-[#0a0a0a] border border-white/10 rounded-sm hover:border-[#B38F4F] transition-all group flex justify-between items-center">
+              <span className="text-sm font-bold text-slate-200 group-hover:text-[#B38F4F]">高2から大学受験を始めるなら何をする？現役慶應生の学習戦略</span>
               <ChevronRight className="w-4 h-4 text-[#B38F4F] shrink-0" />
             </Link>
           </div>

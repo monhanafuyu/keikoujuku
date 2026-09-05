@@ -26,16 +26,16 @@ export const InstructorValue: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <div className="order-2 lg:order-1 relative">
-            <div className="absolute inset-0 bg-[#fcfaf5] rounded-2xl transform -rotate-3 scale-[1.02]"></div>
-            <div className="relative bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm z-10">
+            <div className="absolute inset-0 bg-[#FAF9F5] rounded-2xl transform -rotate-3 scale-[1.02]"></div>
+            <div className="relative bg-white border border-slate-100 rounded-2xl p-8 sm:p-10 shadow-sm z-10">
               <div className="space-y-8">
                 {values.map((val, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#fcfaf5] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[#FAF9F5] flex items-center justify-center shrink-0">
                       {val.icon}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-2">{val.title}</h3>
+                      <h3 className="text-lg font-bold text-slate-800 mb-2">{val.title}</h3>
                       <p className="text-sm text-slate-600 leading-relaxed">{val.desc}</p>
                     </div>
                   </div>

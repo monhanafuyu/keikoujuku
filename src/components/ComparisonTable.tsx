@@ -4,7 +4,7 @@ import { Check, X, ShieldAlert, Zap } from 'lucide-react';
 
 export const ComparisonTable: React.FC = () => {
   return (
-    <section id="comparison" className="py-20 bg-slate-50 border-y border-slate-200/80 relative">
+    <section id="comparison" className="py-20 bg-[#050505] border-y border-white/10/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -12,24 +12,24 @@ export const ComparisonTable: React.FC = () => {
             <Zap className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>一般的な塾・予備校との比較</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
             授業以外の「残り160時間」をどう過ごすか。
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             1週間のうち、塾で授業を受ける時間はわずか数時間。合否を分けるのは圧倒的な「自習時間」の密度です。
           </p>
         </div>
 
         {/* Comparison Table Container */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden mb-12">
+        <div className="bg-[#0a0a0a] rounded-3xl border border-white/10 shadow-sm overflow-hidden mb-12">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[640px]">
               <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="py-4 px-5 text-xs font-bold text-slate-500 bg-slate-50 w-1/5">
+                <tr className="border-b border-white/10">
+                  <th className="py-4 px-5 text-xs font-bold text-slate-400 bg-[#050505] w-1/5">
                     項目
                   </th>
-                  <th className="py-4 px-5 text-sm font-bold text-slate-600 bg-slate-100/70 w-2/5">
+                  <th className="py-4 px-5 text-sm font-bold text-slate-300 bg-white/5/70 w-2/5">
                     一般的な個別・集団予備校
                   </th>
                   <th className="py-4 px-5 text-sm font-black text-white bg-[#a07c3f] w-2/5">
@@ -42,17 +42,17 @@ export const ComparisonTable: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
                 {COMPARISON_ITEMS.map((item, index) => (
-                  <tr key={index} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="py-4 px-5 font-bold text-slate-800 bg-slate-50/50">
+                  <tr key={index} className="hover:bg-[#050505]/50 transition-colors">
+                    <td className="py-4 px-5 font-bold text-slate-200 bg-[#050505]/50">
                       {item.category}
                     </td>
-                    <td className="py-4 px-5 text-slate-600 leading-relaxed bg-slate-50/20">
+                    <td className="py-4 px-5 text-slate-300 leading-relaxed bg-[#050505]/20">
                       <div className="flex items-start gap-2">
-                        <span className="w-4 h-4 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center text-[10px] shrink-0 mt-0.5">△</span>
+                        <span className="w-4 h-4 rounded-full bg-slate-200 text-slate-400 flex items-center justify-center text-[10px] shrink-0 mt-0.5">△</span>
                         <span>{item.traditional}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-5 font-medium text-slate-900 leading-relaxed bg-[#b38f4f]/10/20">
+                    <td className="py-4 px-5 font-medium text-white leading-relaxed bg-[#b38f4f]/10/20">
                       <div className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-[#b38f4f] shrink-0 mt-0.5" />
                         <div>

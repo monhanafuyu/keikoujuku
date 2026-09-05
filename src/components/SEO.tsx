@@ -8,7 +8,7 @@ interface SEOProps {
   canonicalUrl: string;
   type?: 'website' | 'article';
   schemaOrgData?: object;
-  breadcrumbs?: { name: string; url: string }[];
+  breadcrumbs?: { name: string; url?: string; item?: string }[];
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -38,7 +38,7 @@ export const SEO: React.FC<SEOProps> = ({
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": `${baseUrl}${crumb.url}`
+      "item": `${baseUrl}${crumb.url || crumb.item || ''}`
     }))
   } : null;
 

@@ -8,7 +8,7 @@ interface PricingProps {
 
 export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
   return (
-    <section id="pricing" className="py-20 bg-slate-50 border-b border-slate-200/80 relative">
+    <section id="pricing" className="py-20 bg-[#050505] border-b border-white/10/80 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -16,10 +16,10 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
             <Sparkles className="w-3.5 h-3.5 text-[#b38f4f]" />
             <span>明朗な月額定額制</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-display">
             目的に合わせて選べる、3つの料金プラン
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base">
             大手予備校や大手管理塾の半額以下の水準で、圧倒的に手厚い完全個別マネジメントを提供します。
           </p>
         </div>
@@ -31,8 +31,8 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
               key={plan.id}
               className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 relative ${
                 plan.isPopular
-                  ? 'bg-white border-2 border-[#b38f4f] shadow-xl shadow-[#3f2e1a]/5 lg:-translate-y-2'
-                  : 'bg-white border border-slate-200 shadow-xs hover:border-slate-300'
+                  ? 'bg-[#0a0a0a] border-2 border-[#b38f4f] shadow-xl shadow-[#3f2e1a]/5 lg:-translate-y-2'
+                  : 'bg-[#0a0a0a] border border-white/10 shadow-xs hover:border-slate-300'
               }`}
             >
               {/* Popular Badge */}
@@ -49,23 +49,23 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
               )}
 
               <div>
-                <div className="text-center pb-6 border-b border-slate-100">
-                  <h3 className="text-xl font-extrabold text-slate-900 mb-1">
+                <div className="text-center pb-6 border-b border-white/10">
+                  <h3 className="text-xl font-extrabold text-white mb-1">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-slate-500 min-h-[32px] flex items-center justify-center">
+                  <p className="text-xs text-slate-400 min-h-[32px] flex items-center justify-center">
                     {plan.targetAudience}
                   </p>
 
                   <div className="mt-4 flex items-baseline justify-center gap-1">
-                    <span className="text-xs text-slate-500 font-bold">月額</span>
-                    <span className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">
+                    <span className="text-xs text-slate-400 font-bold">月額</span>
+                    <span className="text-4xl sm:text-5xl font-black text-white tracking-tight">
                       ¥{plan.price.toLocaleString()}
                     </span>
-                    <span className="text-xs text-slate-500 font-medium">（税込）</span>
+                    <span className="text-xs text-slate-400 font-medium">（税込）</span>
                   </div>
 
-                  <p className="text-xs text-slate-600 mt-3 leading-relaxed">
+                  <p className="text-xs text-slate-300 mt-3 leading-relaxed">
                     {plan.description}
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
                     <div
                       key={idx}
                       className={`flex items-start gap-2.5 text-xs sm:text-sm ${
-                        feature.included ? 'text-slate-800' : 'text-slate-400 opacity-60'
+                        feature.included ? 'text-slate-200' : 'text-slate-400 opacity-60'
                       }`}
                     >
                       {feature.included ? (
@@ -91,7 +91,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
                       ) : (
                         <X className="w-4 h-4 text-slate-300 shrink-0 mt-0.5" />
                       )}
-                      <span className={feature.highlight ? 'font-bold text-slate-900' : ''}>
+                      <span className={feature.highlight ? 'font-bold text-white' : ''}>
                         {feature.text}
                       </span>
                     </div>
@@ -99,13 +99,13 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-4 border-t border-white/10">
                 <button
                   onClick={() => onOpenConsultation(plan.name)}
                   className={`w-full py-3.5 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 ${
                     plan.isPopular
                       ? 'bg-[#a07c3f] hover:bg-[#594226] text-white shadow-md shadow-[#a07c3f]/25 hover:shadow-lg'
-                      : 'bg-slate-100 hover:bg-slate-200 text-slate-800'
+                      : 'bg-white/5 hover:bg-slate-200 text-slate-200'
                   }`}
                 >
                   <span>無料相談でこのプランを相談</span>
@@ -117,12 +117,12 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenConsultation }) => {
         </div>
 
         {/* Pricing Guarantee Notes */}
-        <div className="bg-white rounded-2xl p-5 border border-slate-200 text-xs text-slate-600 max-w-4xl mx-auto space-y-1.5">
-          <p className="font-bold text-slate-800 flex items-center gap-1.5">
+        <div className="bg-[#0a0a0a] rounded-2xl p-5 border border-white/10 text-xs text-slate-300 max-w-4xl mx-auto space-y-1.5">
+          <p className="font-bold text-slate-200 flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-[#b38f4f]" />
             料金とご契約に関するご案内
           </p>
-          <ul className="list-disc list-inside space-y-1 pl-1 text-slate-500">
+          <ul className="list-disc list-inside space-y-1 pl-1 text-slate-400">
             <li>入会金・年会費・施設維持費・季節講習の強制購入などは一切ございません。</li>
             <li>参考書は市販の最適なもの（1冊1,000円〜1,500円程度）をご自身でご購入いただきます。</li>
             <li>いつでもプランの変更・休会が月単位で可能です。違約金等は一切かかりません。</li>
