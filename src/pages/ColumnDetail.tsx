@@ -72,7 +72,7 @@ export const ColumnDetail: React.FC = () => {
             
             {/* Article Content */}
             <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm">
-              <div className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:border-b prose-h2:border-slate-200 prose-h2:pb-3 prose-h2:mt-10 prose-h2:mb-6 prose-h2:text-2xl prose-h3:text-xl prose-p:text-slate-700 prose-p:leading-loose prose-strong:text-slate-900 prose-strong:font-bold prose-ul:text-slate-700 prose-li:leading-relaxed">
+              <div className="prose prose-slate prose-lg max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:border-b prose-h2:border-slate-200 prose-h2:pb-3 prose-h2:mt-10 prose-h2:mb-6 prose-h2:text-2xl prose-h3:text-xl prose-p:text-slate-700 prose-p:leading-loose prose-strong:text-slate-900 prose-strong:font-bold prose-a:text-[#a07c3f] prose-a:font-bold hover:prose-a:text-[#8a6d3b] prose-a:underline prose-ul:text-slate-700 prose-li:leading-relaxed">
                 <Markdown>{column.content}</Markdown>
               </div>
             </div>

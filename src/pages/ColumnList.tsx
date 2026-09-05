@@ -10,7 +10,7 @@ export const ColumnList: React.FC = () => {
   return (
     <PageTemplate>
       <SEO 
-        title="慶應受験戦略コラム｜現役慶應生が語る合格の極意｜慶應ROUTE"
+        title="慶應受験戦略コラム｜一般選抜・FIT入試・指定校推薦の対策｜慶應ROUTE"
         description="現役慶應生による受験戦略コラム。一般選抜、FIT入試、SFC総合型、指定校推薦など、多様なルートからの慶應合格戦略を論理的に解説します。"
         canonicalUrl="/column"
         breadcrumbs={[
