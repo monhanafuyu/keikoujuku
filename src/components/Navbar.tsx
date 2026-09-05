@@ -42,8 +42,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3'
-            : isHome
-            ? 'bg-slate-900/60 backdrop-blur-sm py-4 border-b border-white/10'
             : 'bg-white/95 backdrop-blur-md py-4 border-b border-slate-200'
         }`}
       >
@@ -55,24 +53,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className={`font-extrabold text-xl tracking-tight font-display transition-colors ${
-                  !isScrolled && isHome ? 'text-white' : 'text-slate-900 group-hover:text-[#a07c3f]'
-                }`}>
+                <span className="font-extrabold text-xl tracking-tight font-display transition-colors text-slate-900 group-hover:text-[#a07c3f]">
                   慶應ROUTE
                 </span>
               </div>
-              <p className={`text-[10px] font-medium hidden sm:block tracking-wide ${
-                !isScrolled && isHome ? 'text-slate-200' : 'text-slate-500'
-              }`}>
+              <p className="text-[10px] font-medium hidden sm:block tracking-wide text-slate-500">
                 一般も、推薦も。慶應合格へのルートを、一つに絞らない。
               </p>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className={`hidden lg:flex items-center gap-6 text-sm font-medium ${
-            !isScrolled && isHome ? 'text-slate-100' : 'text-slate-700'
-          }`}>
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
             {/* Dropdown for 慶應受験対策 */}
             <div 
               className="relative group py-1"
@@ -140,9 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-lg transition-colors lg:hidden ${
-              !isScrolled && isHome ? 'text-white hover:bg-white/10' : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
-            }`}
+            className="p-2 rounded-lg transition-colors lg:hidden text-slate-700 hover:text-slate-900 hover:bg-slate-100"
             aria-label="メニューを開く"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

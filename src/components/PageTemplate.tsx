@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Navbar, Footer, FinalCta, FreeConsultationModal } from './Layout';
+import { Navbar } from './Navbar';
+import { Footer } from './Footer';
+import { FinalCta } from './FinalCta';
+import { FreeConsultationModal } from './FreeConsultationModal';
 
 export const PageTemplate: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
