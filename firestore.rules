@@ -123,9 +123,24 @@ service cloud.firestore {
              (!('createdAt' in data) || data.createdAt is timestamp);
     }
 
+    function isValidConsultationRequest(data) {
+      return data.keys().hasAll(['name', 'grade', 'email', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+             data.grade is string && data.grade.size() > 0 && data.grade.size() <= 50 &&
+             data.email is string && data.email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$") &&
+             data.createdAt is string;
+    }
+
     // ===============================================================
     // Rules
     // ===============================================================
+
+    match /consultationRequests/{requestId} {
+      allow read: if isAdmin();
+      allow create: if isValidConsultationRequest(request.resource.data);
+      allow update: if isAdmin() && isValidConsultationRequest(request.resource.data);
+      allow delete: if isAdmin();
+    }
 
     match /siteContent/{docId} {
       allow read: if true;

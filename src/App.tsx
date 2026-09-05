@@ -14,6 +14,7 @@ import { ColumnList } from './pages/ColumnList';
 import { ColumnDetail } from './pages/ColumnDetail';
 import { About, Contact, Terms, Privacy, Legal } from './pages/LegalPages';
 import { ScrollToTop } from './components/ScrollToTop';
+import { Admin } from './pages/Admin';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/keio-ippan" element={<KeioIppan />} />
           <Route path="/keio-fit" element={<KeioFit />} />
           <Route path="/keio-sfc" element={<KeioSfc />} />

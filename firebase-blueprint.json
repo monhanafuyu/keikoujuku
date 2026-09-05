@@ -88,9 +88,25 @@
         "createdAt": { "type": "string", "format": "date-time" }
       },
       "required": ["studentName", "grade", "email", "phone", "status"]
+    },
+    "ConsultationRequest": {
+      "title": "Consultation Request",
+      "description": "Requests for free strategy consultation",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "grade": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 200 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "grade", "email", "createdAt"]
     }
   },
   "firestore": {
+    "consultationRequests/{requestId}": {
+      "schema": { "$ref": "#/entities/ConsultationRequest" },
+      "description": "List of free strategy consultation requests."
+    },
     "siteContent/{docId}": {
       "schema": { "$ref": "#/entities/SiteContent" },
       "description": "Holds the main site content. Usually just one document 'main'."

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, ShieldCheck, Sparkles, Video, MessageSquare, Send } from 'lucide-react';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 interface FreeConsultationModalProps {
   isOpen: boolean;
@@ -28,7 +30,16 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
     setIsSubmitting(true);
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/monhanafuyu@gmail.com", {
+      // Firebase Firestoreに保存
+      await addDoc(collection(db, 'consultationRequests'), {
+        name: formData.name,
+        grade: formData.grade,
+        email: formData.email,
+        createdAt: new Date().toISOString(),
+      });
+      
+      // 既存のメール通知処理（任意で継続、不要なら削除可能ですがバックアップとして残します）
+      fetch("https://formsubmit.co/ajax/monhanafuyu@gmail.com", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -40,13 +51,9 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
             お名前: formData.name,
             メールアドレス: formData.email,
         })
-      });
+      }).catch(console.error);
       
-      if (response.ok) {
-        setIsSuccess(true);
-      } else {
-        alert("送信に失敗しました。");
-      }
+      setIsSuccess(true);
     } catch (error) {
       console.error(error);
       alert("通信エラーが発生しました。");
