@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, CheckCircle2, ShieldCheck, Sparkles, Video, MessageSquare } from 'lucide-react';
+import { X, CheckCircle2, ShieldCheck, Sparkles, Video, MessageSquare, Send } from 'lucide-react';
 
 interface FreeConsultationModalProps {
   isOpen: boolean;
@@ -14,7 +14,6 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
 }) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [showOptionalSurvey, setShowOptionalSurvey] = useState<boolean>(false);
 
   const [formData, setFormData] = useState({
     grade: '高2',
@@ -22,28 +21,38 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
     email: '',
   });
 
-  const [surveyData, setSurveyData] = useState({
-    targetUniversity: '',
-    currentDeviation: '',
-    concerns: '',
-  });
-
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // 擬似的な送信処理
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/monhanafuyu@gmail.com", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            _subject: "【慶應ROUTE】無料受験戦略相談のお申し込み",
+            学年: formData.grade,
+            お名前: formData.name,
+            メールアドレス: formData.email,
+        })
+      });
+      
+      if (response.ok) {
+        setIsSuccess(true);
+      } else {
+        alert("送信に失敗しました。");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("通信エラーが発生しました。");
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 800);
-  };
-
-  const handleSurveySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setShowOptionalSurvey(false);
-    onClose();
+    }
   };
 
   const gradeOptions = ['高1', '高2', '高3', '既卒', 'その他'];
@@ -60,107 +69,29 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
         </button>
 
         {isSuccess ? (
-          showOptionalSurvey ? (
-            /* 任意アンケート画面 */
-            <div className="animate-in fade-in duration-300">
-              <div className="text-center mb-6">
-                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <CheckCircle2 className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-extrabold text-slate-900 font-display">
-                  日程のご予約ありがとうございます！
-                </h3>
-                <p className="text-sm text-slate-600 mt-2">
-                  より有意義な面談にするため、<br className="sm:hidden" />差し支えなければ以下のアンケートにお答えください。（任意）
-                </p>
-              </div>
-
-              <form onSubmit={handleSurveySubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                    志望校・学部（決まっている範囲で）
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="例：慶應義塾大学法学部"
-                    value={surveyData.targetUniversity}
-                    onChange={(e) => setSurveyData({ ...surveyData, targetUniversity: e.target.value })}
-                    className="w-full p-3 rounded-xl border border-slate-200 bg-[#FAF9F5] text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f] focus:bg-white transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                    現在のおおよその偏差値
-                  </label>
-                  <select
-                    value={surveyData.currentDeviation}
-                    onChange={(e) => setSurveyData({ ...surveyData, currentDeviation: e.target.value })}
-                    className="w-full p-3 rounded-xl border border-slate-200 bg-[#FAF9F5] text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f] focus:bg-white transition-colors"
-                  >
-                    <option value="">選択してください</option>
-                    <option value="〜45（基礎から）">〜45（基礎から）</option>
-                    <option value="45〜50">45〜50</option>
-                    <option value="50〜55">50〜55</option>
-                    <option value="55〜60">55〜60</option>
-                    <option value="60以上">60以上</option>
-                    <option value="わからない">わからない</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                    現在一番悩んでいること
-                  </label>
-                  <textarea
-                    rows={3}
-                    placeholder="何から勉強すればいいかわからない、など"
-                    value={surveyData.concerns}
-                    onChange={(e) => setSurveyData({ ...surveyData, concerns: e.target.value })}
-                    className="w-full p-3 rounded-xl border border-slate-200 bg-[#FAF9F5] text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#b38f4f] focus:bg-white transition-colors resize-none"
-                  ></textarea>
-                </div>
-                <div className="pt-2 flex gap-3">
-                  <button
-                    type="button"
-                    onClick={() => onClose()}
-                    className="flex-1 py-3.5 rounded-xl bg-slate-100 text-slate-600 font-bold text-sm hover:bg-slate-200 transition-colors"
-                  >
-                    スキップして閉じる
-                  </button>
-                  <button
-                    type="submit"
-                    className="flex-1 py-3.5 rounded-xl bg-[#b38f4f] text-white font-bold text-sm hover:bg-[#a07c3f] transition-colors shadow-md"
-                  >
-                    回答を送信する
-                  </button>
-                </div>
-              </form>
+          /* 送信完了画面 */
+          <div className="text-center py-8 space-y-5 animate-in fade-in duration-300">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-sm mb-4">
+              <CheckCircle2 className="w-8 h-8" />
             </div>
-          ) : (
-            /* 送信完了・日程選択への案内（モック） */
-            <div className="text-center py-4 space-y-5 animate-in fade-in duration-300">
-              <div className="w-16 h-16 bg-[#FAF9F5] border border-[#f3e8d3] rounded-full flex items-center justify-center mx-auto shadow-sm">
-                <Calendar className="w-8 h-8 text-[#b38f4f]" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-extrabold text-slate-900 font-display mb-2">
-                  日程を選択してください
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
-                  （※本来はここでカレンダー埋め込みや日程調整ツールが表示されます）<br/>
-                  ご入力いただいたメールアドレスにも予約リンクをお送りしました。
-                </p>
-              </div>
-              <div className="pt-4">
-                <button
-                  onClick={() => setShowOptionalSurvey(true)}
-                  className="w-full py-4 rounded-xl bg-[#b38f4f] text-white font-bold text-sm hover:bg-[#a07c3f] transition-colors shadow-md flex items-center justify-center gap-2"
-                >
-                  <CheckCircle2 className="w-5 h-5" />
-                  <span>仮の日程で予約を完了する</span>
-                </button>
-              </div>
+            <div>
+              <h3 className="text-2xl font-extrabold text-slate-900 font-display mb-3">
+                お申し込み完了
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+                無料受験戦略相談のお申し込みを受け付けました。<br/>
+                ご入力いただいたメールアドレス宛に、担当者より日程調整のご連絡をさせていただきます。
+              </p>
             </div>
-          )
+            <div className="pt-6">
+              <button
+                onClick={onClose}
+                className="w-full py-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-sm hover:bg-slate-200 transition-colors"
+              >
+                閉じる
+              </button>
+            </div>
+          </div>
         ) : (
           /* シンプルな申し込みフォーム */
           <div className="animate-in fade-in duration-200">
@@ -170,7 +101,7 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                 <span>約30秒で申し込み完了</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-slate-900 font-display mb-3 tracking-tight">
-                無料学習相談を予約する
+                無料学習相談を申し込む
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed px-4">
                 勉強法・参考書・学習計画について、Zoomで30分無料相談できます。<br className="hidden sm:block"/>
@@ -242,8 +173,8 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
                     <span>送信中...</span>
                   ) : (
                     <>
-                      <span>無料相談の日程を選ぶ</span>
-                      <Calendar className="w-5 h-5 ml-1" />
+                      <span>申し込む</span>
+                      <Send className="w-5 h-5 ml-1" />
                     </>
                   )}
                 </button>
@@ -274,4 +205,5 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
     </div>
   );
 };
+
 
