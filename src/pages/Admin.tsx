@@ -55,7 +55,8 @@ export const Admin: React.FC = () => {
     try {
       await signInWithPopup(auth, googleProvider);
     } catch (err: any) {
-      setError('ログインに失敗しました');
+      console.error(err);
+      setError('ログインに失敗しました。AI Studioのプレビュー画面でポップアップがブロックされている場合は、右上の「新しいタブで開く」アイコンからサイトを開いてお試しください。');
     }
   };
 

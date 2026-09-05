@@ -55,71 +55,34 @@ export const PricingAndComparison: React.FC<{ onOpenConsultation: () => void }> 
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           
-          {/* 4 Koma */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col relative shadow-sm">
+          {/* 4 Koma (Recommended) */}
+          <div className="bg-white rounded-2xl border-2 border-[#b38f4f] p-6 sm:p-8 flex flex-col relative shadow-lg transform md:-translate-y-2 z-10">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#b38f4f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-widest shadow-sm">
+              スタンダード
+            </div>
             <h3 className="text-xl font-bold text-slate-900 mb-2">毎週スタディ<br/><span className="text-base text-slate-500 font-normal">月4コマ</span></h3>
             <div className="my-6">
-              <span className="text-3xl font-black text-slate-900">32,000</span>
+              <span className="text-3xl font-black text-[#b38f4f]">29,800</span>
               <span className="text-slate-500 font-medium ml-1">円 / 月(税込)</span>
             </div>
-            <p className="text-xs text-slate-600 mb-6 bg-slate-50 p-3 rounded-lg border border-slate-100">
+            <p className="text-xs text-[#a07c3f] mb-6 bg-[#FAF9F5] p-3 rounded-lg border border-[#f3e8d3] font-medium">
               自分で勉強を進められるが、定期的に戦略・進捗を確認してほしい人
             </p>
-            <ul className="space-y-3 mb-8 flex-1 text-sm text-slate-600">
+            <ul className="space-y-3 mb-8 flex-1 text-sm text-slate-700">
               <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>慶應特化 個別カリキュラム</span></li>
               <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>学習管理・進捗面談</span></li>
               <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>質問送信・個別解説</span></li>
             </ul>
-            <button onClick={onOpenConsultation} className="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-bold hover:border-slate-400 hover:bg-slate-50 transition-colors">相談する</button>
-          </div>
-
-          {/* 6 Koma (Recommended) */}
-          <div className="bg-white rounded-2xl border-2 border-[#b38f4f] p-6 sm:p-8 flex flex-col relative shadow-lg transform md:-translate-y-4 z-10">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#b38f4f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-widest shadow-sm">
-              おすすめ
-            </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">毎週スタディ<br/><span className="text-base text-slate-500 font-normal">月6コマ</span></h3>
-            <div className="my-6">
-              <span className="text-3xl font-black text-[#b38f4f]">42,000</span>
-              <span className="text-slate-500 font-medium ml-1">円 / 月(税込)</span>
-            </div>
-            <p className="text-xs text-[#a07c3f] mb-6 bg-[#FAF9F5] p-3 rounded-lg border border-[#f3e8d3] font-medium">
-              学習管理・質問・一般推薦対策をバランスよく受けたい人
-            </p>
-            <ul className="space-y-3 mb-8 flex-1 text-sm text-slate-700">
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>月4コマの全内容</span></li>
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>小論文・英作文 添削</span></li>
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>志望理由書 サポート</span></li>
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>模擬面接</span></li>
-            </ul>
             <button onClick={onOpenConsultation} className="w-full py-3 rounded-xl bg-[#b38f4f] text-white font-bold hover:bg-[#a07c3f] transition-colors shadow-md shadow-[#b38f4f]/20">無料相談に申し込む</button>
           </div>
 
-          {/* 8 Koma */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col relative shadow-sm">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">毎週スタディ<br/><span className="text-base text-slate-500 font-normal">月8コマ</span></h3>
-            <div className="my-6">
-              <span className="text-3xl font-black text-slate-900">51,400</span>
-              <span className="text-slate-500 font-medium ml-1">円 / 月(税込)</span>
-            </div>
-            <p className="text-xs text-slate-600 mb-6 bg-slate-50 p-3 rounded-lg border border-slate-100">
-              慶應対策をより密に進めたい人、直前期や複数方式を本格的に並行する人
-            </p>
-            <ul className="space-y-3 mb-8 flex-1 text-sm text-slate-600">
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>月6コマの全内容</span></li>
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>高頻度な面談・進捗管理</span></li>
-              <li className="flex items-start gap-2"><Check className="w-4 h-4 text-[#b38f4f] mt-0.5 shrink-0" /><span>複数の入試方式の同時並行</span></li>
-            </ul>
-            <button onClick={onOpenConsultation} className="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-bold hover:border-slate-400 hover:bg-slate-50 transition-colors">相談する</button>
-          </div>
-
           {/* Chat Study */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col relative shadow-sm lg:mt-0">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col relative shadow-sm">
             <h3 className="text-xl font-bold text-slate-900 mb-2">チャット<br/><span className="text-base text-slate-500 font-normal">スタディコース</span></h3>
             <div className="my-6">
-              <span className="text-3xl font-black text-slate-900">16,000</span>
+              <span className="text-3xl font-black text-slate-900">9,800</span>
               <span className="text-slate-500 font-medium ml-1">円 / 月(税込)</span>
             </div>
             <p className="text-xs text-slate-600 mb-6 bg-slate-50 p-3 rounded-lg border border-slate-100">

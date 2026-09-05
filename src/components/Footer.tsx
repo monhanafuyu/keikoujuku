@@ -101,6 +101,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               <li>
                 <Link to="/legal" className="hover:text-white transition-colors block">特定商取引法に基づく表記</Link>
               </li>
+              <li>
+                <Link to="/admin" className="hover:text-white transition-colors block text-slate-500">管理者画面</Link>
+              </li>
             </ul>
           </div>
         </div>
