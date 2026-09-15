@@ -59,6 +59,12 @@ export const KeioFit: React.FC = () => {
             <p>
               方式にはA方式（自己推薦）とB方式（指定地域・評定要件あり）があり、それぞれ出願条件や試験内容が異なります。
             </p>
+            <Link to="/column/keio-fit-ab-houshiki" className="inline-flex items-center text-sm font-bold text-[#b38f4f] hover:text-[#8a6d3b] transition-colors mt-2 mb-2">
+              A方式とB方式の違いと対策を詳しく見る
+              <ChevronRight className="w-4 h-4 ml-1" />
+            </Link>
+            <p className="hidden">
+            </p>
             <p className="text-xs text-slate-500 mt-4 p-4 bg-slate-50 rounded-lg border border-slate-100 font-bold">
               ※年度によって出願資格、募集人数、評定条件、提出書類、試験内容などが変更される可能性があります。最新年度の詳細は必ず慶應義塾大学公式の募集要項をご確認ください。
             </p>

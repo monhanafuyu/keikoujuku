@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { PageTemplate } from '../components/PageTemplate';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { 
-  Award, BookOpen, ShieldCheck, Target, CheckCircle2, AlertTriangle, HelpCircle
+  Award, BookOpen, ShieldCheck, Target, CheckCircle2, AlertTriangle, HelpCircle, ChevronRight
 } from 'lucide-react';
 
 export const Shiteiko: React.FC = () => {
@@ -61,8 +62,7 @@ export const Shiteiko: React.FC = () => {
               高1・高2から考えるべき理由
             </h3>
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              指定校推薦の校内選考で最も重視される「評定平均」は、<strong>高校1年生の1学期から高校3年生の1学期までの全科目の成績</strong>で決まります。「高3になってから頑張る」のでは手遅れになることが多く、高1・高2の段階から定期テスト対策を戦略的に行う必要があります。
-            </p>
+              指定校推薦の校内選考で最も重視される「評定平均」は、<strong>高校1年生の1学期から高校3年生の1学期までの全科目の成績</strong>で決まります。「高3になってから頑張る」のでは手遅れになることが多く、高1・高2の段階から定期テスト対策を戦略的に行う必要があります。</p><Link to="/column/keio-shiteiko-condition" className="inline-flex items-center text-sm font-bold text-[#b38f4f] hover:text-[#8a6d3b] transition-colors mt-4">指定校推薦の条件と校内選考対策を詳しく見る<ChevronRight className="w-4 h-4 ml-1" /></Link>
           </div>
         </section>
 
