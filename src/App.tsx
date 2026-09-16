@@ -12,7 +12,7 @@ import { StrategyChart } from './pages/StrategyChart';
 
 import { ColumnList } from './pages/ColumnList';
 import { ColumnDetail } from './pages/ColumnDetail';
-import { About, Contact, Terms, Privacy, Legal } from './pages/LegalPages';
+import { Contact, Terms, Privacy } from './pages/LegalPages';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Admin } from './pages/Admin';
 
@@ -41,12 +41,9 @@ export default function App() {
           <Route path="/columns" element={<Navigate to="/column" replace />} />
           <Route path="/columns/:id" element={<Navigate to="/column/:id" replace />} />
 
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/legal" element={<Legal />} />
-          
           <Route path="*" element={<Home />} />
         </Routes>
       </Router>

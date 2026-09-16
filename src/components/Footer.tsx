@@ -87,9 +87,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
                 </button>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white transition-colors block">運営者情報</Link>
-              </li>
-              <li>
                 <Link to="/contact" className="hover:text-white transition-colors block">お問い合わせ</Link>
               </li>
               <li>
@@ -97,9 +94,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               </li>
               <li>
                 <Link to="/privacy" className="hover:text-white transition-colors block">プライバシーポリシー</Link>
-              </li>
-              <li>
-                <Link to="/legal" className="hover:text-white transition-colors block">特定商取引法に基づく表記</Link>
               </li>
               <li>
                 <Link to="/admin" className="hover:text-white transition-colors block text-slate-500">管理者画面</Link>
