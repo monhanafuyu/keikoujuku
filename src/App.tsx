@@ -15,6 +15,7 @@ import { ColumnDetail } from './pages/ColumnDetail';
 import { Contact, Terms, Privacy } from './pages/LegalPages';
 import { ScrollToTop } from './components/ScrollToTop';
 import { Admin } from './pages/Admin';
+import { NotFound } from './pages/NotFound';
 
 export default function App() {
   return (
@@ -44,7 +45,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </HelmetProvider>
