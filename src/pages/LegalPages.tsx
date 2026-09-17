@@ -4,13 +4,13 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { FreeConsultationModal } from '../components/FreeConsultationModal';
 
-const LegalLayout = ({ title, children }: { title: string, children: React.ReactNode }) => {
+const LegalLayout = ({ title, canonicalUrl, children }: { title: string, canonicalUrl: string, children: React.ReactNode }) => {
   const [isConsultationOpen, setIsConsultationOpen] = React.useState(false);
   const openConsultation = () => setIsConsultationOpen(true);
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#B38F4F] selection:text-white">
-      <SEO title={`${title}｜慶應ROUTE`} description={title} canonicalUrl="/legal" />
+      <SEO title={`${title}｜慶應ROUTE`} description={title} canonicalUrl={canonicalUrl} />
       <Navbar onOpenConsultation={openConsultation} />
       <main className="pt-32 pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +27,7 @@ const LegalLayout = ({ title, children }: { title: string, children: React.React
 };
 
 export const Contact = () => (
-  <LegalLayout title="お問い合わせ">
+  <LegalLayout title="お問い合わせ" canonicalUrl="/contact">
     <p>当塾のサービスに関するお問い合わせや、受験に関するご相談は、随時オンラインにて承っております。</p>
     <p>画面右上の<strong>「無料相談」</strong>ボタン、または画面下部の<strong>「無料受験戦略相談」</strong>のリンクよりお申し込みください。</p>
     
@@ -38,7 +38,7 @@ export const Contact = () => (
 );
 
 export const Terms = () => (
-  <LegalLayout title="利用規約">
+  <LegalLayout title="利用規約" canonicalUrl="/terms">
     <p>この利用規約（以下、「本規約」といいます。）は、慶應ROUTE（以下、「当塾」といいます。）が提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。</p>
 
     <h3>第1条（適用）</h3>
@@ -66,7 +66,7 @@ export const Terms = () => (
 );
 
 export const Privacy = () => (
-  <LegalLayout title="プライバシーポリシー">
+  <LegalLayout title="プライバシーポリシー" canonicalUrl="/privacy">
     <p>慶應ROUTE（以下、「当塾」といいます。）は、本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。</p>
 
     <h3>第1条（個人情報）</h3>

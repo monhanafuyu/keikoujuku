@@ -9,6 +9,7 @@ interface SEOProps {
   type?: 'website' | 'article';
   schemaOrgData?: object;
   breadcrumbs?: { name: string; url?: string; item?: string }[];
+  noindex?: boolean;
 }
 
 export const SEO: React.FC<SEOProps> = ({ 
@@ -47,6 +48,7 @@ export const SEO: React.FC<SEOProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={fullCanonicalUrl} />
       
       <meta property="og:title" content={title} />

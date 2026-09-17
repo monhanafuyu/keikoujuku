@@ -29,19 +29,12 @@ export default function App() {
           <Route path="/keio-fit" element={<KeioFit />} />
           <Route path="/keio-sfc" element={<KeioSfc />} />
           <Route path="/shiteiko" element={<Shiteiko />} />
-          <Route path="/shiteikou" element={<Navigate to="/shiteiko" replace />} />
           <Route path="/high-school-1-2" element={<HighSchool12 />} />
           <Route path="/study-cycle" element={<StudyCycle />} />
           <Route path="/strategy-chart" element={<StrategyChart />} />
           
-          <Route path="/general-recommendation" element={<Navigate to="/shiteiko" replace />} />
-          <Route path="/study-management" element={<Navigate to="/study-cycle" replace />} />
-          
           <Route path="/column" element={<ColumnList />} />
           <Route path="/column/:id" element={<ColumnDetail />} />
-          <Route path="/columns" element={<Navigate to="/column" replace />} />
-          <Route path="/columns/:id" element={<Navigate to="/column/:id" replace />} />
-
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />

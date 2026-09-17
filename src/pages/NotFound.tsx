@@ -10,6 +10,8 @@ export const NotFound: React.FC = () => {
       <SEO 
         title="ページが見つかりません｜慶應ROUTE"
         description="お探しのページは見つかりませんでした。削除されたか、URLが間違っている可能性があります。"
+        canonicalUrl="/404"
+        noindex={true}
       />
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="text-center max-w-xl mx-auto">

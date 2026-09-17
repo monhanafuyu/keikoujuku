@@ -81,7 +81,7 @@ export const AdmissionTypes: React.FC = () => {
 
         <div className="text-center">
           <Link 
-            to="/general-recommendation" 
+            to="/shiteiko" 
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition-all shadow-md active:scale-95"
           >
             <span>一般入試と推薦の両立戦略について詳しく見る</span>
