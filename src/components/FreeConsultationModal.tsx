@@ -37,9 +37,11 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
         email: formData.email,
         createdAt: new Date().toISOString(),
       });
-      
-      // 既存のメール通知処理（任意で継続、不要なら削除可能ですがバックアップとして残します）
-      fetch("https://formsubmit.co/ajax/monhanafuyu@gmail.com", {
+
+      // FormSubmitを使用したメール通知処理
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
+      if (adminEmail) {
+        fetch(`https://formsubmit.co/ajax/${adminEmail}`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -52,7 +54,8 @@ export const FreeConsultationModal: React.FC<FreeConsultationModalProps> = ({
             メールアドレス: formData.email,
         })
       }).catch(console.error);
-      
+      }
+
       setIsSuccess(true);
     } catch (error) {
       console.error(error);

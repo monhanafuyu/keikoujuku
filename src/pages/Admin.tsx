@@ -29,7 +29,7 @@ export const Admin: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (user && user.email === 'monhanafuyu@gmail.com') {
+    if (user && user.email === import.meta.env.VITE_ADMIN_EMAIL) {
       fetchRequests();
     }
   }, [user]);
@@ -112,7 +112,7 @@ export const Admin: React.FC = () => {
                   Googleでログイン
                 </button>
               </div>
-            ) : user.email !== 'monhanafuyu@gmail.com' ? (
+            ) : user.email !== import.meta.env.VITE_ADMIN_EMAIL ? (
               <div className="text-center py-12 text-red-600 bg-red-50 rounded-2xl">
                 権限がありません。管理者アカウントでログインしてください。
               </div>
