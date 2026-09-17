@@ -19,7 +19,8 @@ export const SEO: React.FC<SEOProps> = ({
   canonicalUrl, 
   type = 'website',
   schemaOrgData,
-  breadcrumbs
+  breadcrumbs,
+  noindex
 }) => {
   const baseUrl = 'https://www.keikouzemi.com';
   const fullCanonicalUrl = `${baseUrl}${canonicalUrl === '/' ? '' : canonicalUrl}`;

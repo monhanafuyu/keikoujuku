@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Hero } from '../components/Hero';
 import { KeioSpecialized } from '../components/KeioSpecialized';
 import { AdmissionTypes } from '../components/AdmissionTypes';
+import { TargetAudience } from '../components/TargetAudience';
+import { Features } from '../components/Features';
 import { Roadmap } from '../components/Roadmap';
 import { StudyCycle } from '../components/StudyCycle';
 import { StrategyDashboard } from '../components/StrategyDashboard';
@@ -39,6 +41,8 @@ export default function Home() {
         <Roadmap />
         <StudyCycle />
         <StrategyDashboard />
+        <TargetAudience />
+        <Features />
         <InstructorValue />
         <QualityAssurance />
         <PricingAndComparison onOpenConsultation={openConsultation} />

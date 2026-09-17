@@ -1,17 +1,22 @@
 import React from 'react';
-import { UserCheck, MessageSquare, Map } from 'lucide-react';
+import { UserCheck, MessageSquare, Map, Award } from 'lucide-react';
 
 export const InstructorValue: React.FC = () => {
   const values = [
     {
+      icon: <Award className="w-5 h-5 text-[#b38f4f]" />,
+      title: '圧倒的な実績を持つ現役慶應生',
+      desc: '全国模試一位を獲得した講師や、評定平均5.0の講師、英検一級取得者など、トップクラスの実力を持つ講師陣が在籍しています。'
+    },
+    {
       icon: <Map className="w-5 h-5 text-[#b38f4f]" />,
-      title: 'リアルな慶應受験を経験している',
-      desc: '数年前の古い情報ではなく、現在の入試傾向や合格ラインを肌感覚で知っています。'
+      title: '一般と総合型の「並行受験」体現者',
+      desc: '自身も一般入試と総合型選抜を並行して受験した経験を持つ講師陣が、並行受験のリアルな戦略を直接指導します。'
     },
     {
       icon: <MessageSquare className="w-5 h-5 text-[#b38f4f]" />,
       title: '高校生と年齢が近く、質問しやすい',
-      desc: '分からない問題を恥ずかしがらずに聞ける距離感。受験生活の不安も相談できます。'
+      desc: '分からない問題を恥ずかしがらずに聞ける距離感。受験生活の不安も相談できます。大学入学後のゼミや学生生活についても直接聞くことができます。'
     },
     {
       icon: <UserCheck className="w-5 h-5 text-[#b38f4f]" />,
