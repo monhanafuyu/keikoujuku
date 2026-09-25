@@ -11,8 +11,9 @@ export const KeioFit: React.FC = () => {
   return (
     <PageTemplate>
       <SEO 
-        title="慶應法学部FIT入試対策｜志望理由・小論文・面接｜慶應ROUTE"
-        description="慶應義塾大学法学部FIT入試対策。志望理由、自己分析、活動整理、小論文、面接から一般選抜との併願戦略まで現役慶應生がサポートします。"
+        title="慶應法学部FIT入試対策専門塾｜A方式・B方式の評定基準・志望理由書・総合考査・面接対策｜慶應ROUTE"
+        description="慶應義塾大学法学部FIT入試（A方式・B方式）対策。出願要件・評定基準、志望理由書・自己推薦書（2,000字）の添削から二次選考の総合考査・口頭試問（面接）、一般選抜との併願戦略まで現役慶應法学部生が完全個別指導。"
+        keywords="慶應 fit, 慶應義塾大学fit入試, fit入試 対策, 慶應 fit a方式, 慶應 fit b方式, 慶應 fit 評定, 慶應 fit 総合考査, 慶應 法学部 fit 過去問"
         canonicalUrl="/keio-fit"
         breadcrumbs={[
           { name: '慶應法学部FIT入試対策', item: '/keio-fit' }

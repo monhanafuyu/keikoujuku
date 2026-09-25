@@ -33,6 +33,28 @@ export default function App() {
           <Route path="/study-cycle" element={<StudyCycle />} />
           <Route path="/strategy-chart" element={<StrategyChart />} />
           
+          {/* GSCで検知された旧URL・表記揺れ・末尾スラッシュの正規URLリダイレクト */}
+          <Route path="/shiteikou" element={<Navigate to="/shiteiko" replace />} />
+          <Route path="/shiteikou/" element={<Navigate to="/shiteiko" replace />} />
+          <Route path="/shiteiko/" element={<Navigate to="/shiteiko" replace />} />
+          <Route path="/keio-fit/" element={<Navigate to="/keio-fit" replace />} />
+          <Route path="/keio-ippan/" element={<Navigate to="/keio-ippan" replace />} />
+          <Route path="/keio-sfc/" element={<Navigate to="/keio-sfc" replace />} />
+          <Route path="/high-school-1-2/" element={<Navigate to="/high-school-1-2" replace />} />
+          <Route path="/study-cycle/" element={<Navigate to="/study-cycle" replace />} />
+          <Route path="/strategy-chart/" element={<Navigate to="/strategy-chart" replace />} />
+          <Route path="/study-management" element={<Navigate to="/study-cycle" replace />} />
+          <Route path="/study-management/" element={<Navigate to="/study-cycle" replace />} />
+          <Route path="/coaching" element={<Navigate to="/study-cycle" replace />} />
+          <Route path="/coaching/" element={<Navigate to="/study-cycle" replace />} />
+          <Route path="/general" element={<Navigate to="/keio-ippan" replace />} />
+          <Route path="/general/" element={<Navigate to="/keio-ippan" replace />} />
+          <Route path="/sougougata" element={<Navigate to="/keio-fit" replace />} />
+          <Route path="/sougougata/" element={<Navigate to="/keio-fit" replace />} />
+          <Route path="/legal" element={<Navigate to="/terms" replace />} />
+          <Route path="/legal/" element={<Navigate to="/terms" replace />} />
+          <Route path="/column/" element={<Navigate to="/column" replace />} />
+
           <Route path="/column" element={<ColumnList />} />
           <Route path="/column/:id" element={<ColumnDetail />} />
           <Route path="/contact" element={<Contact />} />

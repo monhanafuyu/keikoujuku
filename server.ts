@@ -15,6 +15,46 @@ async function startServer() {
 
   app.use(express.json());
 
+  // 301 Permanent Redirects for GSC legacy URLs and URL consolidations
+  const REDIRECT_MAP: Record<string, string> = {
+    "/shiteikou": "/shiteiko",
+    "/shiteikou/": "/shiteiko",
+    "/study-management": "/study-cycle",
+    "/study-management/": "/study-cycle",
+    "/coaching": "/study-cycle",
+    "/coaching/": "/study-cycle",
+    "/general": "/keio-ippan",
+    "/general/": "/keio-ippan",
+    "/sougougata": "/keio-fit",
+    "/sougougata/": "/keio-fit",
+    "/legal": "/terms",
+    "/legal/": "/terms",
+    "/column/keio-fit-ippan-ryouritsu": "/column/keio-fit-general-exams",
+    "/column/fit-ippan-ryouritsu": "/column/keio-fit-general-exams",
+    "/column/recommendation-and-general-exam": "/column/shiteiko-ippan-ryouritsu",
+    "/column/keio-ippan-when-to-start": "/column/keio-when-start",
+    "/column/keio-high2-plan": "/column/keio-grade2-schedule",
+    "/column/kou2-juken-strategy": "/column/keio-grade2-schedule",
+    "/column/shiteiko-high1": "/column/shiteikou-kou1-todo",
+    "/column/fit-when-to-start": "/column/keio-fit-when-start",
+    "/column/kou1-juken-start": "/column/keio-when-start",
+    "/column/keio-high1-start": "/column/keio-when-start",
+  };
+
+  app.use((req, res, next) => {
+    const urlPath = req.path;
+    if (REDIRECT_MAP[urlPath]) {
+      return res.redirect(301, REDIRECT_MAP[urlPath]);
+    }
+    // Remove trailing slash if present (except root '/')
+    if (urlPath.length > 1 && urlPath.endsWith('/')) {
+      const cleanPath = urlPath.slice(0, -1);
+      const query = req.url.slice(urlPath.length);
+      return res.redirect(301, cleanPath + query);
+    }
+    next();
+  });
+
   // Explicit route for sitemap.xml to guarantee XML content-type and HTTP 200
   app.get("/sitemap.xml", (req, res) => {
     const sitemapPathPublic = path.join(process.cwd(), "public", "sitemap.xml");

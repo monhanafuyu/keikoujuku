@@ -26,8 +26,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#B38F4F] selection:text-white pb-20 sm:pb-0">
       <SEO 
-        title="慶應ROUTE｜現役慶應生による慶應専門の大学受験塾"
-        description="現役慶應生が指導する慶應専門の大学受験塾「慶應ROUTE」。一般選抜・慶應法学部FIT入試・SFC総合型選抜・指定校推薦まで対応。受験戦略、学習管理、質問・個別解説を一貫してサポートします。"
+        title="慶應専門塾 慶應ROUTE｜一般選抜・法学部FIT入試・指定校推薦・SFC総合型選抜"
+        description="現役慶應生による慶應義塾大学専門のオンライン受験戦略塾「慶應ROUTE」。一般選抜・慶應法FIT入試・指定校推薦・SFC総合型選抜に対応。評定平均4.8の獲得から独自傾向の英語・小論文・個別学習管理まで一貫指導。"
+        keywords="慶應 塾, 慶應義塾大学 受験, 慶應 指定校推薦, 慶應義塾大学fit入試, 指定校推薦 一般入試 両立, 慶應 一般選抜, 大学受験 コーチング"
         canonicalUrl="/"
       />
       

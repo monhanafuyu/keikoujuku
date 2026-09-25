@@ -101,6 +101,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.keikouzemi.com/column/eiken-keio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.keikouzemi.com/column/shiteikou-kou1-todo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.keikouzemi.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -14,10 +14,41 @@ const generateSlug = (text: string) => {
   return text.toLowerCase().replace(/[^\w\s\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/g, '').replace(/\s+/g, '-');
 };
 
+// URLエイリアスマッピング（過去のインデックスや表記揺れを正規URLへ統合）
+const COLUMN_ALIASES: Record<string, string> = {
+  'keio-fit-ippan-ryouritsu': 'keio-fit-general-exams',
+  'fit-ippan-ryouritsu': 'keio-fit-general-exams',
+  'recommendation-and-general-exam': 'shiteiko-ippan-ryouritsu',
+  'keio-ippan-when-to-start': 'keio-when-start',
+  'keio-high2-plan': 'keio-grade2-schedule',
+  'kou2-juken-strategy': 'keio-grade2-schedule',
+  'shiteiko-high1': 'shiteikou-kou1-todo',
+  'fit-when-to-start': 'keio-fit-when-start',
+  'kou1-juken-start': 'keio-when-start',
+  'keio-high1-start': 'keio-when-start',
+};
+
+// MarkdownからFAQ項目を自動抽出して構造化データ（FAQPage）を生成
+const extractFaqFromContent = (content: string) => {
+  const faqMatch = content.match(/## FAQ[^\n]*\n+([\s\S]*?)(?=\n## |$)/);
+  if (!faqMatch) return [];
+  const faqText = faqMatch[1];
+  const qas: { question: string; answer: string }[] = [];
+  const regex = /\*\*Q\.\s*([^\*]+?)\*\*\s*\n+A\.\s*([^\n]+)/g;
+  let m;
+  while ((m = regex.exec(faqText)) !== null) {
+    qas.push({ question: m[1].trim(), answer: m[2].trim() });
+  }
+  return qas;
+};
+
 export const ColumnDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const column = columns.find(c => c.id === id);
+  
+  // エイリアス解決
+  const resolvedId = id && COLUMN_ALIASES[id] ? COLUMN_ALIASES[id] : id;
+  const column = columns.find(c => c.id === resolvedId);
 
   useEffect(() => {
     if (!column) {
@@ -27,12 +58,16 @@ export const ColumnDetail: React.FC = () => {
 
   if (!column) return null;
 
+  const faqItems = extractFaqFromContent(column.content);
+
   return (
     <PageTemplate>
       <SEO 
         title={`${column.title}｜慶應受験戦略コラム｜慶應ROUTE`}
         description={column.excerpt}
         canonicalUrl={`/column/${column.id}`}
+        type="article"
+        faqItems={faqItems}
         breadcrumbs={[
           { name: '受験戦略コラム', item: '/column' },
           { name: column.title, item: `/column/${column.id}` }
