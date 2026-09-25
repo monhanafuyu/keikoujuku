@@ -46,12 +46,6 @@ async function startServer() {
     if (REDIRECT_MAP[urlPath]) {
       return res.redirect(301, REDIRECT_MAP[urlPath]);
     }
-    // Remove trailing slash if present (except root '/')
-    if (urlPath.length > 1 && urlPath.endsWith('/')) {
-      const cleanPath = urlPath.slice(0, -1);
-      const query = req.url.slice(urlPath.length);
-      return res.redirect(301, cleanPath + query);
-    }
     next();
   });
 
